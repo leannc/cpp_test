@@ -5,4 +5,6 @@ project(CPP_TEST)
 
 add_executable(${PROJECT_NAME}
         src/main.cpp
+        src/general/std_variant_with_visitor.cpp
+        src/general/UseCase.h
         )
