@@ -11,3 +11,5 @@
 
 void std_variant_with_visitor();
 void std_variant_with_visitor2();
+
+void polymorphism();

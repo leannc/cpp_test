@@ -7,5 +7,6 @@
 
 int main() {
     CALL_USE_CASE(std_variant_with_visitor2);
+    CALL_USE_CASE(polymorphism);
     return 0;
 }

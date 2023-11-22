@@ -53,7 +53,6 @@ void std_variant_with_visitor2()
             [](double arg) { std::cout<<"the double value is "<<arg<<std::endl; },
             [](std::string arg) { std::cout<<"the string value is "<<arg<<std::endl; }
         }, variant);
-        //TODO 使用vector<vector<MicroLink>>,或者用map等，把微连数据完善
     }
 
 
