@@ -6,13 +6,23 @@
 class base
 {
 public:
+    base()
+    {
+        animals.push_back(this);
+    }
+
+
     void shout()
     {
         std::cout<<this->name()<<" shouted"<<std::endl;
     };
 
     virtual std::string name() = 0;
+public:
+    static std::vector<base*> animals;
 };
+
+std::vector<base*> base::animals;
 
 class dog : public base
 {
@@ -32,13 +42,12 @@ class cat : public base
 
 
 
-void polymorphism()
+void polymorphism_do_things_in_base_constructor()
 {
-    std::vector<base*> animals;
-    animals.push_back(new dog());
-    animals.push_back(new cat());
+    dog d;
+    cat c;
 
-    for(auto animal : animals)
+    for (auto& animal : base::animals)
     {
         animal->shout();
     }
