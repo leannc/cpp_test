@@ -15,3 +15,4 @@ void std_variant_with_visitor2();
 
 void polymorphism_do_things_in_base_constructor();
 void polymorphism_dynamic_registry();
+void set_set_test();
