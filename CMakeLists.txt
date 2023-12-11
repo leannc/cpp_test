@@ -12,4 +12,10 @@ add_executable(${PROJECT_NAME}
         src/templates/MyTemplate.cpp
         src/templates/MyTemplate.h
         src/general/std_set.cpp
+
+        src/doxygen_test/Animal.cpp
+        src/doxygen_test/Animal.h
+        src/doxygen_test/Animal.h
+        src/doxygen_test/Cat.cpp
+        src/doxygen_test/Cat.h
 )
