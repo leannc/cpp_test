@@ -17,3 +17,4 @@ void polymorphism_do_things_in_base_constructor();
 void polymorphism_dynamic_registry();
 void std_set_test();
 void semaphore_test();
+void condition_variable_test();
