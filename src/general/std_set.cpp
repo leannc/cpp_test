@@ -4,7 +4,7 @@
 #include <set>
 #include <iostream>
 
-void set_set_test()
+void std_set_test()
 {
     std::set<int> test_sort_set;
 

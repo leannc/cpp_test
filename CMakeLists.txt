@@ -18,4 +18,7 @@ add_executable(${PROJECT_NAME}
         src/doxygen_test/Animal.h
         src/doxygen_test/Cat.cpp
         src/doxygen_test/Cat.h
+
+
+        src/general/semaphore.cpp
 )
