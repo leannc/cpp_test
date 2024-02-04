@@ -22,4 +22,5 @@ add_executable(${PROJECT_NAME}
 
         src/general/semaphore.cpp
         src/general/condition_variable.cpp
+        src/general/std_async_simple.cpp
 )
