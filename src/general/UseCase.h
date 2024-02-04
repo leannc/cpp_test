@@ -19,3 +19,4 @@ void std_set_test();
 void semaphore_test();
 void condition_variable_test();
 void std_async_simple_test();
+void std_async_complex_1_test();
