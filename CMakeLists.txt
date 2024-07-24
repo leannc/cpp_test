@@ -23,6 +23,16 @@ add_executable(${PROJECT_NAME}
         src/doxygen_test/Animal.h
         src/doxygen_test/Cat.cpp
         src/doxygen_test/Cat.h
-
-
+        src/concurrencpp_test/concurrencpp_hello_world.cpp
+        src/concurrencpp_test/UseCase.h
 )
+
+target_include_directories(${PROJECT_NAME}
+    PUBLIC src/concurrencpp_test/include
+)
+
+target_link_directories(${PROJECT_NAME} PUBLIC
+        src/concurrencpp_test/lib
+)
+
+target_link_libraries(${PROJECT_NAME} concurrencpp)
