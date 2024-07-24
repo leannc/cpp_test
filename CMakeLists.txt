@@ -20,7 +20,7 @@ add_executable(${PROJECT_NAME}
         src/doxygen_test/Cat.h
 
 
-        src/general/semaphore.cpp
+        src/general/semaphore_test.cpp
         src/general/condition_variable.cpp
         src/general/std_async_simple.cpp
         src/general/std_async_complex_1.cpp

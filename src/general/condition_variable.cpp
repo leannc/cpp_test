@@ -15,6 +15,7 @@ void consume(std::condition_variable* cv ,std::mutex* mylock,bool* empty)
     std::unique_lock<std::mutex> ul(*mylock);
     while (*empty)
     {
+        //这个地方，会自己把ul这一把锁释放掉，然后等待，当cv->notify_one()的时候，会重新获取这把锁
         cv->wait(ul);
     }
 
@@ -30,6 +31,8 @@ void produce(std::condition_variable* cv,std::mutex* mylock,bool* empty)
     {
         std::cout << "produced"<<std::endl;
         *empty=false;
+        //这个地方，会通知一个等待的线程，这个地方是随机的
+        //这里也可以使用cv->notify_all();来通知所有等待的线程
         cv->notify_one();
     }
 }

@@ -4,9 +4,8 @@
 
 #include <iostream>
 #include <thread>
-#include <condition_variable>
 #include <mutex>
-#include <semaphore.h>
+#include <semaphore>
 #include <vector>
 
 #define MAX_SPACE 30
@@ -35,6 +34,7 @@ void produce()
 
 void consume()
 {
+
     while (true)
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(70));
