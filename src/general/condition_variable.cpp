@@ -37,7 +37,7 @@ void produce(std::condition_variable* cv,std::mutex* mylock,bool* empty)
     }
 }
 
-int condition_variable_test()
+void condition_variable_test()
 {
     std::mutex lock;
     bool empty=true;
@@ -51,5 +51,4 @@ int condition_variable_test()
     consumer.join();
     producer.join();
 
-    return 0;
 }

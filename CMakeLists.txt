@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 project(CPP_TEST)
 
 add_executable(${PROJECT_NAME}
@@ -13,6 +13,11 @@ add_executable(${PROJECT_NAME}
         src/templates/MyTemplate.h
         src/general/std_set.cpp
 
+        src/general/semaphore_test.cpp
+        src/general/condition_variable.cpp
+        src/general/std_async_simple.cpp
+        src/general/std_async_complex_1.cpp
+
         src/doxygen_test/Animal.cpp
         src/doxygen_test/Animal.h
         src/doxygen_test/Animal.h
@@ -20,8 +25,4 @@ add_executable(${PROJECT_NAME}
         src/doxygen_test/Cat.h
 
 
-        src/general/semaphore_test.cpp
-        src/general/condition_variable.cpp
-        src/general/std_async_simple.cpp
-        src/general/std_async_complex_1.cpp
 )

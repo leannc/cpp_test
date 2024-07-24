@@ -22,7 +22,7 @@ bool bufferdFileLoader()
 }
 
 
-int std_async_complex_1_test()
+void std_async_complex_1_test()
 {
     std::future<bool> bgThread= std::async(std::launch::async,bufferdFileLoader);
 
@@ -43,6 +43,4 @@ int std_async_complex_1_test()
         }
 
     }
-
-    return 0;
 }

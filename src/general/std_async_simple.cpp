@@ -14,7 +14,7 @@ int square(int x,int ms) {
  }
 
 
- int std_async_simple_test()
+ void std_async_simple_test()
  {
      std::cout << "main thread id is " << std::this_thread::get_id() << std::endl;
     //这里会马上开始执行，是在另一个线程中执行的
@@ -28,6 +28,4 @@ int square(int x,int ms) {
      int result = f.get();
 
      std::cout <<"result is " <<result<< std::endl;
-
-     return 0;
  }
