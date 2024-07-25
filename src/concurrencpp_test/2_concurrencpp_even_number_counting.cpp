@@ -18,11 +18,13 @@ std::vector<int> make_random_vector() {
 
 concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_pool_executor> tpe, const std::vector<int>& vector,int& worker_times) {
     std::cout << "begin count_even in thread : " << std::this_thread::get_id()<< std::endl;
+    co_await concurrencpp::resume_on(tpe);
     const auto vecor_size = vector.size();
     const auto concurrency_level = tpe->max_concurrency_level();
     std::cout << "concurrency_level: " << concurrency_level << std::endl;
     const auto chunk_size = vecor_size / concurrency_level;
-
+//    co_await concurrencpp::resume_on(tpe);
+//    std::cout << "returned: " << concurrency_level << std::endl;
     std::vector<concurrencpp::result<size_t>> chunk_count;
 
     for (auto i = 0; i < concurrency_level; i++) {
