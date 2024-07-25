@@ -31,6 +31,7 @@ add_executable(${PROJECT_NAME}
         src/concurrencpp_test/5_prime_number_finder.cpp
         src/concurrencpp_test/6_manual_executor.cpp
         src/concurrencpp_test/7_when_all.cpp
+        src/concurrencpp_test/8_when_any.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
