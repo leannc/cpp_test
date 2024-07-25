@@ -30,6 +30,7 @@ add_executable(${PROJECT_NAME}
         src/concurrencpp_test/4_async_file_processing_version_2.cpp
         src/concurrencpp_test/5_prime_number_finder.cpp
         src/concurrencpp_test/6_manual_executor.cpp
+        src/concurrencpp_test/7_when_all.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
