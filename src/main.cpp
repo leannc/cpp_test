@@ -21,7 +21,8 @@ int main() {
 //    CALL_USE_CASE(concurrencpp_hello_world);
 //    CALL_USE_CASE(concurrencpp_even_number_counting);
 //    CALL_USE_CASE(async_file_processing);
-    CALL_USE_CASE(async_file_processing_version_2);
+//    CALL_USE_CASE(async_file_processing_version_2);
+    CALL_USE_CASE(prime_number_finder);
 
 
 

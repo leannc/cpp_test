@@ -18,4 +18,5 @@ int concurrencpp_hello_world();
 int concurrencpp_even_number_counting();
 int async_file_processing();
 int async_file_processing_version_2();
+int prime_number_finder();
 

@@ -19,6 +19,7 @@ std::vector<int> make_random_vector() {
 concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_pool_executor> tpe, const std::vector<int>& vector,int& worker_times) {
     std::cout << "begin count_even in thread : " << std::this_thread::get_id()<< std::endl;
     co_await concurrencpp::resume_on(tpe);
+    std::cout << "resume count_even in thread : " << std::this_thread::get_id()<< std::endl;
     const auto vecor_size = vector.size();
     const auto concurrency_level = tpe->max_concurrency_level();
     std::cout << "concurrency_level: " << concurrency_level << std::endl;
@@ -44,9 +45,9 @@ concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_poo
     size_t total_count = 0;
 
     for (auto& result : chunk_count) {
-        std::cout << "before co_await,total_count : "  << total_count<< std::endl;
+//        std::cout << "before co_await,total_count : "  << total_count<< std::endl;
         total_count += co_await result;
-        std::cout << "after co_await total_count: "  << total_count<< std::endl;
+//        std::cout << "after co_await total_count: "  << total_count<< std::endl;
     }
 
     std::cout << "end count_even in thread : "  << std::this_thread::get_id()<< std::endl;
