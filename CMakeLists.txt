@@ -23,8 +23,10 @@ add_executable(${PROJECT_NAME}
         src/doxygen_test/Animal.h
         src/doxygen_test/Cat.cpp
         src/doxygen_test/Cat.h
-        src/concurrencpp_test/concurrencpp_hello_world.cpp
+        src/concurrencpp_test/1_concurrencpp_hello_world.cpp
         src/concurrencpp_test/UseCase.h
+        src/concurrencpp_test/2_concurrencpp_even_number_counting.cpp
+        src/concurrencpp_test/3_async_file_processing.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
