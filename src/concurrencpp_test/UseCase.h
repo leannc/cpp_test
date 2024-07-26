@@ -16,6 +16,8 @@
 
 #include <chrono>
 
+#include <cstdlib>
+
 
 int concurrencpp_hello_world();
 int concurrencpp_even_number_counting();
@@ -25,4 +27,5 @@ int prime_number_finder();
 int manual_executor();
 int concurrencpp_when_all();
 int concurrencpp_when_any();
+int concurrencpp_result_promise();
 

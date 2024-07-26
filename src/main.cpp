@@ -25,7 +25,8 @@ int main() {
 //    CALL_USE_CASE(prime_number_finder);
 //    CALL_USE_CASE(manual_executor);
 //    CALL_USE_CASE(concurrencpp_when_all);
-    CALL_USE_CASE(concurrencpp_when_any);
+//    CALL_USE_CASE(concurrencpp_when_any);
+    CALL_USE_CASE(concurrencpp_result_promise);
 
 
 

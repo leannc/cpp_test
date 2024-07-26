@@ -32,6 +32,7 @@ add_executable(${PROJECT_NAME}
         src/concurrencpp_test/6_manual_executor.cpp
         src/concurrencpp_test/7_when_all.cpp
         src/concurrencpp_test/8_when_any.cpp
+        src/concurrencpp_test/9_result_promise.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
