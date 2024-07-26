@@ -31,4 +31,5 @@ int concurrencpp_result_promise();
 int regular_timer();
 int oneshot_timer();
 int delay_object();
+int concurrencpp_generator();
 

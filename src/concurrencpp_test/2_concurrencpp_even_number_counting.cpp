@@ -35,6 +35,7 @@ concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_poo
         const auto chunk_end = chunk_begin + chunk_size;
         auto result = tpe->submit([&vector, chunk_begin, chunk_end,&worker_times]() -> size_t {
             worker_times++;
+            std::this_thread::sleep_for(100ms);
 //            std::cout << "start work : " << std::this_thread::get_id()<< std::endl;
             return std::count_if(vector.begin() + chunk_begin, vector.begin() + chunk_end, [](auto i) {
                 return i % 2 == 0;
@@ -45,11 +46,10 @@ concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_poo
     }
 
     size_t total_count = 0;
-
     for (auto& result : chunk_count) {
-//        std::cout << "before co_await,total_count : "  << total_count<< std::endl;
+        std::cout << "before co_await,total_count : "  << total_count<< std::endl;
         total_count += co_await result;
-//        std::cout << "after co_await total_count: "  << total_count<< std::endl;
+        std::cout << "after co_await total_count: "  << total_count<< std::endl;
     }
 
     std::cout << "end count_even in thread : "  << std::this_thread::get_id()<< std::endl;

@@ -36,6 +36,7 @@ add_executable(${PROJECT_NAME}
         src/concurrencpp_test/10_regular_timer.cpp
         src/concurrencpp_test/11_oneshot_timer.cpp
         src/concurrencpp_test/12_delay_object.cpp
+        src/concurrencpp_test/13_generator.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
