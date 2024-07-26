@@ -4,6 +4,7 @@
 #include "UseCase.h"
 
 //using namespace concurrencpp;
+using namespace std::chrono_literals;
 
 std::vector<int> make_random_vector() {
     std::vector<int> vec(64 * 1'024);
@@ -16,9 +17,10 @@ std::vector<int> make_random_vector() {
     return vec;
 }
 
-concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_pool_executor> tpe, const std::vector<int>& vector,int& worker_times) {
+concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_pool_executor> tpe,std::shared_ptr<concurrencpp::timer_queue> tq, const std::vector<int>& vector,int& worker_times) {
     std::cout << "begin count_even in thread : " << std::this_thread::get_id()<< std::endl;
-    co_await concurrencpp::resume_on(tpe);
+//    co_await concurrencpp::resume_on(tpe);
+//    co_await tq->make_delay_object(1ms, tpe);
     std::cout << "resume count_even in thread : " << std::this_thread::get_id()<< std::endl;
     const auto vecor_size = vector.size();
     const auto concurrency_level = tpe->max_concurrency_level();
@@ -73,7 +75,7 @@ int concurrencpp_even_number_counting() {
     concurrencpp::runtime runtime(options);
     const auto vector = make_random_vector();
     std::cout << "before calling count_even  in thread : "  << std::this_thread::get_id()<< std::endl;
-    auto result = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
+    auto result = count_even(runtime.thread_pool_executor(),runtime.timer_queue(), vector,worker_invoke_times);
 //    auto result2 = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
 //    auto result3 = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
 //    auto result4 = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
