@@ -33,6 +33,8 @@ add_executable(${PROJECT_NAME}
         src/concurrencpp_test/7_when_all.cpp
         src/concurrencpp_test/8_when_any.cpp
         src/concurrencpp_test/9_result_promise.cpp
+        src/concurrencpp_test/10_regular_timer.cpp
+        src/concurrencpp_test/11_oneshot_timer.cpp
 )
 
 target_include_directories(${PROJECT_NAME}

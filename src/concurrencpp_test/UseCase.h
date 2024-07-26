@@ -28,4 +28,6 @@ int manual_executor();
 int concurrencpp_when_all();
 int concurrencpp_when_any();
 int concurrencpp_result_promise();
+int regular_timer();
+int oneshot_timer();
 
