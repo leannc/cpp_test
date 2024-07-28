@@ -33,7 +33,8 @@ int main() {
 //    CALL_USE_CASE(oneshot_timer);
 //    CALL_USE_CASE(delay_object);
 //    CALL_USE_CASE(concurrencpp_generator);
-    CALL_USE_CASE(concurrencpp_async_locks);
+//    CALL_USE_CASE(concurrencpp_async_locks);
+    CALL_USE_CASE(async_condition_variable);
 
 
 

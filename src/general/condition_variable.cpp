@@ -48,7 +48,17 @@ void condition_variable_test()
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     std::thread producer(produce,&cv,&lock,&empty);
 
+//////////////////////////
+    std::cout << "--------------------------------"<<std::endl;
+    std::thread producer2(produce,&cv,&lock,&empty);
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::thread consumer2(consume,&cv,&lock,&empty);
+
+
     consumer.join();
     producer.join();
+
+    consumer2.join();
+    producer2.join();
 
 }

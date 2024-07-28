@@ -36,6 +36,10 @@ int concurrencpp_async_locks() {
         results[i] = add_numbers({}, runtime.thread_pool_executor(), range_start, range_end);
     }
 
+
+    std::cout << "task commited" << std::endl;
+
+
     for (auto& result : results) {
         result.get();
     }
