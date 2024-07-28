@@ -34,4 +34,5 @@ int delay_object();
 int concurrencpp_generator();
 int concurrencpp_async_locks();
 int async_condition_variable();
+int SLA_axis_init();
 

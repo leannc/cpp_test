@@ -39,6 +39,7 @@ add_executable(${PROJECT_NAME}
         src/concurrencpp_test/13_generator.cpp
         src/concurrencpp_test/14_async_locks.cpp
         src/concurrencpp_test/15_async_condition_variable.cpp
+        src/concurrencpp_test/16_SLA_axis_init.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
