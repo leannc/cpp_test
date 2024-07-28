@@ -49,6 +49,7 @@ concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_poo
     for (auto& result : chunk_count) {
         std::cout << "before co_await,total_count : "  << total_count<< std::endl;
         total_count += co_await result;
+//        total_count += result.get();
         std::cout << "after co_await total_count: "  << total_count<< std::endl;
     }
 
