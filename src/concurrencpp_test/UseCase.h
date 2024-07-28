@@ -32,4 +32,5 @@ int regular_timer();
 int oneshot_timer();
 int delay_object();
 int concurrencpp_generator();
+int concurrencpp_async_locks();
 
