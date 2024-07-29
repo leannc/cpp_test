@@ -170,19 +170,21 @@ int SLA_axis_init()
 
      auto recoater_platform_init_task = start_task();
      auto resin_init_task=start_task();
+
+
     //刮刀轴回零
     recoater_platform_init_task = axis_go_origin_task(thread_pool_executor,runtime.timer_queue(),std::move(recoater_platform_init_task),"recoater");
+    //网板回零
+    recoater_platform_init_task = axis_go_origin_task(thread_pool_executor,runtime.timer_queue(),std::move(recoater_platform_init_task),"platform");
+    //网板运动到指定位置
+    recoater_platform_init_task = axis_move_task(thread_pool_executor,runtime.timer_queue(),std::move(recoater_platform_init_task),10,"platform");
+
+
     //液位轴回零
     resin_init_task = axis_go_origin_task(thread_pool_executor,runtime.timer_queue(),std::move(resin_init_task),"resin");
-
     //液位轴运动到指定位置
     resin_init_task = axis_move_task(thread_pool_executor,runtime.timer_queue(),std::move(resin_init_task),10,"resin");
 
-    //网板回零
-    recoater_platform_init_task = axis_go_origin_task(thread_pool_executor,runtime.timer_queue(),std::move(recoater_platform_init_task),"platform");
-
-    //网板运动到指定位置
-    recoater_platform_init_task = axis_move_task(thread_pool_executor,runtime.timer_queue(),std::move(recoater_platform_init_task),10,"platform");
 
     recoater_platform_init_task.get();
     resin_init_task.get();
