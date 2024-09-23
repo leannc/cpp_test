@@ -87,6 +87,7 @@ result<int> axis_go_origin_task(std::shared_ptr<concurrencpp::thread_pool_execut
     auto result = co_await preivous_task;
     if (result == -1)
     {
+
         std::cout <<"<task begin> "<< axis_name << " go origin " <<std::this_thread::get_id()<<std::endl;
     } else
     {

@@ -40,7 +40,8 @@ public:
     lazy_result<int> pop(std::shared_ptr<executor> resume_executor) {
         auto guard = co_await _lock.lock(resume_executor);
         co_await _cv.await(resume_executor, guard, [this] {
-            return _abort || !_queue.empty();
+//            return _abort || !_queue.empty();
+            return true;
         });
 
         if (!_queue.empty()) {
@@ -49,9 +50,11 @@ public:
 
             co_return result;
         }
-
-        assert(_abort);
-        throw std::runtime_error("queue has been shut down.");
+//
+//        assert(_abort);
+//        throw std::runtime_error("queue has been shut down.");
+        std::cout <<"consumer still working" << std::endl;
+        co_return 0;
     }
 };
 
