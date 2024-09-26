@@ -11,6 +11,8 @@
 
 int main() {
 //    CALL_USE_CASE(std_variant_with_visitor2);
+    CALL_USE_CASE(std_variant_with_visitor3);
+//    CALL_USE_CASE(std_variant_with_visitor4);
 //    CALL_USE_CASE(polymorphism_do_things_in_base_constructor);
 //    CALL_USE_CASE(polymorphism_dynamic_registry);
 //    CALL_USE_CASE(std_set_test);
@@ -34,7 +36,7 @@ int main() {
 //    CALL_USE_CASE(delay_object);
 //    CALL_USE_CASE(concurrencpp_generator);
 //    CALL_USE_CASE(concurrencpp_async_locks);
-    CALL_USE_CASE(async_condition_variable);
+//    CALL_USE_CASE(async_condition_variable);
 //    CALL_USE_CASE(SLA_axis_init);
 
 

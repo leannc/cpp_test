@@ -12,6 +12,8 @@
 
 void std_variant_with_visitor();
 void std_variant_with_visitor2();
+void std_variant_with_visitor3();
+void std_variant_with_visitor4();
 
 void polymorphism_do_things_in_base_constructor();
 void polymorphism_dynamic_registry();
