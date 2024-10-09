@@ -5,13 +5,14 @@
 #include "TestInfo.h"
 #include "general/UseCase.h"
 #include "concurrencpp_test/UseCase.h"
-#include "templates/MyTemplate.h"
+#include "templates/UseCase.h"
+#include "templates/template_classes/HideImplementationTemplate.h"
 
 
 
 int main() {
 //    CALL_USE_CASE(std_variant_with_visitor2);
-    CALL_USE_CASE(std_variant_with_visitor3);
+//    CALL_USE_CASE(std_variant_with_visitor3);
 //    CALL_USE_CASE(std_variant_with_visitor4);
 //    CALL_USE_CASE(polymorphism_do_things_in_base_constructor);
 //    CALL_USE_CASE(polymorphism_dynamic_registry);
@@ -38,6 +39,9 @@ int main() {
 //    CALL_USE_CASE(concurrencpp_async_locks);
 //    CALL_USE_CASE(async_condition_variable);
 //    CALL_USE_CASE(SLA_axis_init);
+
+//    CALL_USE_CASE(hide_implementation_template_use);
+    CALL_USE_CASE(variadic_template_use);
 
 
 

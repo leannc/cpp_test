@@ -9,8 +9,8 @@ add_executable(${PROJECT_NAME}
         src/general/std_variant_with_visitor.cpp
         src/general/polymorphism_dynamic_registry.cpp
         src/general/polymorphism_do_things_in_base_constructor.cpp
-        src/templates/MyTemplate.cpp
-        src/templates/MyTemplate.h
+        src/templates/template_classes/HideImplementationTemplate.cpp
+        src/templates/template_classes/HideImplementationTemplate.h
         src/general/std_set.cpp
 
         src/general/semaphore_test.cpp
@@ -40,6 +40,10 @@ add_executable(${PROJECT_NAME}
         src/concurrencpp_test/14_async_locks.cpp
         src/concurrencpp_test/15_async_condition_variable.cpp
         src/concurrencpp_test/16_SLA_axis_init.cpp
+        src/templates/hide_implementation_template_use.cpp
+        src/templates/template_classes/VariadicClassTemplate.cpp
+        src/templates/template_classes/VariadicClassTemplate.h
+        src/templates/variadic_template_use.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
