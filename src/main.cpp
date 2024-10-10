@@ -41,7 +41,8 @@ int main() {
 //    CALL_USE_CASE(SLA_axis_init);
 
 //    CALL_USE_CASE(hide_implementation_template_use);
-    CALL_USE_CASE(variadic_template_use);
+//    CALL_USE_CASE(variadic_template_use);
+    CALL_USE_CASE(variadic_function_template);
 
 
 

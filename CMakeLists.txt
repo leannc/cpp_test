@@ -44,6 +44,8 @@ add_executable(${PROJECT_NAME}
         src/templates/template_classes/VariadicClassTemplate.cpp
         src/templates/template_classes/VariadicClassTemplate.h
         src/templates/variadic_template_use.cpp
+        src/templates/template_classes/VariadicFuntionTemplate.cpp
+        src/templates/template_classes/VariadicFuntionTemplate.h
 )
 
 target_include_directories(${PROJECT_NAME}
