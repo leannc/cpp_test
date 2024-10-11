@@ -44,8 +44,10 @@ add_executable(${PROJECT_NAME}
         src/templates/template_classes/VariadicClassTemplate.cpp
         src/templates/template_classes/VariadicClassTemplate.h
         src/templates/variadic_template_use.cpp
-        src/templates/template_classes/VariadicFuntionTemplate.cpp
-        src/templates/template_classes/VariadicFuntionTemplate.h
+        src/templates/VariadicFuntionTemplate.cpp
+
+        src/templates/stand_alone_fold_expression.cpp
+        src/templates/abbreviation_template.cpp
 )
 
 target_include_directories(${PROJECT_NAME}

@@ -14,3 +14,5 @@
 void hide_implementation_template_use();
 void variadic_template_use();
 void variadic_function_template();
+void stand_alone_fold_expression_using();
+void abbreviation_template();

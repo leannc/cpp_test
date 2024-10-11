@@ -42,7 +42,9 @@ int main() {
 
 //    CALL_USE_CASE(hide_implementation_template_use);
 //    CALL_USE_CASE(variadic_template_use);
-    CALL_USE_CASE(variadic_function_template);
+//    CALL_USE_CASE(variadic_function_template);
+//    CALL_USE_CASE(stand_alone_fold_expression_using);
+    CALL_USE_CASE(abbreviation_template);
 
 
 
