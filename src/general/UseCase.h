@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <algorithm>
 
 void std_variant_with_visitor();
 void std_variant_with_visitor2();
@@ -18,6 +19,7 @@ void std_variant_with_visitor4();
 void polymorphism_do_things_in_base_constructor();
 void polymorphism_dynamic_registry();
 void std_set_test();
+void std_min_max_element_test();
 void semaphore_test();
 void condition_variable_test();
 void std_async_simple_test();

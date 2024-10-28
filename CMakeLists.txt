@@ -48,6 +48,7 @@ add_executable(${PROJECT_NAME}
 
         src/templates/stand_alone_fold_expression.cpp
         src/templates/abbreviation_template.cpp
+        src/general/std_min_max_element.cpp
 )
 
 target_include_directories(${PROJECT_NAME}

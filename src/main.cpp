@@ -17,6 +17,7 @@ int main() {
 //    CALL_USE_CASE(polymorphism_do_things_in_base_constructor);
 //    CALL_USE_CASE(polymorphism_dynamic_registry);
 //    CALL_USE_CASE(std_set_test);
+    CALL_USE_CASE(std_min_max_element_test);
 //    CALL_USE_CASE(semaphore_test);
 //    CALL_USE_CASE(condition_variable_test);
 //    CALL_USE_CASE(std_async_simple_test);
@@ -44,7 +45,7 @@ int main() {
 //    CALL_USE_CASE(variadic_template_use);
 //    CALL_USE_CASE(variadic_function_template);
 //    CALL_USE_CASE(stand_alone_fold_expression_using);
-    CALL_USE_CASE(abbreviation_template);
+//    CALL_USE_CASE(abbreviation_template);
 
 
 
