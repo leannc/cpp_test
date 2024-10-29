@@ -17,11 +17,12 @@ int main() {
 //    CALL_USE_CASE(polymorphism_do_things_in_base_constructor);
 //    CALL_USE_CASE(polymorphism_dynamic_registry);
 //    CALL_USE_CASE(std_set_test);
-    CALL_USE_CASE(std_min_max_element_test);
+//    CALL_USE_CASE(std_min_max_element_test);
 //    CALL_USE_CASE(semaphore_test);
 //    CALL_USE_CASE(condition_variable_test);
 //    CALL_USE_CASE(std_async_simple_test);
 //    CALL_USE_CASE(std_async_complex_1_test);
+    CALL_USE_CASE(std_function_as_a_parameter_test);
 
 
 //    CALL_USE_CASE(concurrencpp_hello_world);
