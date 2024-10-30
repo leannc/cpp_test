@@ -38,4 +38,10 @@ void std_function_as_a_parameter_test()
     f = std::bind(demo_func_2,std::placeholders::_1,7);
     demo_function_call_without_para(4,f);
 
+
+    demo_function_call_without_para(17,[](std::string s){
+        std::cout<<"in lambda function"<<std::endl;
+        return 31;
+    });
+
 }
