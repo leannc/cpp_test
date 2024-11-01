@@ -52,6 +52,7 @@ add_executable(${PROJECT_NAME}
         src/general/std_function_as_a_parameter.cpp
         src/templates/concepts.cpp
         src/templates/concept_requirements.cpp
+        src/general/std_for_each.cpp
 )
 
 target_include_directories(${PROJECT_NAME}

@@ -23,6 +23,7 @@ int main() {
 //    CALL_USE_CASE(std_async_simple_test);
 //    CALL_USE_CASE(std_async_complex_1_test);
 //    CALL_USE_CASE(std_function_as_a_parameter_test);
+    CALL_USE_CASE(std_for_each_test);
 
 
 //    CALL_USE_CASE(concurrencpp_hello_world);
@@ -48,7 +49,7 @@ int main() {
 //    CALL_USE_CASE(stand_alone_fold_expression_using);
 //    CALL_USE_CASE(abbreviation_template);
 //    CALL_USE_CASE(concept_test);
-    CALL_USE_CASE(concept_requirements_test);
+//    CALL_USE_CASE(concept_requirements_test);
 
 
 

@@ -25,3 +25,4 @@ void condition_variable_test();
 void std_async_simple_test();
 void std_async_complex_1_test();
 void std_function_as_a_parameter_test();
+void std_for_each_test();
