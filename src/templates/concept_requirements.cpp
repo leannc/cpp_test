@@ -13,12 +13,13 @@ concept Doc = requires(T t, int b) {
 void useDoc (Doc auto d)
 {
     std::cout<<"calling useDoc"<<std::endl;
+    d.exportToJSON();
 }
 
 class Good
 {
 public:
-    void exportToJSON() {};
+    int exportToJSON() {return 0;};
     void serialize( int b) {};
 };
 
