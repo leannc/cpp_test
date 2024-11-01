@@ -53,6 +53,7 @@ add_executable(${PROJECT_NAME}
         src/templates/concepts.cpp
         src/templates/concept_requirements.cpp
         src/general/std_for_each.cpp
+        src/design_pattern/visitor_pattern/visitor_pattern_in_std_variant_form.cpp
 )
 
 target_include_directories(${PROJECT_NAME}

@@ -29,4 +29,6 @@ void std_for_each_test()
 
     std::for_each(std::execution::par,vec.begin(),vec.end(),print);
 
+    std::cout<<"-------------------end"<<std::endl;
+
 }
