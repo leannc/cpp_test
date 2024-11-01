@@ -13,3 +13,4 @@
 
 void visitor_pattern_in_std_variant_form();
 void visitor_pattern_in_std_variant_form_pointer_version();
+void strategy_pattern_combine_with_visitor_pattern();
