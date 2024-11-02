@@ -56,6 +56,7 @@ add_executable(${PROJECT_NAME}
         src/design_pattern/visitor_pattern/visitor_pattern_in_std_variant_form.cpp
         src/design_pattern/strategy_pattern/strategy_pattern_combine_with_visitor_pattern.cpp
         src/general/std_unique_ptr.cpp
+        src/design_pattern/strategy_pattern/strategy_using_template_params.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
