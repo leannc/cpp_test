@@ -5,6 +5,7 @@
 #include "TestInfo.h"
 #include "general/UseCase.h"
 #include "concurrencpp_test/UseCase.h"
+#include "algorithm/UseCase.h"
 #include "design_pattern/UseCase.h"
 #include "templates/UseCase.h"
 #include "templates/template_classes/HideImplementationTemplate.h"
@@ -26,7 +27,7 @@ int main() {
 //    CALL_USE_CASE(std_function_as_a_parameter_test);
 //    CALL_USE_CASE(std_for_each_test);
 //    CALL_USE_CASE(std_unique_ptr);
-    CALL_USE_CASE(std_span);
+//    CALL_USE_CASE(std_span);
 
 
 //    CALL_USE_CASE(concurrencpp_hello_world);
@@ -59,6 +60,13 @@ int main() {
 //    CALL_USE_CASE(visitor_pattern_in_std_variant_form);
 //    CALL_USE_CASE(strategy_pattern_combine_with_visitor_pattern);
 //    CALL_USE_CASE(strategy_using_template_params);
+
+
+
+//    -------- algorithm------------
+    CALL_USE_CASE(std_erase);
+
+
 
     return 0;
 
