@@ -5,6 +5,7 @@
 
 #include <span>
 #include <array>
+#include <list>
 
 void print(std::span<int> s)
 {
@@ -28,6 +29,11 @@ void std_span()
     int raw_array[3]={110,210,310};
     std::cout<<"----------raw array---------"<<std::endl;
     print(raw_array);
+
+    std::list<int> list = {101,201,301};
+    std::cout<<"----------std::list---------"<<std::endl;
+//    print(list);   ///报错，span不能代表list
+
 
     std::span s = v; ///这个地方非常cheap，因为s就只是一个 指针+长度 而已
     std::cout<<"----------std span---------"<<std::endl;
