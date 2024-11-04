@@ -28,3 +28,4 @@ void std_function_as_a_parameter_test();
 void std_for_each_test();
 void std_unique_ptr();
 void std_span();
+void std_string_view();

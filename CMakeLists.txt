@@ -59,6 +59,7 @@ add_executable(${PROJECT_NAME}
         src/design_pattern/strategy_pattern/strategy_using_template_params.cpp
         src/general/std_span.cpp
         src/algorithm/std_erase.cpp
+        src/general/std_string_view.cpp
 )
 
 target_include_directories(${PROJECT_NAME}

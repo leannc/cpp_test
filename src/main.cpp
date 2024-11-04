@@ -28,6 +28,7 @@ int main() {
 //    CALL_USE_CASE(std_for_each_test);
 //    CALL_USE_CASE(std_unique_ptr);
 //    CALL_USE_CASE(std_span);
+    CALL_USE_CASE(std_string_view);
 
 
 //    CALL_USE_CASE(concurrencpp_hello_world);
@@ -64,7 +65,7 @@ int main() {
 
 
 //    -------- algorithm------------
-    CALL_USE_CASE(std_erase);
+//    CALL_USE_CASE(std_erase);
 
 
 
