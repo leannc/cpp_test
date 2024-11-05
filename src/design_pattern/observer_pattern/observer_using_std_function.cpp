@@ -118,4 +118,9 @@ void observer_using_std_function()
     p1.setAddress("asdv");
 
 
+    std::cout<<"-----------------------"<<std::endl;
+    p1.detach(&lambda_observer);
+    p1.setName("wang");
+
+
 }
