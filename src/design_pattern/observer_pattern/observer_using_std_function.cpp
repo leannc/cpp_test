@@ -106,7 +106,9 @@ void observer_using_std_function()
 
     PersonObserver free_function_observer(free_callback_function);
 
-
+    /**
+     * 虽然observer没有做什么事情，但是还是需要一个observer对象，因为person这种被观察者，需要一个set去存储所有的observer的指针，而不能直接存储std::function的指针。
+     * */
 
     Person p1;
 
