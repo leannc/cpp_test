@@ -53,8 +53,11 @@ add_executable(${PROJECT_NAME}
         src/templates/concepts.cpp
         src/templates/concept_requirements.cpp
         src/general/std_for_each.cpp
+
         src/design_pattern/visitor_pattern/visitor_pattern_in_std_variant_form.cpp
         src/design_pattern/strategy_pattern/strategy_pattern_combine_with_visitor_pattern.cpp
+        src/design_pattern/observer_pattern/observer_using_std_function.cpp
+
         src/general/std_unique_ptr.cpp
         src/design_pattern/strategy_pattern/strategy_using_template_params.cpp
         src/general/std_span.cpp

@@ -6,6 +6,7 @@
 #include <span>
 #include <array>
 #include <list>
+#include <stack>
 
 void print(std::span<int> s)
 {
@@ -18,6 +19,7 @@ void print(std::span<int> s)
 
 void std_span()
 {
+//    std::stack<int,std::vector<int>> s;
     std::vector<int> v{1,2,3,4,5,6};
     std::cout<<"----------std::vector---------"<<std::endl;
     print(v);

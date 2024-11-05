@@ -28,7 +28,7 @@ int main() {
 //    CALL_USE_CASE(std_for_each_test);
 //    CALL_USE_CASE(std_unique_ptr);
 //    CALL_USE_CASE(std_span);
-    CALL_USE_CASE(std_string_view);
+//    CALL_USE_CASE(std_string_view);
 
 
 //    CALL_USE_CASE(concurrencpp_hello_world);
@@ -61,6 +61,7 @@ int main() {
 //    CALL_USE_CASE(visitor_pattern_in_std_variant_form);
 //    CALL_USE_CASE(strategy_pattern_combine_with_visitor_pattern);
 //    CALL_USE_CASE(strategy_using_template_params);
+    CALL_USE_CASE(observer_using_std_function);
 
 
 
