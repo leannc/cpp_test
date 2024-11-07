@@ -63,7 +63,8 @@ int main() {
 //    CALL_USE_CASE(strategy_pattern_combine_with_visitor_pattern);
 //    CALL_USE_CASE(strategy_using_template_params);
 //    CALL_USE_CASE(observer_using_std_function);
-    CALL_USE_CASE(concepts_can_replace_inheritance);
+//    CALL_USE_CASE(concepts_can_replace_inheritance);
+    CALL_USE_CASE(concepts_can_replace_inheritance_advanced);
 
 
 

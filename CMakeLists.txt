@@ -68,6 +68,7 @@ add_executable(${PROJECT_NAME}
         src/type_traits/std_is_same_v.cpp
         src/type_traits/std_decay_t.cpp
         src/design_pattern/concepts_over_CRTP/concepts_can_replace_inheritance.cpp
+        src/design_pattern/concepts_over_CRTP/concepts_can_replace_inheritance_advanced.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
