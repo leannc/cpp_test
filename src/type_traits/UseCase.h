@@ -13,3 +13,4 @@
 #include <type_traits>
 
 void std_is_same_v();
+void std_decay_t();

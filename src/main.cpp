@@ -71,7 +71,8 @@ int main() {
 
 
 //    ------------type_traits------------
-    CALL_USE_CASE(std_is_same_v);
+//    CALL_USE_CASE(std_is_same_v);
+    CALL_USE_CASE(std_decay_t);
 
     return 0;
 
