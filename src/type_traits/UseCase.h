@@ -14,3 +14,4 @@
 
 void std_is_same_v();
 void std_decay_t();
+void function_return_values_in_type_traits();

@@ -16,3 +16,4 @@ void visitor_pattern_in_std_variant_form_pointer_version();
 void strategy_pattern_combine_with_visitor_pattern();
 void strategy_using_template_params();
 void observer_using_std_function();
+void concepts_can_replace_inheritance();
