@@ -19,12 +19,29 @@ auto func(T t) {
     }
 }
 
+/**
+ * 效果一样，只不过是用了decltype
+ * */
+template <typename T>
+auto func2(T t) {
+    if constexpr (std::is_same_v<decltype(t),int>) {
+        return t+2;
+    } else {
+        return t.substr(2);
+    }
+}
+
 
 void std_is_same_v()
 {
     int i=0;
     std::cout<<func(i) << std::endl;
+    std::cout<<func2(i) << std::endl;
 
     std::string s= "kang";
     std::cout<<func(s) << std::endl;
+    std::cout<<func2(s) << std::endl;
+
+
+
 }
