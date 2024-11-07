@@ -72,6 +72,9 @@ add_executable(${PROJECT_NAME}
 
         src/design_pattern/concepts_over_CRTP/concepts_can_replace_inheritance.cpp
         src/design_pattern/concepts_over_CRTP/concepts_can_replace_inheritance_advanced.cpp
+        src/design_pattern/bridge_pattern/car.cpp
+        src/design_pattern/bridge_pattern/car.h
+        src/design_pattern/bridge_pattern/pimple_bridge_pattern.cpp
 )
 
 target_include_directories(${PROJECT_NAME}

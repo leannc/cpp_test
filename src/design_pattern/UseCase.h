@@ -18,3 +18,4 @@ void strategy_using_template_params();
 void observer_using_std_function();
 void concepts_can_replace_inheritance();
 void concepts_can_replace_inheritance_advanced();
+void pimple_bridge_pattern();
