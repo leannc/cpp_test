@@ -63,6 +63,7 @@ add_executable(${PROJECT_NAME}
         src/general/std_span.cpp
         src/algorithm/std_erase.cpp
         src/general/std_string_view.cpp
+        src/type_traits/std_is_same_v.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
