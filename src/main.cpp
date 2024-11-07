@@ -64,7 +64,7 @@ int main() {
 //    CALL_USE_CASE(strategy_using_template_params);
 //    CALL_USE_CASE(observer_using_std_function);
 //    CALL_USE_CASE(concepts_can_replace_inheritance);
-    CALL_USE_CASE(concepts_can_replace_inheritance_advanced);
+//    CALL_USE_CASE(concepts_can_replace_inheritance_advanced);
 
 
 
@@ -75,7 +75,7 @@ int main() {
 //    ------------type_traits------------
 //    CALL_USE_CASE(std_is_same_v);
 //    CALL_USE_CASE(std_decay_t);
-//    CALL_USE_CASE(function_return_values_in_type_traits);
+    CALL_USE_CASE(function_return_values_in_type_traits);
 
     return 0;
 
