@@ -65,7 +65,8 @@ int main() {
 //    CALL_USE_CASE(observer_using_std_function);
 //    CALL_USE_CASE(concepts_can_replace_inheritance);
 //    CALL_USE_CASE(concepts_can_replace_inheritance_advanced);
-    CALL_USE_CASE(pimple_bridge_pattern);
+//    CALL_USE_CASE(pimple_bridge_pattern);
+    CALL_USE_CASE(typical_prototype_pattern);
 
 
 
