@@ -31,6 +31,8 @@ struct Square {
 template<typename T>
 void draw(T const&);
 
+
+///这里只能用模板特化，不能用同名的draw函数重载，因为在底下将draw作为参数输入的时候，会导致不知道输入的是哪个draw，它没有签名
 template<>
 void draw<Circle>(Circle const & circle) {
     std::cout<<"the circle's radius is "<<circle.radius<<std::endl;
