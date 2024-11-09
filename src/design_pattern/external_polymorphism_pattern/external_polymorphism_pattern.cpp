@@ -28,13 +28,21 @@ struct Square {
     double area() const {return side*side;}
 };
 
-void drawCircle(Circle const & circle) {
+template<typename T>
+void draw(T const&);
+
+template<>
+void draw<Circle>(Circle const & circle) {
     std::cout<<"the circle's radius is "<<circle.radius<<std::endl;
 }
 
-void drawSquare(Square const & square) {
+template<>
+void draw<Square>(Square const & square) {
     std::cout<<"the square's side is "<<square.side<<std::endl;
 }
+
+
+
 
 template<>
 double perimeter<Circle>(Circle c)
@@ -51,8 +59,8 @@ double perimeter<Square>(Square s)
 
 void external_polymorphism_pattern ()
 {
-    std::unique_ptr<ShapeConcept> circle_1 = std::make_unique<ShapeModel<Circle>>(Circle(10,11), drawCircle);
-    std::unique_ptr<ShapeConcept> square_1 = std::make_unique<ShapeModel<Square>>(Square(3,4), drawSquare);
+    std::unique_ptr<ShapeConcept> circle_1 = std::make_unique<ShapeModel<Circle>>(Circle(10,11), draw<Circle>);
+    std::unique_ptr<ShapeConcept> square_1 = std::make_unique<ShapeModel<Square>>(Square(3,4), draw<Square>);
 
     circle_1->draw();
     square_1->draw();
