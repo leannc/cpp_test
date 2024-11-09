@@ -20,3 +20,4 @@ void concepts_can_replace_inheritance();
 void concepts_can_replace_inheritance_advanced();
 void pimple_bridge_pattern();
 void typical_prototype_pattern();
+void external_polymorphism_pattern();

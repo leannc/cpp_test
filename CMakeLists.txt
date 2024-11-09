@@ -76,6 +76,9 @@ add_executable(${PROJECT_NAME}
         src/design_pattern/bridge_pattern/car.h
         src/design_pattern/bridge_pattern/pimple_bridge_pattern.cpp
         src/design_pattern/prototype_pattern/typical_prototype_pattern.cpp
+        src/design_pattern/external_polymorphism_pattern/ShapeConcept.h
+        src/design_pattern/external_polymorphism_pattern/ShapeModel.h
+        src/design_pattern/external_polymorphism_pattern/external_polymorphism_pattern.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
