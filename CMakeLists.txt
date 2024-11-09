@@ -79,6 +79,7 @@ add_executable(${PROJECT_NAME}
         src/design_pattern/external_polymorphism_pattern/ShapeConcept.h
         src/design_pattern/external_polymorphism_pattern/ShapeModel.h
         src/design_pattern/external_polymorphism_pattern/external_polymorphism_pattern.cpp
+        src/general/std_move.cpp
 )
 
 target_include_directories(${PROJECT_NAME}

@@ -30,6 +30,7 @@ int main() {
 //    CALL_USE_CASE(std_unique_ptr);
 //    CALL_USE_CASE(std_span);
 //    CALL_USE_CASE(std_string_view);
+    CALL_USE_CASE(std_move);
 
 
 //    CALL_USE_CASE(concurrencpp_hello_world);
@@ -67,7 +68,7 @@ int main() {
 //    CALL_USE_CASE(concepts_can_replace_inheritance_advanced);
 //    CALL_USE_CASE(pimple_bridge_pattern);
 //    CALL_USE_CASE(typical_prototype_pattern);
-    CALL_USE_CASE(external_polymorphism_pattern);
+//    CALL_USE_CASE(external_polymorphism_pattern);
 
 
 
