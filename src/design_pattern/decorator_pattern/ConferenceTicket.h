@@ -5,7 +5,7 @@
 #ifndef CPP_TEST_CONFERENCETICKET_H
 #define CPP_TEST_CONFERENCETICKET_H
 
-#include "../../UseCase.h"
+#include "../UseCase.h"
 
 class ConferenceTicket
 {

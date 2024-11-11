@@ -71,7 +71,8 @@ int main() {
 //    CALL_USE_CASE(external_polymorphism_pattern);
 //    CALL_USE_CASE(owning_type_erasure_implementation);
 //    CALL_USE_CASE(classic_decorator_design_pattern);
-    CALL_USE_CASE(compile_time_decorator);
+//    CALL_USE_CASE(compile_time_decorator);
+    CALL_USE_CASE(value_based_run_time_decorator);
 
 
 

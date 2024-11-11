@@ -1,7 +1,7 @@
 //
 // Created by kang on 2024/11/11.
 //
-#include "ConferenceTicket.h"
+#include "../ConferenceTicket.h"
 #include "Decorators.h"
 
 
