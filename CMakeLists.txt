@@ -53,6 +53,7 @@ add_executable(${PROJECT_NAME}
         src/templates/concepts.cpp
         src/templates/concept_requirements.cpp
         src/general/std_for_each.cpp
+        src/general/std_move.cpp
 
         src/design_pattern/visitor_pattern/visitor_pattern_in_std_variant_form.cpp
         src/design_pattern/strategy_pattern/strategy_pattern_combine_with_visitor_pattern.cpp
@@ -79,7 +80,11 @@ add_executable(${PROJECT_NAME}
         src/design_pattern/external_polymorphism_pattern/ShapeConcept.h
         src/design_pattern/external_polymorphism_pattern/ShapeModel.h
         src/design_pattern/external_polymorphism_pattern/external_polymorphism_pattern.cpp
-        src/general/std_move.cpp
+        src/design_pattern/owning_type_erasure_implementation/owning_type_erasure_implementation.cpp
+        src/design_pattern/owning_type_erasure_implementation/Shape.h
+        src/design_pattern/decorator_pattern/classic/classic_decorator_design_pattern.cpp
+
+
 )
 
 target_include_directories(${PROJECT_NAME}
