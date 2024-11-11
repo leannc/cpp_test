@@ -83,6 +83,9 @@ add_executable(${PROJECT_NAME}
         src/design_pattern/owning_type_erasure_implementation/owning_type_erasure_implementation.cpp
         src/design_pattern/owning_type_erasure_implementation/Shape.h
         src/design_pattern/decorator_pattern/classic/classic_decorator_design_pattern.cpp
+        src/design_pattern/decorator_pattern/compile_time_decorator_pattern/ConferenceTicket.h
+        src/design_pattern/decorator_pattern/compile_time_decorator_pattern/Decorators.h
+        src/design_pattern/decorator_pattern/compile_time_decorator_pattern/compile_time_decorator.cpp
 
 
 )

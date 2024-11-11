@@ -39,7 +39,7 @@ public:
 
     double area() {return radius*radius*3.14;}
 
-private:
+public:
     Unit perimeter() { return 2*radius*3.14;};
     Unit radius;
 };
@@ -53,7 +53,7 @@ public:
 
     double area() {return length*width;}
 
-private:
+public:
     Unit perimeter() { return 2*(length + width);};
     Unit length;
     Unit width;

@@ -30,7 +30,7 @@ public:
 
     double area() {return radius*radius*3.14;}
 
-private:
+public:
     Unit perimeter() { return 2*radius*3.14;};
     Unit radius;
 };
@@ -54,7 +54,7 @@ private:
 
 
 void concepts_can_replace_inheritance() {
-    printArea(Circle<double>{5});  ///可以，因为都是double
+    printArea(Circle<double>{5.0});  ///可以，因为都是double
 //    printArea(Circle<int>{5});  ///报错，因为不满足 std::same_as<decltype(t.perimeter())>; 这个返回值的条件，需要area()函数和perimeter()成员函数的返回值类型相同
 
 //    printArea(Rectangle<double>{5,2});  ///报错，因为不满足 std::is_base_of_v<ShapeBase,T>; 需要是ShapeBase的子类才行

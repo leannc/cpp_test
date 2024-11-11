@@ -23,7 +23,7 @@ public:
 
     void draw() const override { drawer(shape);}
     double area() const override { return shape.area();}
-    double perimeter() const override {return perimeter<ShapeT>(shape);}
+    double perimeter() const override {return ::perimeter(shape);}
     double origin(std::function<double(void)>  getOrigin) const override {return getOrigin();}
 
 private:

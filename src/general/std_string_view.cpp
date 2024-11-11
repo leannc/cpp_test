@@ -24,7 +24,7 @@ void std_string_view()
     std::cout<<"string length is "<<s.size()<<", the first address is "<<s.data() <<std::endl;
     print(s);
 
-    char* c("asdfasdf");
+    const char* c="asdfasdf";
     print(c);
 
 
