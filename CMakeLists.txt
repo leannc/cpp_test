@@ -89,6 +89,10 @@ add_executable(${PROJECT_NAME}
         src/design_pattern/decorator_pattern/value_based_run_time_decorator_pattern/Items.h
         src/design_pattern/decorator_pattern/value_based_run_time_decorator_pattern/Decorators.h
         src/design_pattern/decorator_pattern/value_based_run_time_decorator_pattern/value_based_run_time_decorator.cpp
+        src/design_pattern/singleton_pattern/persistenceInterface.h
+        src/design_pattern/singleton_pattern/database.h
+        src/design_pattern/singleton_pattern/persistenceInterface.cpp
+        src/design_pattern/singleton_pattern/singleton_with_dependency_injection.cpp
 
 
 )

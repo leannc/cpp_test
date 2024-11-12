@@ -25,3 +25,4 @@ void owning_type_erasure_implementation();
 void classic_decorator_design_pattern();
 void compile_time_decorator();
 void value_based_run_time_decorator();
+void singleton_with_dependency_injection();
