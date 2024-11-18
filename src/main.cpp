@@ -31,6 +31,7 @@ int main() {
 //    CALL_USE_CASE(std_span);
 //    CALL_USE_CASE(std_string_view);
 //    CALL_USE_CASE(std_move);
+    CALL_USE_CASE(std_decay);
 
 
 //    CALL_USE_CASE(concurrencpp_hello_world);
@@ -56,7 +57,7 @@ int main() {
 //    CALL_USE_CASE(stand_alone_fold_expression_using);
 //    CALL_USE_CASE(abbreviation_template);
 //    CALL_USE_CASE(concept_test);
-    CALL_USE_CASE(concept_requirements_test);
+//    CALL_USE_CASE(concept_requirements_test);
 
 
 //    -------- design_pattern------------

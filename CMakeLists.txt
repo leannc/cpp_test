@@ -93,6 +93,7 @@ add_executable(${PROJECT_NAME}
         src/design_pattern/singleton_pattern/database.h
         src/design_pattern/singleton_pattern/persistenceInterface.cpp
         src/design_pattern/singleton_pattern/singleton_with_dependency_injection.cpp
+        src/general/std_decay.cpp
 
 
 )
