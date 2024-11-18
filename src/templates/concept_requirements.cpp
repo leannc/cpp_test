@@ -23,6 +23,17 @@ public:
     void serialize( int b) {};
 };
 
+class Good2
+{
+public:
+    int exportToJSON() {return 1;};
+    void serialize( int b) {};
+
+private:
+    int i;
+};
+
+
 class Bad
 {
 public:
@@ -35,6 +46,7 @@ void concept_requirements_test()
 {
 
     useDoc(Good{});
+    useDoc(Good2{});
 //    useDoc(Bad{});  ///报错，因为没有满足require的要求
 
 }

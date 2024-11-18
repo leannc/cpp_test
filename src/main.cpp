@@ -56,7 +56,7 @@ int main() {
 //    CALL_USE_CASE(stand_alone_fold_expression_using);
 //    CALL_USE_CASE(abbreviation_template);
 //    CALL_USE_CASE(concept_test);
-//    CALL_USE_CASE(concept_requirements_test);
+    CALL_USE_CASE(concept_requirements_test);
 
 
 //    -------- design_pattern------------
@@ -73,7 +73,7 @@ int main() {
 //    CALL_USE_CASE(classic_decorator_design_pattern);
 //    CALL_USE_CASE(compile_time_decorator);
 //    CALL_USE_CASE(value_based_run_time_decorator);
-    CALL_USE_CASE(singleton_with_dependency_injection);
+//    CALL_USE_CASE(singleton_with_dependency_injection);
 
 
 
