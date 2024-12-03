@@ -7,6 +7,7 @@
 /**
  * std::is_void_v可以判断值是否是空
  * std::is_integral_v可以判断值是否为整数
+ * declval<T>，可以在 unevaluate的情况下，返回一个T类型的对象出来，这里没有真正执行一个对象的构造。
  * */
 
 template <typename F>
