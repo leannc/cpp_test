@@ -20,3 +20,4 @@
 
 
 void std_erase();
+void std_roate();

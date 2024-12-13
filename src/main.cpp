@@ -35,7 +35,7 @@ int main() {
 //    CALL_USE_CASE(std_string_view);
 //    CALL_USE_CASE(std_move);
 //    CALL_USE_CASE(std_decay);
-    CALL_USE_CASE(noexcept_usage);
+//    CALL_USE_CASE(noexcept_usage);
 
 
 //    -------- concurrencpp ------------
@@ -88,6 +88,7 @@ int main() {
 
 //    -------- algorithm ------------
 //    CALL_USE_CASE(std_erase);
+    CALL_USE_CASE(std_roate);
 
 
 //    ------------type_traits ------------
