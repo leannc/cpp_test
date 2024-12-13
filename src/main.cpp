@@ -88,7 +88,8 @@ int main() {
 
 //    -------- algorithm ------------
 //    CALL_USE_CASE(std_erase);
-    CALL_USE_CASE(std_roate);
+//    CALL_USE_CASE(std_roate);
+    CALL_USE_CASE(std_partition);
 
 
 //    ------------type_traits ------------

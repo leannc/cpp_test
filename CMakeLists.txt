@@ -98,6 +98,7 @@ add_executable(${PROJECT_NAME}
         src/templates/template_function_overload.cpp
         src/general/noexcept_usage.cpp
         src/algorithm/std_roate.cpp
+        src/algorithm/std_partition.cpp
 
 
 )
