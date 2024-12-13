@@ -96,6 +96,7 @@ add_executable(${PROJECT_NAME}
         src/general/std_decay.cpp
         src/type_traits/std_declval.cpp
         src/templates/template_function_overload.cpp
+        src/general/noexcept_usage.cpp
 
 
 )

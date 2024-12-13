@@ -14,6 +14,9 @@
 
 
 int main() {
+
+
+//    -------- general ------------
 //    CALL_USE_CASE(std_variant_with_visitor2);
 //    CALL_USE_CASE(std_variant_with_visitor3);
 //    CALL_USE_CASE(std_variant_with_visitor4);
@@ -32,9 +35,10 @@ int main() {
 //    CALL_USE_CASE(std_string_view);
 //    CALL_USE_CASE(std_move);
 //    CALL_USE_CASE(std_decay);
+    CALL_USE_CASE(noexcept_usage);
 
 
-
+//    -------- concurrencpp ------------
 //    CALL_USE_CASE(concurrencpp_hello_world);
 //    CALL_USE_CASE(concurrencpp_even_number_counting);
 //    CALL_USE_CASE(async_file_processing);
@@ -53,7 +57,7 @@ int main() {
 //    CALL_USE_CASE(SLA_axis_init);
 
 
-//    -------- templates------------
+//    -------- templates ------------
 //    CALL_USE_CASE(hide_implementation_template_use);
 //    CALL_USE_CASE(variadic_template_use);
 //    CALL_USE_CASE(variadic_function_template);
@@ -61,10 +65,10 @@ int main() {
 //    CALL_USE_CASE(abbreviation_template);
 //    CALL_USE_CASE(concept_test);
 //    CALL_USE_CASE(concept_requirements_test);
-    CALL_USE_CASE(template_function_overload);
+//    CALL_USE_CASE(template_function_overload);
 
 
-//    -------- design_pattern------------
+//    -------- design_pattern ------------
 //    CALL_USE_CASE(visitor_pattern_in_std_variant_form);
 //    CALL_USE_CASE(strategy_pattern_combine_with_visitor_pattern);
 //    CALL_USE_CASE(strategy_using_template_params);
@@ -82,11 +86,11 @@ int main() {
 
 
 
-//    -------- algorithm------------
+//    -------- algorithm ------------
 //    CALL_USE_CASE(std_erase);
 
 
-//    ------------type_traits------------
+//    ------------type_traits ------------
 //    CALL_USE_CASE(std_is_same_v);
 //    CALL_USE_CASE(std_decay_t);
 //    CALL_USE_CASE(function_return_values_in_type_traits);
