@@ -20,6 +20,7 @@ int main() {
 //    CALL_USE_CASE(std_variant_with_visitor2);
 //    CALL_USE_CASE(std_variant_with_visitor3);
 //    CALL_USE_CASE(std_variant_with_visitor4);
+    CALL_USE_CASE(std_variant_with_template);
 //    CALL_USE_CASE(polymorphism_do_things_in_base_constructor);
 //    CALL_USE_CASE(polymorphism_dynamic_registry);
 //    CALL_USE_CASE(std_set_test);
@@ -89,7 +90,7 @@ int main() {
 //    -------- algorithm ------------
 //    CALL_USE_CASE(std_erase);
 //    CALL_USE_CASE(std_roate);
-    CALL_USE_CASE(std_partition);
+//    CALL_USE_CASE(std_partition);
 
 
 //    ------------type_traits ------------

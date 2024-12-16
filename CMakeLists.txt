@@ -99,6 +99,7 @@ add_executable(${PROJECT_NAME}
         src/general/noexcept_usage.cpp
         src/algorithm/std_roate.cpp
         src/algorithm/std_partition.cpp
+        src/general/std_variant_with_template.cpp
 
 
 )
