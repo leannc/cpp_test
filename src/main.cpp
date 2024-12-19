@@ -20,7 +20,7 @@ int main() {
 //    CALL_USE_CASE(std_variant_with_visitor2);
 //    CALL_USE_CASE(std_variant_with_visitor3);
 //    CALL_USE_CASE(std_variant_with_visitor4);
-    CALL_USE_CASE(std_variant_with_template);
+//    CALL_USE_CASE(std_variant_with_template);
 //    CALL_USE_CASE(polymorphism_do_things_in_base_constructor);
 //    CALL_USE_CASE(polymorphism_dynamic_registry);
 //    CALL_USE_CASE(std_set_test);
@@ -37,6 +37,7 @@ int main() {
 //    CALL_USE_CASE(std_move);
 //    CALL_USE_CASE(std_decay);
 //    CALL_USE_CASE(noexcept_usage);
+
 
 
 //    -------- concurrencpp ------------
@@ -91,6 +92,7 @@ int main() {
 //    CALL_USE_CASE(std_erase);
 //    CALL_USE_CASE(std_roate);
 //    CALL_USE_CASE(std_partition);
+    CALL_USE_CASE(std_transform);
 
 
 //    ------------type_traits ------------
