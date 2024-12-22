@@ -101,6 +101,7 @@ add_executable(${PROJECT_NAME}
         src/algorithm/std_partition.cpp
         src/general/std_variant_with_template.cpp
         src/algorithm/std_transform.cpp
+        src/general/std_unique_ptr_with_custom_deleter.cpp
 
 
 )

@@ -33,4 +33,5 @@ void std_string_view();
 void std_move();
 void std_decay();
 void noexcept_usage();
+void std_unique_ptr_with_custom_deleter();
 
