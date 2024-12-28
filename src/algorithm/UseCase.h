@@ -23,3 +23,4 @@ void std_erase();
 void std_roate();
 void std_partition();
 void std_transform();
+void std_find();
