@@ -39,5 +39,9 @@ void std_erase()
 //    std::erase()
 
 
+    std::vector<int> v2{0,1,2,3,4,5,6,7,8,9};
+    v2.erase(v2.begin(),v2.begin()+2);
+    std::cout<<"-----v2--------"<<std::endl;
+    for (auto& e :v2) std::cout<< e<<std::endl;
 
 }

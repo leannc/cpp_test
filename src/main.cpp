@@ -90,11 +90,11 @@ int main() {
 
 
 //    -------- algorithm ------------
-//    CALL_USE_CASE(std_erase);
+    CALL_USE_CASE(std_erase);
 //    CALL_USE_CASE(std_roate);
 //    CALL_USE_CASE(std_partition);
 //    CALL_USE_CASE(std_transform);
-    CALL_USE_CASE(std_find);
+//    CALL_USE_CASE(std_find);
 
 
 //    ------------type_traits ------------
