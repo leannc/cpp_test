@@ -103,6 +103,7 @@ add_executable(${PROJECT_NAME}
         src/algorithm/std_transform.cpp
         src/general/std_unique_ptr_with_custom_deleter.cpp
         src/algorithm/std_find.cpp
+        src/general/std_format.cpp
 
 
 )

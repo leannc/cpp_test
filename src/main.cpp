@@ -38,6 +38,7 @@ int main() {
 //    CALL_USE_CASE(std_decay);
 //    CALL_USE_CASE(noexcept_usage);
 //    CALL_USE_CASE(std_unique_ptr_with_custom_deleter);
+    CALL_USE_CASE(std_format);
 
 
 
@@ -90,7 +91,7 @@ int main() {
 
 
 //    -------- algorithm ------------
-    CALL_USE_CASE(std_erase);
+//    CALL_USE_CASE(std_erase);
 //    CALL_USE_CASE(std_roate);
 //    CALL_USE_CASE(std_partition);
 //    CALL_USE_CASE(std_transform);
