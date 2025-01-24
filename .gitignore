@@ -2,4 +2,5 @@
 .idea
 /doc/html/
 /doc/latex/
-
+/out
+/.vscode
