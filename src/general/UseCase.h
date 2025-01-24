@@ -35,4 +35,5 @@ void std_decay();
 void noexcept_usage();
 void std_unique_ptr_with_custom_deleter();
 void std_format();
+void std_atomic();
 

@@ -40,6 +40,7 @@ int main() {
 //    CALL_USE_CASE(noexcept_usage);
 //    CALL_USE_CASE(std_unique_ptr_with_custom_deleter);
 //    CALL_USE_CASE(std_format);
+    CALL_USE_CASE(std_atomic);
 
 
 
@@ -105,8 +106,8 @@ int main() {
 //    CALL_USE_CASE(function_return_values_in_type_traits);
 //    CALL_USE_CASE(std_declval);
 
-//    ------------type_traits ------------
-    CALL_USE_CASE(packing_and_encoding);
+//    ------------performance ------------
+//    CALL_USE_CASE(packing_and_encoding);
 
 
 
