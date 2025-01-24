@@ -23,5 +23,6 @@ void std_atomic() {
 
    auto last = std::unique(arr.begin(),arr.end());
    assert(last == arr.end() && "duplication exist");
+   std::cout<<"the result is right"<<std::endl;
 
 }
