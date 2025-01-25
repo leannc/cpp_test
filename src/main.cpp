@@ -40,7 +40,7 @@ int main() {
 //    CALL_USE_CASE(noexcept_usage);
 //    CALL_USE_CASE(std_unique_ptr_with_custom_deleter);
 //    CALL_USE_CASE(std_format);
-    CALL_USE_CASE(std_atomic);
+    // CALL_USE_CASE(std_atomic);
 
 
 
@@ -98,6 +98,7 @@ int main() {
 //    CALL_USE_CASE(std_partition);
 //    CALL_USE_CASE(std_transform);
 //    CALL_USE_CASE(std_find);
+   CALL_USE_CASE(multy_level_sort);
 
 
 //    ------------type_traits ------------

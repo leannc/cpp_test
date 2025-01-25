@@ -5,24 +5,36 @@ project(CPP_TEST)
 
 add_executable(${PROJECT_NAME}
         src/main.cpp
+
         src/general/UseCase.h
         src/general/std_variant_with_visitor.cpp
         src/general/polymorphism_dynamic_registry.cpp
         src/general/polymorphism_do_things_in_base_constructor.cpp
-        src/templates/template_classes/HideImplementationTemplate.cpp
-        src/templates/template_classes/HideImplementationTemplate.h
         src/general/std_set.cpp
-
         src/general/semaphore_test.cpp
         src/general/condition_variable.cpp
         src/general/std_async_simple.cpp
         src/general/std_async_complex_1.cpp
+        src/general/std_min_max_element.cpp
+        src/general/std_function_as_a_parameter.cpp
+        src/general/std_for_each.cpp
+        src/general/std_move.cpp
+        src/general/std_unique_ptr.cpp
+        src/general/std_span.cpp  
+        src/general/std_string_view.cpp
+        src/general/std_variant_with_template.cpp
+        src/general/std_decay.cpp
+        src/general/noexcept_usage.cpp
+        src/general/std_unique_ptr_with_custom_deleter.cpp
+        src/general/std_format.cpp
+        src/general/std_atomic.cpp
 
         src/doxygen_test/Animal.cpp
         src/doxygen_test/Animal.h
         src/doxygen_test/Animal.h
         src/doxygen_test/Cat.cpp
         src/doxygen_test/Cat.h
+
         src/concurrencpp_test/1_concurrencpp_hello_world.cpp
         src/concurrencpp_test/UseCase.h
         src/concurrencpp_test/2_concurrencpp_even_number_counting.cpp
@@ -40,37 +52,24 @@ add_executable(${PROJECT_NAME}
         src/concurrencpp_test/14_async_locks.cpp
         src/concurrencpp_test/15_async_condition_variable.cpp
         src/concurrencpp_test/16_SLA_axis_init.cpp
+
         src/templates/hide_implementation_template_use.cpp
         src/templates/template_classes/VariadicClassTemplate.cpp
         src/templates/template_classes/VariadicClassTemplate.h
         src/templates/variadic_template_use.cpp
         src/templates/VariadicFuntionTemplate.cpp
-
         src/templates/stand_alone_fold_expression.cpp
         src/templates/abbreviation_template.cpp
-        src/general/std_min_max_element.cpp
-        src/general/std_function_as_a_parameter.cpp
+        src/templates/template_classes/HideImplementationTemplate.cpp
+        src/templates/template_classes/HideImplementationTemplate.h
         src/templates/concepts.cpp
         src/templates/concept_requirements.cpp
-        src/general/std_for_each.cpp
-        src/general/std_move.cpp
-
+        src/templates/template_function_overload.cpp
+        
+        src/design_pattern/strategy_pattern/strategy_using_template_params.cpp
         src/design_pattern/visitor_pattern/visitor_pattern_in_std_variant_form.cpp
         src/design_pattern/strategy_pattern/strategy_pattern_combine_with_visitor_pattern.cpp
         src/design_pattern/observer_pattern/observer_using_std_function.cpp
-
-        src/general/std_unique_ptr.cpp
-        src/design_pattern/strategy_pattern/strategy_using_template_params.cpp
-        src/general/std_span.cpp
-        src/algorithm/std_erase.cpp
-        src/general/std_string_view.cpp
-
-
-        src/type_traits/std_is_same_v.cpp
-        src/type_traits/std_decay_t.cpp
-        src/type_traits/function_return_values_in_type_traits.cpp
-
-
         src/design_pattern/concepts_over_CRTP/concepts_can_replace_inheritance.cpp
         src/design_pattern/concepts_over_CRTP/concepts_can_replace_inheritance_advanced.cpp
         src/design_pattern/bridge_pattern/car.cpp
@@ -93,20 +92,23 @@ add_executable(${PROJECT_NAME}
         src/design_pattern/singleton_pattern/database.h
         src/design_pattern/singleton_pattern/persistenceInterface.cpp
         src/design_pattern/singleton_pattern/singleton_with_dependency_injection.cpp
-        src/general/std_decay.cpp
+
+
+
+        src/type_traits/std_is_same_v.cpp
+        src/type_traits/std_decay_t.cpp
         src/type_traits/std_declval.cpp
-        src/templates/template_function_overload.cpp
-        src/general/noexcept_usage.cpp
+        src/type_traits/function_return_values_in_type_traits.cpp
+
+        src/algorithm/std_erase.cpp
+        src/algorithm/std_find.cpp
+        src/algorithm/multy_level_sort.cpp
         src/algorithm/std_roate.cpp
         src/algorithm/std_partition.cpp
-        src/general/std_variant_with_template.cpp
         src/algorithm/std_transform.cpp
-        src/general/std_unique_ptr_with_custom_deleter.cpp
-        src/algorithm/std_find.cpp
-        src/general/std_format.cpp
-        "src/performance engineer/packing_and_encoding.cpp"
-        src/general/std_atomic.cpp
 
+        
+        "src/performance engineer/packing_and_encoding.cpp"
 
 )
 
