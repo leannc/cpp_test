@@ -37,4 +37,5 @@ void std_unique_ptr_with_custom_deleter();
 void std_format();
 void std_atomic();
 void inter_dependence();
+void customize_unordered_map();
 
