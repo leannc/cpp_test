@@ -4,20 +4,79 @@
 #include <iostream>
 #include "TestInfo.h"
 #include "general/UseCase.h"
-#include "performance engineer/UseCase.h"
+#include "performance_engineer/UseCase.h"
 #include "concurrencpp_test/UseCase.h"
 #include "algorithm/UseCase.h"
 #include "design_pattern/UseCase.h"
 #include "type_traits/UseCase.h"
 #include "templates/UseCase.h"
 #include "templates/template_classes/HideImplementationTemplate.h"
-
+#include "benchmark/UseCase.h"
 
 
 int main() {
 
+//---------------------------------------------------
+//CATEGORY   algorithm
+//---------------------------------------------------
+//    CALL_USE_CASE(std_erase);
+//    CALL_USE_CASE(std_roate);
+//    CALL_USE_CASE(std_partition);
+//    CALL_USE_CASE(std_transform);
+//    CALL_USE_CASE(std_find);
+//    CALL_USE_CASE(multy_level_sort);
 
-//    -------- general ------------
+
+//---------------------------------------------------
+//CATEGORY   benchmark
+//---------------------------------------------------
+    BENCHMARK(BM_string_compare);
+    
+    
+    RUN_BENCH_MARK();
+
+
+//---------------------------------------------------
+//CATEGORY   concurrencpp
+//---------------------------------------------------
+//    CALL_USE_CASE(concurrencpp_hello_world);
+//    CALL_USE_CASE(concurrencpp_even_number_counting);
+//    CALL_USE_CASE(async_file_processing);
+//    CALL_USE_CASE(async_file_processing_version_2);
+//    CALL_USE_CASE(prime_number_finder);
+//    CALL_USE_CASE(manual_executor);
+//    CALL_USE_CASE(concurrencpp_when_all);
+//    CALL_USE_CASE(concurrencpp_when_any);
+//    CALL_USE_CASE(concurrencpp_result_promise);
+//    CALL_USE_CASE(regular_timer);
+//    CALL_USE_CASE(oneshot_timer);
+//    CALL_USE_CASE(delay_object);
+//    CALL_USE_CASE(concurrencpp_generator);
+//    CALL_USE_CASE(concurrencpp_async_locks);
+//    CALL_USE_CASE(async_condition_variable);
+//    CALL_USE_CASE(SLA_axis_init);
+
+//---------------------------------------------------
+//CATEGORY   design_pattern
+//---------------------------------------------------
+//    CALL_USE_CASE(visitor_pattern_in_std_variant_form);
+//    CALL_USE_CASE(strategy_pattern_combine_with_visitor_pattern);
+//    CALL_USE_CASE(strategy_using_template_params);
+//    CALL_USE_CASE(observer_using_std_function);
+//    CALL_USE_CASE(concepts_can_replace_inheritance);
+//    CALL_USE_CASE(concepts_can_replace_inheritance_advanced);
+//    CALL_USE_CASE(pimple_bridge_pattern);
+//    CALL_USE_CASE(typical_prototype_pattern);
+//    CALL_USE_CASE(external_polymorphism_pattern);
+//    CALL_USE_CASE(owning_type_erasure_implementation);
+//    CALL_USE_CASE(classic_decorator_design_pattern);
+//    CALL_USE_CASE(compile_time_decorator);
+//    CALL_USE_CASE(value_based_run_time_decorator);
+//    CALL_USE_CASE(singleton_with_dependency_injection);
+
+//---------------------------------------------------
+//CATEGORY   general
+//---------------------------------------------------
 //    CALL_USE_CASE(std_variant_with_visitor2);
 //    CALL_USE_CASE(std_variant_with_visitor3);
 //    CALL_USE_CASE(std_variant_with_visitor4);
@@ -46,27 +105,15 @@ int main() {
     CALL_USE_CASE(customize_std_map);
 
 
-
-//    -------- concurrencpp ------------
-//    CALL_USE_CASE(concurrencpp_hello_world);
-//    CALL_USE_CASE(concurrencpp_even_number_counting);
-//    CALL_USE_CASE(async_file_processing);
-//    CALL_USE_CASE(async_file_processing_version_2);
-//    CALL_USE_CASE(prime_number_finder);
-//    CALL_USE_CASE(manual_executor);
-//    CALL_USE_CASE(concurrencpp_when_all);
-//    CALL_USE_CASE(concurrencpp_when_any);
-//    CALL_USE_CASE(concurrencpp_result_promise);
-//    CALL_USE_CASE(regular_timer);
-//    CALL_USE_CASE(oneshot_timer);
-//    CALL_USE_CASE(delay_object);
-//    CALL_USE_CASE(concurrencpp_generator);
-//    CALL_USE_CASE(concurrencpp_async_locks);
-//    CALL_USE_CASE(async_condition_variable);
-//    CALL_USE_CASE(SLA_axis_init);
+//---------------------------------------------------
+//CATEGORY   performance
+//---------------------------------------------------
+//    CALL_USE_CASE(packing_and_encoding);
 
 
-//    -------- templates ------------
+//---------------------------------------------------
+//CATEGORY   templates
+//---------------------------------------------------
 //    CALL_USE_CASE(hide_implementation_template_use);
 //    CALL_USE_CASE(variadic_template_use);
 //    CALL_USE_CASE(variadic_function_template);
@@ -76,42 +123,13 @@ int main() {
 //    CALL_USE_CASE(concept_requirements_test);
 //    CALL_USE_CASE(template_function_overload);
 
-
-//    -------- design_pattern ------------
-//    CALL_USE_CASE(visitor_pattern_in_std_variant_form);
-//    CALL_USE_CASE(strategy_pattern_combine_with_visitor_pattern);
-//    CALL_USE_CASE(strategy_using_template_params);
-//    CALL_USE_CASE(observer_using_std_function);
-//    CALL_USE_CASE(concepts_can_replace_inheritance);
-//    CALL_USE_CASE(concepts_can_replace_inheritance_advanced);
-//    CALL_USE_CASE(pimple_bridge_pattern);
-//    CALL_USE_CASE(typical_prototype_pattern);
-//    CALL_USE_CASE(external_polymorphism_pattern);
-//    CALL_USE_CASE(owning_type_erasure_implementation);
-//    CALL_USE_CASE(classic_decorator_design_pattern);
-//    CALL_USE_CASE(compile_time_decorator);
-//    CALL_USE_CASE(value_based_run_time_decorator);
-//    CALL_USE_CASE(singleton_with_dependency_injection);
-
-
-
-//    -------- algorithm ------------
-//    CALL_USE_CASE(std_erase);
-//    CALL_USE_CASE(std_roate);
-//    CALL_USE_CASE(std_partition);
-//    CALL_USE_CASE(std_transform);
-//    CALL_USE_CASE(std_find);
-//    CALL_USE_CASE(multy_level_sort);
-
-
-//    ------------type_traits ------------
+//---------------------------------------------------
+//CATEGORY   type_traits
+//---------------------------------------------------
 //    CALL_USE_CASE(std_is_same_v);
 //    CALL_USE_CASE(std_decay_t);
 //    CALL_USE_CASE(function_return_values_in_type_traits);
 //    CALL_USE_CASE(std_declval);
-
-//    ------------performance ------------
-//    CALL_USE_CASE(packing_and_encoding);
 
 
 

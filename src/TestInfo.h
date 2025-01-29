@@ -18,6 +18,8 @@ void footer(const std::string title)
 }
 
 #define CALL_USE_CASE(func) \
-    header(#func);\
+    std::cout<<"--------------------------------------------"<<std::endl;\
+    std::cout<<#func<<std::endl;\
+    std::cout<<"--------------------------------------------"<<std::endl;\
     func();\
 //    footer(#func);
