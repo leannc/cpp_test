@@ -129,7 +129,7 @@ target_link_directories(${PROJECT_NAME} PUBLIC
         # libs/google_benchmark/${LIB_TYPE_DIR_NAME}
 )
 
-set(benchmark_DIR "$ENV{HERA_WORKSPACE_DIR}/Dependencies/benchmark/install/msvc-debug/lib/cmake/benchmark")
+set(benchmark_DIR "$ENV{HERA_WORKSPACE_DIR}/HeraBinaries/benchmark/msvc-debug/lib/cmake/benchmark")
 find_package(benchmark REQUIRED)
 
 
