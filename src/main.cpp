@@ -33,9 +33,9 @@ int main() {
     BENCHMARK(BM_string_compare);
 
     BENCHMARK(BM_with_single_param) ->Arg(10000);
-    BENCHMARK(BM_with_single_param) ->RangeMultiplier(2) ->Range(20000,400000);
+    BENCHMARK(BM_with_single_param) ->RangeMultiplier(2) ->Range(20000,400000)->Complexity(benchmark::oAuto);
     
-    BENCHMARK(BM_without_o2_optimization) ->Arg(10000);
+    // BENCHMARK(BM_without_o2_optimization) ->Arg(10000);
 
     // BENCHMARK(BM_with_multy_param) ->Args({10,20}) ->Args({30,40}); 
     // BENCHMARK(BM_with_multy_param) ->RangeMultiplier(2) ->Ranges({{2,40},{3,10}});  
