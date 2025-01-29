@@ -14,6 +14,7 @@ add_executable(${PROJECT_NAME}
         src/algorithm/std_transform.cpp
 
         src/benchmark/BM_string_compare.cpp
+        src/benchmark/BM_with_param.cpp
 
         src/concurrencpp_test/1_concurrencpp_hello_world.cpp
         src/concurrencpp_test/UseCase.h

@@ -31,6 +31,14 @@ int main() {
 //CATEGORY   benchmark
 //---------------------------------------------------
     BENCHMARK(BM_string_compare);
+
+    BENCHMARK(BM_with_single_param) ->Arg(10000);
+    BENCHMARK(BM_with_single_param) ->RangeMultiplier(2) ->Range(20000,400000);
+    
+    BENCHMARK(BM_without_o2_optimization) ->Arg(10000);
+
+    // BENCHMARK(BM_with_multy_param) ->Args({10,20}) ->Args({30,40}); 
+    // BENCHMARK(BM_with_multy_param) ->RangeMultiplier(2) ->Ranges({{2,40},{3,10}});  
     
     
     RUN_BENCH_MARK();
@@ -99,10 +107,10 @@ int main() {
 //    CALL_USE_CASE(noexcept_usage);
 //    CALL_USE_CASE(std_unique_ptr_with_custom_deleter);
 //    CALL_USE_CASE(std_format);
-    // CALL_USE_CASE(std_atomic);
-    // CALL_USE_CASE(inter_dependence);
-    // CALL_USE_CASE(customize_unordered_map);
-    CALL_USE_CASE(customize_std_map);
+//    CALL_USE_CASE(std_atomic);
+//    CALL_USE_CASE(inter_dependence);
+//    CALL_USE_CASE(customize_unordered_map);
+//    CALL_USE_CASE(customize_std_map);
 
 
 //---------------------------------------------------
