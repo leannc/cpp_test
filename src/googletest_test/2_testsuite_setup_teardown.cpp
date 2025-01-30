@@ -1,7 +1,7 @@
 #include "UseCase.h"
 
 
-class TestFixture_demo : public ::testing::Test {
+class Testsuite_setup_teardown : public ::testing::Test {
   protected:
 
   static void SetUpTestSuite() {
@@ -26,19 +26,19 @@ class TestFixture_demo : public ::testing::Test {
   }
 };
 
-TEST_F(TestFixture_demo, test1) {
+TEST_F(Testsuite_setup_teardown, test1) {
   ASSERT_NEAR(1.220,1.221,0.1);
 }
 
-TEST_F(TestFixture_demo, test2) {
+TEST_F(Testsuite_setup_teardown, test2) {
   ASSERT_NEAR(1.223,1.221,0.1);
 }
 
-TEST_F(TestFixture_demo, DISABLED_test3) {
+TEST_F(Testsuite_setup_teardown, DISABLED_test3) {
   std::cout << "This test is disabled and this line should not be printed." << std::endl;
 }
 
-TEST_F(TestFixture_demo, test4) {
+TEST_F(Testsuite_setup_teardown, test4) {
   GTEST_SKIP() << "test4 is skipped.";
   std::cout << "This test is skipped and this line should not be printed." << std::endl;
 }

@@ -27,16 +27,16 @@ class Rectangle : public Shape
 };
 
 template <typename T>
-class MyTypedTestSuite : public ::testing::Test
+class TypedTestSuite : public ::testing::Test
 {
     public:
     T shape_;
 };
 
 typedef ::testing::Types<Circle, Rectangle> Implementations;
-TYPED_TEST_SUITE(MyTypedTestSuite,Implementations);
+TYPED_TEST_SUITE(TypedTestSuite,Implementations);
 
-TYPED_TEST(MyTypedTestSuite, Draw)
+TYPED_TEST(TypedTestSuite, Draw)
 {
     this->shape_.draw();
 }

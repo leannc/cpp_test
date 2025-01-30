@@ -99,6 +99,7 @@ add_executable(${PROJECT_NAME}
         src/googletest_test/4_combine_function_and_param.cpp
         src/googletest_test/5_typed_test.cpp
         src/googletest_test/6_matcher_basic.cpp
+        src/googletest_test/7_custom_matcher.cpp
 
         src/performance_engineer/packing_and_encoding.cpp
 
@@ -144,4 +145,4 @@ find_package(GTest REQUIRED)
 
 
 # target_link_libraries(${PROJECT_NAME} concurrencpp)
-target_link_libraries(${PROJECT_NAME} concurrencpp GTest::gtest_main benchmark::benchmark)
+target_link_libraries(${PROJECT_NAME} concurrencpp GTest::gtest_main GTest::gmock_main benchmark::benchmark)

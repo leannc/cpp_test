@@ -24,15 +24,15 @@ std::map<std::string,std::function<void(std::vector<int>&)>> function_map = {
 
 
 // 定义一个参数化的testsuite，参数是测试用例的名称和输入数据
-class SortTestSuite2 : public testing::TestWithParam<std::tuple<std::pair<const std::string,std::function<void(std::vector<int>&)>>, std::pair<const std::string,std::vector<int>>>> {};
+class CombinedSortTestSuite : public testing::TestWithParam<std::tuple<std::pair<const std::string,std::function<void(std::vector<int>&)>>, std::pair<const std::string,std::vector<int>>>> {};
 
 // 注册参数化测试用例
-INSTANTIATE_TEST_SUITE_P(SortTestSuite_Demo2, SortTestSuite2, ::testing::Combine(::testing::ValuesIn(function_map),::testing::ValuesIn(input_map2)), [](const testing::TestParamInfo<SortTestSuite2::ParamType>& info) {
+INSTANTIATE_TEST_SUITE_P(SortTestSuite_Demo2, CombinedSortTestSuite, ::testing::Combine(::testing::ValuesIn(function_map),::testing::ValuesIn(input_map2)), [](const testing::TestParamInfo<CombinedSortTestSuite::ParamType>& info) {
   return std::get<0>(info.param).first +"_" + std::get<1>(info.param).first;
 });
 
 
-TEST_P(SortTestSuite2, CombineSort) {
+TEST_P(CombinedSortTestSuite, CombineSort) {
   auto p = GetParam();
   auto SortFunction = std::get<0>(p).second;
   auto input = std::get<1>(p).second;
