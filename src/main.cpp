@@ -4,6 +4,7 @@
 #include <iostream>
 #include "TestInfo.h"
 #include "general/UseCase.h"
+#include "gtest/UseCase.h"
 #include "performance_engineer/UseCase.h"
 #include "concurrencpp_test/UseCase.h"
 #include "algorithm/UseCase.h"
@@ -30,10 +31,10 @@ int main() {
 //---------------------------------------------------
 //CATEGORY   benchmark
 //---------------------------------------------------
-    BENCHMARK(BM_string_compare);
+    // BENCHMARK(BM_string_compare);
 
-    BENCHMARK(BM_with_single_param) ->Arg(10000);
-    BENCHMARK(BM_with_single_param) ->RangeMultiplier(2) ->Range(20000,400000)->Complexity(benchmark::oAuto);
+    // BENCHMARK(BM_with_single_param) ->Arg(10000);
+    // BENCHMARK(BM_with_single_param) ->RangeMultiplier(2) ->Range(20000,400000)->Complexity(benchmark::oAuto);
     
     // BENCHMARK(BM_without_o2_optimization) ->Arg(10000);
 
@@ -139,7 +140,8 @@ int main() {
 //    CALL_USE_CASE(function_return_values_in_type_traits);
 //    CALL_USE_CASE(std_declval);
 
-
+    testing::InitGoogleTest(&argc, argv);
+    RUN_ALL_TESTS();
 
     return 0;
 

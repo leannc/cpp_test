@@ -93,6 +93,12 @@ add_executable(${PROJECT_NAME}
         src/general/customize_unordered_map.cpp
         src/general/customize_std_map.cpp
 
+        src/gtest/1_basic_test.cpp
+        src/gtest/2_testsuite_setup_teardown.cpp
+        src/gtest/3_multy_data_for_one_testcase.cpp
+        src/gtest/4_combine_function_and_param.cpp
+        src/gtest/5_typed_test.cpp
+
         src/performance_engineer/packing_and_encoding.cpp
 
         src/templates/hide_implementation_template_use.cpp
@@ -132,6 +138,9 @@ target_link_directories(${PROJECT_NAME} PUBLIC
 set(benchmark_DIR "$ENV{HERA_WORKSPACE_DIR}/HeraBinaries/benchmark/msvc-debug/lib/cmake/benchmark")
 find_package(benchmark REQUIRED)
 
+set(GTest_DIR "$ENV{HERA_WORKSPACE_DIR}/HeraBinaries/googletest/msvc-debug/lib/cmake/GTest")
+find_package(GTest REQUIRED)
+
 
 # target_link_libraries(${PROJECT_NAME} concurrencpp)
-target_link_libraries(${PROJECT_NAME} concurrencpp benchmark::benchmark)
+target_link_libraries(${PROJECT_NAME} concurrencpp GTest::gtest_main benchmark::benchmark)
