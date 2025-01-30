@@ -4,7 +4,7 @@
 #include <iostream>
 #include "TestInfo.h"
 #include "general/UseCase.h"
-#include "gtest/UseCase.h"
+#include "googletest_test/UseCase.h"
 #include "performance_engineer/UseCase.h"
 #include "concurrencpp_test/UseCase.h"
 #include "algorithm/UseCase.h"

@@ -93,11 +93,12 @@ add_executable(${PROJECT_NAME}
         src/general/customize_unordered_map.cpp
         src/general/customize_std_map.cpp
 
-        src/gtest/1_basic_test.cpp
-        src/gtest/2_testsuite_setup_teardown.cpp
-        src/gtest/3_multy_data_for_one_testcase.cpp
-        src/gtest/4_combine_function_and_param.cpp
-        src/gtest/5_typed_test.cpp
+        src/googletest_test/1_basic_test.cpp
+        src/googletest_test/2_testsuite_setup_teardown.cpp
+        src/googletest_test/3_multy_data_for_one_testcase.cpp
+        src/googletest_test/4_combine_function_and_param.cpp
+        src/googletest_test/5_typed_test.cpp
+        src/googletest_test/6_matcher_basic.cpp
 
         src/performance_engineer/packing_and_encoding.cpp
 
