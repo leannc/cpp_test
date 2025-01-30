@@ -11,7 +11,7 @@ TEST(CustomMatcher, IsEvenKangMatcherTest) {
 }
 
 
-MATCHER_P2(IsBetweenKang,a,b,"failed in kang's custom failling message") {
+MATCHER_P2(IsBetweenKang,a,b,"") {
     return a<=arg && arg<=b;
 }
 
