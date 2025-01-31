@@ -11,6 +11,9 @@ using ::testing::AtMost;
 using ::testing::NiceMock; //----这个是suppressing uninteresting calls warnings的，要加上，否则log中会有很多输出
 using ::testing::StrictMock; //----这个是把上面的warnings变成errors，直接导致fail
 
+using ::testing::Assign;
+using ::testing::SaveArg;
+
 using ::testing::Sequence;
 using ::testing::InSequence;
 using ::testing::Expectation;
