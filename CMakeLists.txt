@@ -102,6 +102,7 @@ add_executable(${PROJECT_NAME}
         src/googletest_test/7_custom_matcher.cpp
         src/googletest_test/8_test_mock_class_bank_server.cpp
         src/googletest_test/9_mock_call_action.cpp
+        src/googletest_test/10_check_points_in_mock.cpp
 
         src/performance_engineer/packing_and_encoding.cpp
 
