@@ -100,6 +100,7 @@ add_executable(${PROJECT_NAME}
         src/googletest_test/5_typed_test.cpp
         src/googletest_test/6_matcher_basic.cpp
         src/googletest_test/7_custom_matcher.cpp
+        src/googletest_test/8_test_mock_class_bank_server.cpp
 
         src/performance_engineer/packing_and_encoding.cpp
 

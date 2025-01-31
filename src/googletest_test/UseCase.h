@@ -3,7 +3,22 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
+using ::testing::Return;
+using ::testing::_;
+using ::testing::Args;
+using ::testing::AtLeast;
+using ::testing::AtMost;
+using ::testing::NiceMock; //----这个是suppressing uninteresting calls warnings的，要加上，否则log中会有很多输出
+using ::testing::StrictMock; //----这个是把上面的warnings变成errors，直接导致fail
+
+using ::testing::Sequence;
+using ::testing::InSequence;
+using ::testing::Expectation;
+using ::testing::ExpectationSet;
+
 using ::testing::AllOf;  //----表示的是all of the following matches
+using ::testing::AnyOf;
+using ::testing::Eq;
 using ::testing::Gt;
 using ::testing::Lt;
 using ::testing::MatchesRegex;
