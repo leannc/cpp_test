@@ -1,6 +1,8 @@
 #include "UseCase.h"
 
-
+/**
+ * NOTE:在调用函数时，需要输出的log应该由调用者负责，而不是被调用者
+ */
 int mysqrt(int x) 
 {
     if(x<0) 

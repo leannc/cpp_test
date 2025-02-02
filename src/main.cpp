@@ -87,7 +87,8 @@ int main() {
 //---------------------------------------------------
 //CATEGORY   error_handling
 //---------------------------------------------------
-   CALL_USE_CASE(output_log_should_in_caller);
+//    CALL_USE_CASE(output_log_should_in_caller);
+   CALL_USE_CASE(use_optinal_convey_error_info);
 
 
 //---------------------------------------------------
