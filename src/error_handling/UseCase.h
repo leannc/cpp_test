@@ -5,5 +5,6 @@
 
 
 void output_log_should_in_caller();
-void use_optinal_convey_error_info();
+void use_optinal_to_convey_error_info();
+void use_errno_to_convey_different_errors();
 

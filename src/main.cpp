@@ -1,7 +1,6 @@
 //
 // Created by wangkang on 2023/11/20.
 //
-#include <iostream>
 #include "TestInfo.h"
 #include "general/UseCase.h"
 #include "googletest_test/UseCase.h"
@@ -14,10 +13,15 @@
 #include "templates/template_classes/HideImplementationTemplate.h"
 #include "benchmark/UseCase.h"
 #include "error_handling/UseCase.h"
+#include <locale.h>
 
 
 int main() {
-
+    //----转化成中文，但是目前不成功
+    // if(setlocale(LC_ALL,"zh_CN.UTF-8") ==NULL){
+    //     std::cerr << "Error setting locale to 'zh_CN.UTF-8'." << std::endl;
+    //     return 1;
+    // }
 //---------------------------------------------------
 //CATEGORY   algorithm
 //---------------------------------------------------
@@ -88,7 +92,8 @@ int main() {
 //CATEGORY   error_handling
 //---------------------------------------------------
 //    CALL_USE_CASE(output_log_should_in_caller);
-   CALL_USE_CASE(use_optinal_convey_error_info);
+//    CALL_USE_CASE(use_optinal_convey_error_info);
+   CALL_USE_CASE(use_errno_to_convey_different_errors);
 
 
 //---------------------------------------------------

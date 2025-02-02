@@ -68,7 +68,8 @@ add_executable(${PROJECT_NAME}
         src/doxygen_test/Cat.h
 
         src/error_handling/1_output_log_should_in_caller.cpp
-        src/error_handling/2_use_optinal_convey_error_info.cpp
+        src/error_handling/2_use_optinal_to_convey_error_info.cpp
+        src/error_handling/3_use_errno_to_convey_different_errors.cpp
 
         src/general/UseCase.h
         src/general/std_variant_with_visitor.cpp
