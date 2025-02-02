@@ -13,6 +13,7 @@
 #include "templates/UseCase.h"
 #include "templates/template_classes/HideImplementationTemplate.h"
 #include "benchmark/UseCase.h"
+#include "error_handling/UseCase.h"
 
 
 int main() {
@@ -42,7 +43,7 @@ int main() {
     // BENCHMARK(BM_with_multy_param) ->RangeMultiplier(2) ->Ranges({{2,40},{3,10}});  
     
     
-    RUN_BENCH_MARK();
+    // RUN_BENCH_MARK();
 
 
 //---------------------------------------------------
@@ -82,6 +83,12 @@ int main() {
 //    CALL_USE_CASE(compile_time_decorator);
 //    CALL_USE_CASE(value_based_run_time_decorator);
 //    CALL_USE_CASE(singleton_with_dependency_injection);
+
+//---------------------------------------------------
+//CATEGORY   error_handling
+//---------------------------------------------------
+   CALL_USE_CASE(output_log_should_in_caller);
+
 
 //---------------------------------------------------
 //CATEGORY   general
@@ -140,8 +147,8 @@ int main() {
 //    CALL_USE_CASE(function_return_values_in_type_traits);
 //    CALL_USE_CASE(std_declval);
 
-    testing::InitGoogleTest(&argc, argv);
-    RUN_ALL_TESTS();
+    // testing::InitGoogleTest(&argc, argv);
+    // RUN_ALL_TESTS();
 
     return 0;
 

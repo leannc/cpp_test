@@ -67,6 +67,8 @@ add_executable(${PROJECT_NAME}
         src/doxygen_test/Cat.cpp
         src/doxygen_test/Cat.h
 
+        src/error_handling/1_output_log_should_in_caller.cpp
+
         src/general/UseCase.h
         src/general/std_variant_with_visitor.cpp
         src/general/polymorphism_dynamic_registry.cpp
@@ -128,6 +130,8 @@ add_executable(${PROJECT_NAME}
 )
 
 
+set(PCH_HEADER "src/pch.h")
+target_precompile_headers(${PROJECT_NAME} PRIVATE ${PCH_HEADER})
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC src/concurrencpp_test/include

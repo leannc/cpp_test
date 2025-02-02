@@ -4,5 +4,5 @@
 
 
 
-void packing_and_encoding();
+void output_log_should_in_caller();
 
