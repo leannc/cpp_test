@@ -1,7 +1,7 @@
 #include "UseCase.h"
 
 
-int sqrt(int x) 
+int mysqrt(int x) 
 {
     if(x<0) 
     {
@@ -19,7 +19,7 @@ int sqrt(int x)
 
 void output_log_should_in_caller()
 {
-    int ret = sqrt(-4);
+    int ret = mysqrt(-4);
     if (ret ==-1) {
         std::cout<<"sqrt's param should greater than zero. and this log should be printed here,not in sqrt function"<<std::endl;
     } else {
