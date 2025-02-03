@@ -94,7 +94,8 @@ int main() {
 //    CALL_USE_CASE(output_log_should_in_caller);
 //    CALL_USE_CASE(use_optinal_convey_error_info);
 //    CALL_USE_CASE(use_errno_to_convey_different_errors);
-   CALL_USE_CASE(custom_std_error_code);
+//    CALL_USE_CASE(custom_std_error_code);
+   CALL_USE_CASE(use_std_variant_as_return_error_info_container);
 
 
 //---------------------------------------------------
