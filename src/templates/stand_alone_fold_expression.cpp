@@ -9,21 +9,17 @@
  */
 
 template<typename T>
-bool HasComponent()
-{
-    std::cout<<"has component"<<std::endl;
+bool HasComponent() {
+    std::cout<< "has component"<< std::endl;
     return true;
 }
 
 
 template<typename... Component>
-static void CopyComponentIfExists(int dst, int src)
-{
+static void CopyComponentIfExists(int dst, int src) {
 //    HasComponent<Component>();
-    ([&]()
-    {
-        if (HasComponent<Component>())
-        {
+    ([&]() {
+        if (HasComponent<Component>()) {
 //            dst.AddOrReplaceComponent<Component>(src.GetComponent<Component>());
         }
     }(), ...);
@@ -31,28 +27,23 @@ static void CopyComponentIfExists(int dst, int src)
 
 
 template<typename ...U>
-double Sum(U... args)
-{
+double Sum(U... args) {
     return (args+...);
 }
 
 template<typename ...T>
-void Shout(T... t)
-{
-    ((std::cout<<t<<", "),...)<<std::endl;
+void Shout(T... t) {
+    ((std::cout<< t << ", "), ...) << std::endl;
 }
 
 template<auto ...T>
-void Shout2()
-{
-    ((std::cout<<T<<", "),...)<<std::endl;
+void Shout2() {
+    ((std::cout<< T << ", "), ...)<< std::endl;
 }
 
 
-void stand_alone_fold_expression_using()
-{
-    std::cout<<Sum(1,2,3,4,5)<<std::endl;
-    Shout(1,2.0,"kang",false);
-    Shout2<1,2>();
-
+void stand_alone_fold_expression_using() {
+    std::cout<< Sum(1, 2, 3, 4, 5)<< std::endl;
+    Shout(1, 2.0, "kang", false);
+    Shout2<1, 2>();
 }
