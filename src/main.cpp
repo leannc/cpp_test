@@ -96,7 +96,7 @@ int main() {
 //    CALL_USE_CASE(use_errno_to_convey_different_errors);
 //    CALL_USE_CASE(custom_std_error_code);
 //    CALL_USE_CASE(use_std_variant_as_return_error_info_container);
-   CALL_USE_CASE(use_expected);
+//    CALL_USE_CASE(use_expected);
 
 
 //---------------------------------------------------
@@ -128,6 +128,7 @@ int main() {
 //    CALL_USE_CASE(inter_dependence);
 //    CALL_USE_CASE(customize_unordered_map);
 //    CALL_USE_CASE(customize_std_map);
+   CALL_USE_CASE(useful_macros);
 
 
 //---------------------------------------------------

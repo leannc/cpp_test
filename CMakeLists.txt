@@ -99,6 +99,7 @@ add_executable(${PROJECT_NAME}
         src/general/inter_dependence.cpp
         src/general/customize_unordered_map.cpp
         src/general/customize_std_map.cpp
+        src/general/useful_macros.cpp
 
         src/googletest_test/1_basic_test.cpp
         src/googletest_test/2_testsuite_setup_teardown.cpp

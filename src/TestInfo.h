@@ -7,15 +7,6 @@
 #include <string>
 #include <iostream>
 
-void header(const std::string title)
-{
-    std::cout<<"++++++++++++++++++[START {0}]+++++++++++++++++++++++++++++++"<<title<<std::endl;
-}
-
-void footer(const std::string title)
-{
-    std::cout<<"------------------[END {0}]-------------------------------"<<title<<std::endl;
-}
 
 #define CALL_USE_CASE(func) \
     std::cout<<"--------------------------------------------"<<std::endl;\
