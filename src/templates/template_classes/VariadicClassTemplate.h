@@ -11,7 +11,7 @@ struct VariadicStruct {};
 template<class... types>
 class VariadicClass{};
 
-///error，variadic class template中，parameter pack必须放在最后
+//----error，variadic class template中，parameter pack必须放在最后
 //template< typename ...Ts,typename U> ///也可以有默认值
 //class InvalidClass  {};
 

@@ -3,6 +3,11 @@
 //
 #include "UseCase.h"
 
+/**
+ * NOTE:当参数包(parameter pack)是在函数的参数列表内部展开时，就不用折叠表达式(fold expression)，直接写patern...就可以
+ * NOTE:当参数包的展开，是要加上整个函数表达时，就需要用折叠表达式，例如逗号表达式等来处理。
+ */
+
 template<typename T>
 bool HasComponent()
 {

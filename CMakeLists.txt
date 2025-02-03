@@ -120,6 +120,7 @@ add_executable(${PROJECT_NAME}
         src/templates/variadic_template_use.cpp
         src/templates/VariadicFuntionTemplate.cpp
         src/templates/stand_alone_fold_expression.cpp
+        src/templates/parameter_pack_expansion_and_perfect_forwarding.cpp
         src/templates/abbreviation_template.cpp
         src/templates/template_classes/HideImplementationTemplate.cpp
         src/templates/template_classes/HideImplementationTemplate.h
