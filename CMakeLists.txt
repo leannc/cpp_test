@@ -72,6 +72,7 @@ add_executable(${PROJECT_NAME}
         src/error_handling/3_use_errno_to_convey_different_errors.cpp
         src/error_handling/4_custom_std_error_code.cpp
         src/error_handling/5_use_std_variant_as_return_error_info_container.cpp
+        src/error_handling/6_use_expected.cpp
 
         src/general/UseCase.h
         src/general/std_variant_with_visitor.cpp
@@ -139,6 +140,7 @@ target_precompile_headers(${PROJECT_NAME} PRIVATE ${PCH_HEADER})
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC src/concurrencpp_test/include
+    PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/expected/include
 #     PUBLIC libs/google_benchmark/include
 )
 

@@ -9,4 +9,5 @@ void use_optinal_to_convey_error_info();
 void use_errno_to_convey_different_errors();
 void custom_std_error_code();
 void use_std_variant_as_return_error_info_container();
+void use_expected();
 
