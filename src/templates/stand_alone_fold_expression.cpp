@@ -1,6 +1,8 @@
+// Copyright 2024 <wangkang>
 //
 // Created by kang on 2024/10/10.
 //
+#include <iostream>
 #include "UseCase.h"
 
 /**
