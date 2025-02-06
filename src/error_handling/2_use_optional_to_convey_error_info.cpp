@@ -21,7 +21,7 @@ std::optional<int> mysqrt_optional(int x)
 
 
 
-void use_optinal_convey_error_info()
+void use_optional_to_convey_error_info()
 {
     auto ret = mysqrt_optional(-4);
     if (ret) {
