@@ -1,9 +1,9 @@
 //
 // Created by wangkang on 2023/11/20.
 //
-#include <iostream>
 #include "TestInfo.h"
 #include "general/UseCase.h"
+#include "googletest_test/UseCase.h"
 #include "performance_engineer/UseCase.h"
 #include "concurrencpp_test/UseCase.h"
 #include "algorithm/UseCase.h"
@@ -12,9 +12,12 @@
 #include "templates/UseCase.h"
 #include "templates/template_classes/HideImplementationTemplate.h"
 #include "benchmark/UseCase.h"
+#include "error_handling/UseCase.h"
+#include <locale.h>
 
 
 int main() {
+
 //---------------------------------------------------
 // CATEGORY   algorithm
 //---------------------------------------------------
@@ -30,7 +33,8 @@ int main() {
 // CATEGORY   benchmark
 //---------------------------------------------------
     BENCHMARK(BM_string_compare);
-
+    
+    
     RUN_BENCH_MARK();
 
 
@@ -74,6 +78,17 @@ int main() {
 //    CALL_USE_CASE(singleton_with_dependency_injection);
 
 //---------------------------------------------------
+//CATEGORY   error_handling
+//---------------------------------------------------
+//    CALL_USE_CASE(output_log_should_in_caller);
+//    CALL_USE_CASE(use_optinal_convey_error_info);
+//    CALL_USE_CASE(use_errno_to_convey_different_errors);
+//    CALL_USE_CASE(custom_std_error_code);
+//    CALL_USE_CASE(use_std_variant_as_return_error_info_container);
+//    CALL_USE_CASE(use_expected);
+
+
+//---------------------------------------------------
 // CATEGORY   general
 //---------------------------------------------------
 //    CALL_USE_CASE(std_variant_with_visitor2);
@@ -101,7 +116,7 @@ int main() {
     // CALL_USE_CASE(std_atomic);
     // CALL_USE_CASE(inter_dependence);
     // CALL_USE_CASE(customize_unordered_map);
-    // CALL_USE_CASE(customize_std_map);
+    CALL_USE_CASE(customize_std_map);
 
 
 //---------------------------------------------------
@@ -117,6 +132,7 @@ int main() {
 //    CALL_USE_CASE(variadic_template_use);
 //    CALL_USE_CASE(variadic_function_template);
 //    CALL_USE_CASE(stand_alone_fold_expression_using);
+   CALL_USE_CASE(parameter_pack_expansion_and_perfect_forwarding);
 //    CALL_USE_CASE(abbreviation_template);
 //    CALL_USE_CASE(concept_test);
 //    CALL_USE_CASE(concept_requirements_test);
@@ -130,7 +146,8 @@ int main() {
 //    CALL_USE_CASE(function_return_values_in_type_traits);
 //    CALL_USE_CASE(std_declval);
 
-
+    // testing::InitGoogleTest(&argc, argv);
+    // RUN_ALL_TESTS();
 
     return 0;
 }
