@@ -2,21 +2,6 @@
 // Created by kang on 2024/7/24.
 //
 
-#pragma once
-
-#include <concurrencpp/concurrencpp.h>
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-#include <ctime>
-#include <cstring>
-#include <string>
-#include <fstream>
-
-#include <chrono>
-
-#include <cstdlib>
 #include <benchmark/benchmark.h>
 
 #define RUN_BENCH_MARK()                                                \
@@ -31,3 +16,6 @@
 
 
 void BM_string_compare(benchmark::State& state);
+void BM_with_single_param(benchmark::State& state);
+void BM_with_multy_param(benchmark::State& state);
+void BM_without_o2_optimization(benchmark::State& state);

@@ -2,14 +2,6 @@
 // Created by kang on 2023/11/21.
 //
 
-#pragma once
-#include <variant>
-#include <string>
-#include <functional>
-#include <iostream>
-#include <vector>
-#include <list>
-#include <algorithm>
 
 void std_variant_with_visitor();
 void std_variant_with_visitor2();
@@ -39,4 +31,5 @@ void std_atomic();
 void inter_dependence();
 void customize_unordered_map();
 void customize_std_map();
+void useful_macros();
 

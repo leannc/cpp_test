@@ -8,5 +8,6 @@ void BM_string_compare(benchmark::State& state)
       {
             std::string s1 = "Hello, World!";
             std::string s2 = "Hello, World!";
+            auto result = s1.compare(s2);
       }
 }
