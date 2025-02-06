@@ -2,8 +2,7 @@
 // Created by kang on 2024/11/9.
 //
 
-#ifndef CPP_TEST_SHAPEMODEL_H
-#define CPP_TEST_SHAPEMODEL_H
+#pragma once
 
 #include "ShapeConcept.h"
 
@@ -13,9 +12,9 @@ template<typename ShapeT>
 double perimeter(ShapeT);
 
 
-template<typename ShapeT,typename DrawStrategy>
+template<typename ShapeT, typename DrawStrategy>
 class OwningShapeModel : public ShapeConcept {
-public:
+ public:
     OwningShapeModel(ShapeT shape_, DrawStrategy drawer_)
         : shape(std::move(shape_)), drawer(std::move(drawer_)) {}
 
@@ -24,11 +23,10 @@ public:
         return std::make_unique<OwningShapeModel>(*this);
     }
 
-
-private:
+ private:
     ShapeT shape;
     DrawStrategy drawer;
 };
+}  // namespace type_erasure
 
-}
-#endif //CPP_TEST_SHAPEMODEL_H
+

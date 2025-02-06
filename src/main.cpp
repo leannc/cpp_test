@@ -15,9 +15,8 @@
 
 
 int main() {
-
 //---------------------------------------------------
-//CATEGORY   algorithm
+// CATEGORY   algorithm
 //---------------------------------------------------
 //    CALL_USE_CASE(std_erase);
 //    CALL_USE_CASE(std_roate);
@@ -28,16 +27,15 @@ int main() {
 
 
 //---------------------------------------------------
-//CATEGORY   benchmark
+// CATEGORY   benchmark
 //---------------------------------------------------
     BENCHMARK(BM_string_compare);
-    
-    
+
     RUN_BENCH_MARK();
 
 
 //---------------------------------------------------
-//CATEGORY   concurrencpp
+// CATEGORY   concurrencpp
 //---------------------------------------------------
 //    CALL_USE_CASE(concurrencpp_hello_world);
 //    CALL_USE_CASE(concurrencpp_even_number_counting);
@@ -57,7 +55,7 @@ int main() {
 //    CALL_USE_CASE(SLA_axis_init);
 
 //---------------------------------------------------
-//CATEGORY   design_pattern
+// CATEGORY   design_pattern
 //---------------------------------------------------
 //    CALL_USE_CASE(visitor_pattern_in_std_variant_form);
 //    CALL_USE_CASE(strategy_pattern_combine_with_visitor_pattern);
@@ -69,13 +67,14 @@ int main() {
 //    CALL_USE_CASE(typical_prototype_pattern);
 //    CALL_USE_CASE(external_polymorphism_pattern);
 //    CALL_USE_CASE(owning_type_erasure_implementation);
+   CALL_USE_CASE(cam_component_type_erasure_implementation);
 //    CALL_USE_CASE(classic_decorator_design_pattern);
 //    CALL_USE_CASE(compile_time_decorator);
 //    CALL_USE_CASE(value_based_run_time_decorator);
 //    CALL_USE_CASE(singleton_with_dependency_injection);
 
 //---------------------------------------------------
-//CATEGORY   general
+// CATEGORY   general
 //---------------------------------------------------
 //    CALL_USE_CASE(std_variant_with_visitor2);
 //    CALL_USE_CASE(std_variant_with_visitor3);
@@ -102,17 +101,17 @@ int main() {
     // CALL_USE_CASE(std_atomic);
     // CALL_USE_CASE(inter_dependence);
     // CALL_USE_CASE(customize_unordered_map);
-    CALL_USE_CASE(customize_std_map);
+    // CALL_USE_CASE(customize_std_map);
 
 
 //---------------------------------------------------
-//CATEGORY   performance
+// CATEGORY   performance
 //---------------------------------------------------
 //    CALL_USE_CASE(packing_and_encoding);
 
 
 //---------------------------------------------------
-//CATEGORY   templates
+// CATEGORY   templates
 //---------------------------------------------------
 //    CALL_USE_CASE(hide_implementation_template_use);
 //    CALL_USE_CASE(variadic_template_use);
@@ -124,7 +123,7 @@ int main() {
 //    CALL_USE_CASE(template_function_overload);
 
 //---------------------------------------------------
-//CATEGORY   type_traits
+// CATEGORY   type_traits
 //---------------------------------------------------
 //    CALL_USE_CASE(std_is_same_v);
 //    CALL_USE_CASE(std_decay_t);
@@ -134,5 +133,4 @@ int main() {
 
 
     return 0;
-
 }
