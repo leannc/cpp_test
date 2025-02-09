@@ -70,7 +70,8 @@ void BM_HeapContourPoint_traversal(benchmark::State& state) {  // NOLINT
     double sum = 0.0;
     for (const auto& contour : contours) {
       for (const auto& point : contour->points) {
-        sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
+        // sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
+        sum += point.x + point.y;
         // benchmark::DoNotOptimize(point);
       }
     }
@@ -97,7 +98,8 @@ void BM_HeapContourPoint_traversal_parallel(benchmark::State& state) {  // NOLIN
       double sum = 0.0;
       std::for_each(std::execution::par, contours.begin(), contours.end(), [&sum](const auto& contour) {
         for (const auto& point : contour->points) {
-            sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
+            // sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
+            sum += point.x + point.y;
             // benchmark::DoNotOptimize(point);
           }
       });
