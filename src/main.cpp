@@ -32,7 +32,13 @@ int main() {
 //---------------------------------------------------
 // CATEGORY   benchmark
 //---------------------------------------------------
-    BENCHMARK(BM_string_compare);
+    BENCHMARK(BM_VectorVector_double)->Args({1000, 10000})->Args({10000, 1000});
+    BENCHMARK(BM_VectorFlat_double)->Args({1000, 10000})->Args({10000, 1000});
+    BENCHMARK(BM_VectorFlat_double_parallel)->Args({1000, 10000})->Args({10000, 1000});
+    BENCHMARK(BM_VectorFlat_double_SIMD)->Args({1000, 10000})->Args({10000, 1000});
+    BENCHMARK(BM_VectorVector_double_RowMajor)->Args({1000, 10000})->Args({10000, 1000});
+    BENCHMARK(BM_with_single_param)->Arg(10000000);  // 有O2编译优化
+    BENCHMARK(BM_without_o2_optimization)->Arg(10000000);  // 没有O2编译优化
     RUN_BENCH_MARK();
 
 
@@ -69,7 +75,7 @@ int main() {
 //   CALL_USE_CASE(typical_prototype_pattern);
 //   CALL_USE_CASE(external_polymorphism_pattern);
 //   CALL_USE_CASE(owning_type_erasure_implementation);
-  CALL_USE_CASE(cam_component_type_erasure_implementation);
+  // CALL_USE_CASE(cam_component_type_erasure_implementation);
 //   CALL_USE_CASE(classic_decorator_design_pattern);
 //   CALL_USE_CASE(compile_time_decorator);
 //   CALL_USE_CASE(value_based_run_time_decorator);

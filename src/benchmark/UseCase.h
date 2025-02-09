@@ -15,7 +15,13 @@
     ::benchmark::Shutdown();                                            \
 
 
-void BM_string_compare(benchmark::State& state);
-void BM_with_single_param(benchmark::State& state);
-void BM_with_multy_param(benchmark::State& state);
-void BM_without_o2_optimization(benchmark::State& state);
+void BM_string_compare(benchmark::State& state);  //NOLINT
+void BM_with_single_param(benchmark::State& state);  //NOLINT
+void BM_with_multy_param(benchmark::State& state);  //NOLINT
+void BM_without_o2_optimization(benchmark::State& state);  //NOLINT
+
+void BM_VectorVector_double(benchmark::State& state);  //NOLINT
+void BM_VectorFlat_double(benchmark::State& state);  //NOLINT
+void BM_VectorFlat_double_parallel(benchmark::State& state);  //NOLINT
+void BM_VectorFlat_double_SIMD(benchmark::State& state);  //NOLINT
+void BM_VectorVector_double_RowMajor(benchmark::State& state);  //NOLINT
