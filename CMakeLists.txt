@@ -18,15 +18,15 @@ target_include_directories(${PROJECT_NAME}
 )
 
 target_link_directories(${PROJECT_NAME} PUBLIC
-        src/concurrencpp_test/lib
+        src/concurrencpp_test/lib/${LIB_TYPE_DIR_NAME}
         # libs/google_benchmark/${LIB_TYPE_DIR_NAME}
         # libs/google_benchmark/${LIB_TYPE_DIR_NAME}
 )
 
-set(benchmark_DIR "$ENV{HERA_WORKSPACE_DIR}/HeraBinaries/benchmark/msvc-debug/lib/cmake/benchmark")
+set(benchmark_DIR "$ENV{HERA_WORKSPACE_DIR}/HeraBinaries/benchmark/${LIB_TYPE_DIR_NAME}/lib/cmake/benchmark")
 find_package(benchmark REQUIRED)
 
-set(GTest_DIR "$ENV{HERA_WORKSPACE_DIR}/HeraBinaries/googletest/msvc-debug/lib/cmake/GTest")
+set(GTest_DIR "$ENV{HERA_WORKSPACE_DIR}/HeraBinaries/googletest/${LIB_TYPE_DIR_NAME}/lib/cmake/GTest")
 find_package(GTest REQUIRED)
 
 

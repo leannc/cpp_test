@@ -23,7 +23,7 @@ void fill_matrix(std::vector<double>& matrix) {  // NOLINT
 }
 
 // **基准测试 1：使用 `vector<vector<double>>`**
-void BM_VectorVector_double(benchmark::State& state) {  // NOLINT
+static void BM_VectorVector_double(benchmark::State& state) {  // NOLINT
     uint64_t row = state.range(0);
     uint64_t col = state.range(1);
     std::vector<std::vector<double>> matrix(row, std::vector<double>(col));
@@ -37,7 +37,6 @@ void BM_VectorVector_double(benchmark::State& state) {  // NOLINT
       //   benchmark::DoNotOptimize(sum);  // 避免编译器优化
     }
 }
-
 
 // **基准测试 2：使用 `vector<double>`**
 void BM_VectorFlat_double(benchmark::State& state) {  // NOLINT

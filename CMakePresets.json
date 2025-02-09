@@ -41,6 +41,22 @@
             "CMAKE_C_FLAGS": "/utf-8",
             "CMAKE_CXX_FLAGS_DEBUG": "/O2"
         }
+    },
+    {
+        "name": "x64-release-msvc",
+        "displayName": "x64 Release msvc",
+        "inherits": "win-msvc-base",
+        "architecture": {
+            "value": "x64",
+            "strategy": "external"
+        },
+        "cacheVariables": {
+            "LIB_TYPE_DIR_NAME": "msvc-release",
+            "LIB_NAME_SUFFIX": "",
+            "CMAKE_BUILD_TYPE": "Release",
+            "CMAKE_CXX_FLAGS": "/utf-8",
+            "CMAKE_C_FLAGS": "/utf-8"
+        }
     }
     ],
     "buildPresets": [
@@ -49,6 +65,12 @@
             "description": "",
             "displayName": "",
             "configurePreset": "x64-debug-msvc"
+        },        
+        {
+            "name": "msvc-release-build",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "x64-release-msvc"
         }
     ]
 }
