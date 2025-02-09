@@ -54,8 +54,9 @@ void BM_HeapContourPoint_traversal(benchmark::State& state) {  // NOLINT
   int maxPoints = state.range(1);
   int numContours = state.range(2);
 
+  auto n_contour = getRandomInt(numContours-5, numContours+5);
   // 在堆上构造 Contour 对象
-  auto contours = generateContours(numContours, minPoints, maxPoints);
+  auto contours = generateContours(n_contour, minPoints, maxPoints);
 
   // 计算总点数
   size_t total_points = 0;
@@ -63,19 +64,21 @@ void BM_HeapContourPoint_traversal(benchmark::State& state) {  // NOLINT
       total_points += contour->points.size();
   }
 
+  size_t total = 0;
   for (auto _ : state) {
     // 遍历所有 Contour 中的点
     double sum = 0.0;
     for (const auto& contour : contours) {
       for (const auto& point : contour->points) {
-        sum += point.x + point.y;  // cppcheck-suppress unreadVariable
+        sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
         // benchmark::DoNotOptimize(point);
       }
     }
+    total+=sum;
     // benchmark::DoNotOptimize(sum);
     // benchmark::ClobberMemory();
   }
-
+  std::cout << "the total is " << total << std::endl;
   // 确保统计的是遍历的点数，而不是 contours 数量
 //   state.SetItemsProcessed(contours.size() * state.iterations());
 }
@@ -88,15 +91,18 @@ void BM_HeapContourPoint_traversal_parallel(benchmark::State& state) {  // NOLIN
 
     // 在堆上构造 Contour 对象
     auto contours = generateContours(numContours, minPoints, maxPoints);
-
+    size_t total = 0;
     for (auto _ : state) {
       // 遍历所有 Contour 中的点
       double sum = 0.0;
       std::for_each(std::execution::par, contours.begin(), contours.end(), [&sum](const auto& contour) {
         for (const auto& point : contour->points) {
-            sum += point.x + point.y;  // cppcheck-suppress unreadVariable
+            sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
             // benchmark::DoNotOptimize(point);
           }
       });
+      total+=sum;
     }
+
+    std::cout << "the parallel total is " << total << std::endl;
   }

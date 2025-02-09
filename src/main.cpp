@@ -40,6 +40,7 @@ int main() {
 
     BENCHMARK(BM_HeapContourPoint_traversal)->Args({30, 40, 1000000})->Args({30, 40, 10000000});  // 100万个contour 和 10000万个 contour
     BENCHMARK(BM_HeapContourPoint_traversal_parallel)->Args({30, 40, 1000000})->Args({30, 40, 10000000});  // 100万个contour 和 10000万个 contour
+    BENCHMARK(BM_HeapContourPoint_traversal_parallel)->Args({3, 4, 1000000})->Args({3, 4, 10000000});  // 100万个contour 和 10000万个 contour
 
 
     BENCHMARK(BM_with_single_param)->Arg(10000000);  // 有O2编译优化
