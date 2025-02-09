@@ -72,8 +72,8 @@ void BM_HeapContourPoint_traversal(benchmark::State& state) {  // NOLINT
         // benchmark::DoNotOptimize(point);
       }
     }
-    benchmark::DoNotOptimize(sum);
-    benchmark::ClobberMemory();
+    // benchmark::DoNotOptimize(sum);
+    // benchmark::ClobberMemory();
   }
 
   // 确保统计的是遍历的点数，而不是 contours 数量

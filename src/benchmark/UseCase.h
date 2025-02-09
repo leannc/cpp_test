@@ -1,4 +1,4 @@
-//
+#pragma once
 // Created by kang on 2024/7/24.
 //
 
@@ -20,7 +20,7 @@ void BM_with_single_param(benchmark::State& state);  //NOLINT
 void BM_with_multy_param(benchmark::State& state);  //NOLINT
 void BM_without_o2_optimization(benchmark::State& state);  //NOLINT
 
-// static void BM_VectorVector_double(benchmark::State& state);  //NOLINT
+void BM_VectorVector_double(benchmark::State& state);  //NOLINT
 void BM_VectorFlat_double(benchmark::State& state);  //NOLINT
 void BM_VectorFlat_double_parallel(benchmark::State& state);  //NOLINT
 void BM_VectorFlat_double_SIMD(benchmark::State& state);  //NOLINT

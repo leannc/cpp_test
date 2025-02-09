@@ -23,7 +23,7 @@ void fill_matrix(std::vector<double>& matrix) {  // NOLINT
 }
 
 // **基准测试 1：使用 `vector<vector<double>>`**
-static void BM_VectorVector_double(benchmark::State& state) {  // NOLINT
+void BM_VectorVector_double(benchmark::State& state) {  // NOLINT
     uint64_t row = state.range(0);
     uint64_t col = state.range(1);
     std::vector<std::vector<double>> matrix(row, std::vector<double>(col));
