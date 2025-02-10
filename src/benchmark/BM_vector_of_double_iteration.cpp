@@ -28,14 +28,15 @@ void BM_VectorVector_double(benchmark::State& state) {  // NOLINT
     uint64_t col = state.range(1);
     std::vector<std::vector<double>> matrix(row, std::vector<double>(col));
     fill_matrix(matrix, row, col);
-    for (auto _ : state) {
-        double sum = 0;  // cppcheck-suppress unreadVariable
+    double sum = 0;
+    for (auto _ : state) {       // cppcheck-suppress unreadVariable
         for (int i = 0; i < row; i++)
             for (int j = 0; j < col; j++)
                 sum += matrix[i][j];  // cppcheck-suppress unreadVariable
 
       //   benchmark::DoNotOptimize(sum);  // 避免编译器优化
     }
+    std::cout << "BM_VectorVector_double sum is " << sum << std::endl;
 }
 
 // **基准测试 2：使用 `vector<double>`**
@@ -45,13 +46,15 @@ void BM_VectorFlat_double(benchmark::State& state) {  // NOLINT
     std::vector<double> matrix(row * col);
     fill_matrix(matrix);
     uint64_t total = row*col;
+    double sum = 0;
     for (auto _ : state) {
-        double sum = 0;  // cppcheck-suppress unreadVariable
         for (int i = 0; i < total; i++)
                 sum += matrix[i];  // cppcheck-suppress unreadVariable
 
       //   benchmark::DoNotOptimize(sum);
     }
+
+    std::cout << "BM_VectorFlat_double sum is " << sum << std::endl;
 }
 
 void BM_VectorFlat_double_parallel(benchmark::State& state) {  // NOLINT
@@ -59,13 +62,15 @@ void BM_VectorFlat_double_parallel(benchmark::State& state) {  // NOLINT
     uint64_t col = state.range(1);
     std::vector<double> matrix(row * col);
     fill_matrix(matrix);
+    double sum = 0;
     uint64_t total = row*col;  // cppcheck-suppress unreadVariable
     for (auto _ : state) {
-        double sum = 0;
         std::for_each(std::execution::par, matrix.begin(), matrix.end(), [&sum](const int& element) {
             sum += element;
         });
     }
+
+    std::cout << "BM_VectorFlat_double_parallel sum is " << sum << std::endl;
 }
 
 void BM_VectorFlat_double_SIMD(benchmark::State& state) {  // NOLINT
@@ -74,6 +79,7 @@ void BM_VectorFlat_double_SIMD(benchmark::State& state) {  // NOLINT
     std::vector<double> matrix(row * col);
     fill_matrix(matrix);
     uint64_t total = row*col;
+    double sum = 0;
     for (auto _ : state) {
       __m256d sum_vec = _mm256_setzero_pd();
 
@@ -86,7 +92,7 @@ void BM_VectorFlat_double_SIMD(benchmark::State& state) {  // NOLINT
            // 处理剩余的元素
       double partial_sums[4];
       _mm256_storeu_pd(partial_sums, sum_vec);
-      double sum = partial_sums[0] + partial_sums[1] + partial_sums[2] + partial_sums[3];  // cppcheck-suppress unreadVariable
+      sum = partial_sums[0] + partial_sums[1] + partial_sums[2] + partial_sums[3];  // cppcheck-suppress unreadVariable
 
       // 处理剩余的元素
       for (; i < matrix.size(); ++i) {
@@ -94,6 +100,7 @@ void BM_VectorFlat_double_SIMD(benchmark::State& state) {  // NOLINT
       }
       //   benchmark::DoNotOptimize(sum);
     }
+    std::cout << "BM_VectorFlat_double_SIMD sum is " << sum << std::endl;
 }
 
 
@@ -102,13 +109,15 @@ void BM_VectorVector_double_RowMajor(benchmark::State& state) {  // NOLINT
     uint64_t col = state.range(1);
     std::vector<std::vector<double>> matrix(row, std::vector<double>(col));
     fill_matrix(matrix, row, col);
+    double sum = 0;
     for (auto _ : state) {
-        double sum = 0;  // cppcheck-suppress unreadVariable
+        // cppcheck-suppress unreadVariable
         for (int j = 0; j < col; j++)
             for (int i = 0; i < row; i++)
                 sum += matrix[i][j];
-
       //   benchmark::DoNotOptimize(sum);  // 避免编译器优化
     }
+
+    std::cout << "BM_VectorVector_double_RowMajor sum is " << sum << std::endl;
 }
 
