@@ -14,6 +14,7 @@
 #include "templates/template_classes/HideImplementationTemplate.h"
 #include "benchmark/UseCase.h"
 #include "error_handling/UseCase.h"
+#include "numeric/UseCase.h"
 
 
 
@@ -122,13 +123,16 @@ int main() {
 //   CALL_USE_CASE(std_decay);
 //   CALL_USE_CASE(noexcept_usage);
   // CALL_USE_CASE(std_unique_ptr_with_custom_deleter);
-  CALL_USE_CASE(std_unique_ptr_custom_deleter_should_call_delete_raw_ptr_inside);
+  // CALL_USE_CASE(std_unique_ptr_custom_deleter_should_call_delete_raw_ptr_inside);
 //   CALL_USE_CASE(std_format);
 //   CALL_USE_CASE(std_atomic);
 //   CALL_USE_CASE(inter_dependence);
 //   CALL_USE_CASE(customize_unordered_map);
 //   CALL_USE_CASE(customize_std_map);
-
+//---------------------------------------------------
+// CATEGORY   numeric
+//---------------------------------------------------
+  CALL_USE_CASE(std_inner_product);
 
 //---------------------------------------------------
 // CATEGORY   performance
