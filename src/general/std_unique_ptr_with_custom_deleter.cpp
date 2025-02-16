@@ -17,11 +17,14 @@ void std_unique_ptr_with_custom_deleter() {
         if (fp) {
             std::cout << "Closing file via custom deleter...\n";
             std::fclose(fp);
+            // delete fp;  // NOTE:fclose后面是不需要再加delete的,cppreference上也没加
         }
     };
 
     // 使用自定义的 deleter，让 unique_ptr 在析构时调用 fclose
-    std::unique_ptr<FILE, decltype(FileCloser)> filePtr{std::fopen("myfile.txt", "r"),FileCloser};
+    std::cout<< "Open" << std::endl;
+    FILE* file = std::fopen("README.MD", "r");
+    std::unique_ptr<FILE, decltype(FileCloser)> filePtr{file, FileCloser};
 
     // 这里可以进行文件读取或其他操作
     // ...

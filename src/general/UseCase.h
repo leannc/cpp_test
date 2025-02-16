@@ -26,6 +26,7 @@ void std_move();
 void std_decay();
 void noexcept_usage();
 void std_unique_ptr_with_custom_deleter();
+void std_unique_ptr_custom_deleter_should_call_delete_raw_ptr_inside();
 void std_format();
 void std_atomic();
 void inter_dependence();
