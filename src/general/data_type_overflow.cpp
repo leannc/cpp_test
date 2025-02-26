@@ -18,4 +18,20 @@ void data_type_overflow() {
     if (j < empty_vec.size()-1) {
         std::cout << "wrong, int(j) should be greater than empty_vec size" << std::endl;
     }
+
+    int neg_int = -1;
+    size_t zero_size_t = 0;
+    unsigned int uint_zero = 0;
+
+    if (neg_int > zero_size_t) {
+        std::cout << "wrong, the int is converted to size_t implicitly" << std::endl;
+    }
+
+    if (neg_int < (int)zero_size_t) {
+        std::cout << "right, the size_t is converted to int explicitly" << std::endl;
+    }
+
+    if (neg_int > uint_zero) {
+        std::cout << "wrong, the int is converted to unsigned int implicitly" << std::endl;
+    }
 }
