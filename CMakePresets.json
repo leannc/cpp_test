@@ -38,6 +38,22 @@
             "LIB_NAME_SUFFIX": "d",
             "CMAKE_BUILD_TYPE": "Debug",
             "CMAKE_CXX_FLAGS": "/utf-8",
+            "CMAKE_C_FLAGS": "/utf-8"
+        }
+    },
+    {
+        "name": "x64-debug-msvc-optimize",
+        "displayName": "x64 Debug msvc optimize",
+        "inherits": "win-msvc-base",
+        "architecture": {
+            "value": "x64",
+            "strategy": "external"
+        },
+        "cacheVariables": {
+            "LIB_TYPE_DIR_NAME": "msvc-debug-optimize",
+            "LIB_NAME_SUFFIX": "d",
+            "CMAKE_BUILD_TYPE": "Debug",
+            "CMAKE_CXX_FLAGS": "/utf-8",
             "CMAKE_C_FLAGS": "/utf-8",
             "CMAKE_CXX_FLAGS_DEBUG": "/O2"
         }
@@ -65,7 +81,13 @@
             "description": "",
             "displayName": "",
             "configurePreset": "x64-debug-msvc"
-        },        
+        },
+        {
+            "name": "msvc-debug-build-optimize",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "x64-debug-msvc-optimize"
+        },      
         {
             "name": "msvc-release-build",
             "description": "",

@@ -72,7 +72,7 @@ int main() {
 //---------------------------------------------------
 // CATEGORY   design_pattern
 //---------------------------------------------------
-//   CALL_USE_CASE(visitor_pattern_in_std_variant_form);
+  // CALL_USE_CASE(visitor_pattern_in_std_variant_form);
 //   CALL_USE_CASE(strategy_pattern_combine_with_visitor_pattern);
 //   CALL_USE_CASE(strategy_using_template_params);
 //   CALL_USE_CASE(observer_using_std_function);
@@ -129,10 +129,11 @@ int main() {
 //   CALL_USE_CASE(inter_dependence);
 //   CALL_USE_CASE(customize_unordered_map);
 //   CALL_USE_CASE(customize_std_map);
+  CALL_USE_CASE(data_type_overflow);
 //---------------------------------------------------
 // CATEGORY   numeric
 //---------------------------------------------------
-  CALL_USE_CASE(std_inner_product);
+  // CALL_USE_CASE(std_inner_product);
 
 //---------------------------------------------------
 // CATEGORY   performance
