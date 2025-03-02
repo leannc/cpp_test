@@ -19,7 +19,8 @@ class Square {
   void draw() const { std::cout << "square" << std::endl; }
 };
 
-template <typename... Devs> class ShapeBase {
+template <typename... Devs>
+class ShapeBase {
  public:
   using Shapes = std::vector<std::variant<Devs...>>;
   explicit ShapeBase(Shapes shapes) : shapes_{std::move(shapes)} {}

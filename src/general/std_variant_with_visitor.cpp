@@ -26,33 +26,27 @@ void std_variant_with_visitor() {
   func(45.67);
 }
 
-template <class... Ts> struct overloaded : Ts... {
+template <class... Ts>
+struct overloaded : Ts... {
   using Ts::operator()...;
 };
 // explicit deduction guide (not needed as of C++20)
-template <class... Ts> overloaded(Ts...) -> overloaded<Ts...>;
+template <class... Ts>
+overloaded(Ts...) -> overloaded<Ts...>;
 
 void std_variant_with_visitor2() {
-  std::vector<std::variant<int, double, std::string>> variant_list = {
-      "hello", 20, 31.23, "kang"};
+  std::vector<std::variant<int, double, std::string>> variant_list = {"hello", 20, 31.23, "kang"};
 
   for (auto &variant : variant_list) {
     /// 这里用std::visit来写
-    std::visit(
-        overloaded{[](auto arg) {
-                     std::cout << "the default value is " << arg << std::endl;
-                   },
-                   [](double arg) {
-                     std::cout << "the double value is " << arg << std::endl;
-                   },
-                   [](std::string arg) {
-                     std::cout << "the string value is " << arg << std::endl;
-                   }},
-        variant);
+    std::visit(overloaded{[](auto arg) { std::cout << "the default value is " << arg << std::endl; },
+                          [](double arg) { std::cout << "the double value is " << arg << std::endl; },
+                          [](std::string arg) { std::cout << "the string value is " << arg << std::endl; }},
+               variant);
   }
 }
 
-//------------------------------powerful--------------------------------
+// ------------------------------powerful--------------------------------
 class Circle {
  public:
   void DrawCircle() const { std::cout << "circle" << std::endl; }

@@ -34,9 +34,8 @@ void customize_std_map() {
       1;  // NOTE:这里把key覆盖了，因为里面的参数与cr1是一样的
   custom_map[cr2] = 2;
   custom_map[cr3] = 3;
-  std::cout << custom_map[cr1] << std::endl;  // 1
-  std::cout << custom_map[cr2] << std::endl;  // 2
-  std::cout << custom_map[cr3] << std::endl;  // 3
-  std::cout << custom_map[CityRecord{"Tokyo", "Japan", 37000000, 35.7, 139.6}]
-            << std::endl;  // 0
+  std::cout << custom_map[cr1] << std::endl;                                                  // 1
+  std::cout << custom_map[cr2] << std::endl;                                                  // 2
+  std::cout << custom_map[cr3] << std::endl;                                                  // 3
+  std::cout << custom_map[CityRecord{"Tokyo", "Japan", 37000000, 35.7, 139.6}] << std::endl;  // 0
 }

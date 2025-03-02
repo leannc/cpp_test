@@ -66,7 +66,7 @@ int main() {
   //   CALL_USE_CASE(delay_object);
   //   CALL_USE_CASE(concurrencpp_generator);
   //   CALL_USE_CASE(concurrencpp_async_locks);
-  CALL_USE_CASE(async_condition_variable_test);
+  // CALL_USE_CASE(async_condition_variable_test);
   //   CALL_USE_CASE(SLA_axis_init);
 
   //---------------------------------------------------
@@ -129,6 +129,7 @@ int main() {
   //   CALL_USE_CASE(customize_unordered_map);
   //   CALL_USE_CASE(customize_std_map);
   // CALL_USE_CASE(data_type_overflow);
+  CALL_USE_CASE(function_object);
   //---------------------------------------------------
   // CATEGORY   numeric
   //---------------------------------------------------
