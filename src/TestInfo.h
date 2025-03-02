@@ -4,13 +4,12 @@
 
 #pragma once
 
-#include <string>
 #include <iostream>
+#include <string>
 
-
-#define CALL_USE_CASE(func) \
-    std::cout<<"--------------------------------------------"<<std::endl;\
-    std::cout<<#func<<std::endl;\
-    std::cout<<"--------------------------------------------"<<std::endl;\
-    func();\
+#define CALL_USE_CASE(func)                                                                                            \
+  std::cout << "--------------------------------------------" << std::endl;                                            \
+  std::cout << #func << std::endl;                                                                                     \
+  std::cout << "--------------------------------------------" << std::endl;                                            \
+  func();                                                                                                              \
 //    footer(#func);

@@ -6,7 +6,6 @@
 
 #include <numeric>
 
-
 void std_erase();
 void std_roate();
 void std_partition();

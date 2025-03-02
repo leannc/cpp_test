@@ -9,12 +9,10 @@ namespace type_erasure {
 
 class CAMComponentConcept {
  public:
-    virtual ~CAMComponentConcept() = default;
+  virtual ~CAMComponentConcept() = default;
 
-    virtual void update() = 0;
-    virtual std::unique_ptr<CAMComponentConcept> clone() const = 0;
+  virtual void update() = 0;
+  virtual std::unique_ptr<CAMComponentConcept> clone() const = 0;
 };
 
 }  // namespace type_erasure
-
-

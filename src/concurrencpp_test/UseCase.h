@@ -6,7 +6,6 @@
 
 #include <concurrencpp/concurrencpp.h>
 
-
 int concurrencpp_hello_world();
 int concurrencpp_even_number_counting();
 int async_file_processing();
@@ -21,6 +20,5 @@ int oneshot_timer();
 int delay_object();
 int concurrencpp_generator();
 int concurrencpp_async_locks();
-int async_condition_variable();
+int async_condition_variable_test();
 int SLA_axis_init();
-

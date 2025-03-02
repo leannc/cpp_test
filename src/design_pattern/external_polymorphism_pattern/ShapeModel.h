@@ -7,29 +7,24 @@
 
 #include "ShapeConcept.h"
 
-template<typename ShapeT>
+template <typename ShapeT>
 double perimeter(ShapeT);
 
-
-template<typename ShapeT>
+template <typename ShapeT>
 class ShapeModel : public ShapeConcept {
-public:
-    using DrawStrategy = std::function<void(ShapeT const&)>;
+ public:
+  using DrawStrategy = std::function<void(ShapeT const &)>;
 
-     ShapeModel(ShapeT shape_, DrawStrategy drawer_)
-    : shape(std::move(shape_))
-    , drawer(std::move(drawer_))
-    {}
+  ShapeModel(ShapeT shape_, DrawStrategy drawer_) : shape(std::move(shape_)), drawer(std::move(drawer_)) {}
 
-    void draw() const override { drawer(shape);}
-    double area() const override { return shape.area();}
-    double perimeter() const override {return ::perimeter(shape);}
-    double origin(std::function<double(void)>  getOrigin) const override {return getOrigin();}
+  void draw() const override { drawer(shape); }
+  double area() const override { return shape.area(); }
+  double perimeter() const override { return ::perimeter(shape); }
+  double origin(std::function<double(void)> getOrigin) const override { return getOrigin(); }
 
-private:
-    ShapeT shape;
-    DrawStrategy drawer;
+ private:
+  ShapeT shape;
+  DrawStrategy drawer;
 };
 
-
-#endif //CPP_TEST_SHAPEMODEL_H
+#endif  // CPP_TEST_SHAPEMODEL_H

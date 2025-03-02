@@ -12,11 +12,11 @@
 
 template <typename T>
 auto func(T t) {
-    if constexpr (std::is_same_v<T,int>) {
-        return t+1;
-    } else {
-        return t.substr(1);
-    }
+  if constexpr (std::is_same_v<T, int>) {
+    return t + 1;
+  } else {
+    return t.substr(1);
+  }
 }
 
 /**
@@ -24,24 +24,19 @@ auto func(T t) {
  * */
 template <typename T>
 auto func2(T t) {
-    if constexpr (std::is_same_v<decltype(t),int>) {
-        return t+2;
-    } else {
-        return t.substr(2);
-    }
+  if constexpr (std::is_same_v<decltype(t), int>) {
+    return t + 2;
+  } else {
+    return t.substr(2);
+  }
 }
 
+void std_is_same_v() {
+  int i = 0;
+  std::cout << func(i) << std::endl;
+  std::cout << func2(i) << std::endl;
 
-void std_is_same_v()
-{
-    int i=0;
-    std::cout<<func(i) << std::endl;
-    std::cout<<func2(i) << std::endl;
-
-    std::string s= "kang";
-    std::cout<<func(s) << std::endl;
-    std::cout<<func2(s) << std::endl;
-
-
-
+  std::string s = "kang";
+  std::cout << func(s) << std::endl;
+  std::cout << func2(s) << std::endl;
 }

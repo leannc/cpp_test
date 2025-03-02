@@ -2,7 +2,6 @@
 // Created by kang on 2023/11/21.
 //
 
-
 void hide_implementation_template_use();
 void variadic_template_use();
 void variadic_function_template();

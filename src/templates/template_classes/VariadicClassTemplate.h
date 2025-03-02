@@ -5,16 +5,14 @@
 #ifndef CPP_TEST_VARIADICCLASSTEMPLATE_H
 #define CPP_TEST_VARIADICCLASSTEMPLATE_H
 
-template<class...>
+template <class...>
 struct VariadicStruct {};
 
-template<class... types>
-class VariadicClass{};
+template <class... types>
+class VariadicClass {};
 
-//----error，variadic class template中，parameter pack必须放在最后
-//template< typename ...Ts,typename U> ///也可以有默认值
-//class InvalidClass  {};
+// ----error，variadic class template中，parameter pack必须放在最后
+// template< typename ...Ts,typename U> ///也可以有默认值
+// class InvalidClass  {};
 
-
-
-#endif //CPP_TEST_VARIADICCLASSTEMPLATE_H
+#endif  // CPP_TEST_VARIADICCLASSTEMPLATE_H

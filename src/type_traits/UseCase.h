@@ -1,4 +1,4 @@
-//
+#pragma once
 // Created by kang on 2023/11/21.
 //
 

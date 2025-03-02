@@ -1,9 +1,7 @@
 #include "UseCase.h"
 
-
 class Testsuite_setup_teardown : public ::testing::Test {
-  protected:
-
+ protected:
   static void SetUpTestSuite() {
     // Code here will be called before the first test
     // in this test suite.
@@ -26,13 +24,9 @@ class Testsuite_setup_teardown : public ::testing::Test {
   }
 };
 
-TEST_F(Testsuite_setup_teardown, test1) {
-  ASSERT_NEAR(1.220,1.221,0.1);
-}
+TEST_F(Testsuite_setup_teardown, test1) { ASSERT_NEAR(1.220, 1.221, 0.1); }
 
-TEST_F(Testsuite_setup_teardown, test2) {
-  ASSERT_NEAR(1.223,1.221,0.1);
-}
+TEST_F(Testsuite_setup_teardown, test2) { ASSERT_NEAR(1.223, 1.221, 0.1); }
 
 TEST_F(Testsuite_setup_teardown, DISABLED_test3) {
   std::cout << "This test is disabled and this line should not be printed." << std::endl;

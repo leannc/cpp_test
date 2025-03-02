@@ -4,28 +4,18 @@
 
 #include "UseCase.h"
 
-auto shout(auto arg)
-{
-    std::cout<<arg<<std::endl;
-}
+auto shout(auto arg) { std::cout << arg << std::endl; }
 
-auto shout2(auto...args)
-{
-    ((std::cout<<"fold expression: "<<args<<", "),...)<<std::endl;
-}
+auto shout2(auto... args) { ((std::cout << "fold expression: " << args << ", "), ...) << std::endl; }
 
+void abbreviation_template() {
+  shout(1);
+  shout("kang");
+  shout<double>(4.2);
 
+  shout2(1);
+  shout2("wang");
+  shout2<double>(4.2);
 
-void abbreviation_template()
-{
-    shout(1);
-    shout("kang");
-    shout<double>(4.2);
-
-
-    shout2(1);
-    shout2("wang");
-    shout2<double>(4.2);
-
-    shout2(1,false,"kang");
+  shout2(1, false, "kang");
 }

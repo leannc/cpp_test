@@ -5,29 +5,33 @@
 #ifndef CPP_TEST_DATABASE_H
 #define CPP_TEST_DATABASE_H
 
-#include "persistenceInterface.h"
 #include "../UseCase.h"
+#include "persistenceInterface.h"
 
 class Database : public PersistenceInterface {
-public:
-    virtual ~Database() = default;
-    bool read () const
-    {
-        //do something
-        do_read();
-        return true;
-    }
+ public:
+  virtual ~Database() = default;
+  bool read() const {
+    // do something
+    do_read();
+    return true;
+  }
 
-    bool write() {
-        //do something
-        do_write();
-        return true;
-    }
+  bool write() {
+    // do something
+    do_write();
+    return true;
+  }
 
-private:
-    bool do_read() const override { std::cout<<"Database::do_read()"<<std::endl; ;return true;};
-    bool do_write() override {std::cout<<"Database::do_write()"<<std::endl; return true;};
-
+ private:
+  bool do_read() const override {
+    std::cout << "Database::do_read()" << std::endl;
+    return true;
+  };
+  bool do_write() override {
+    std::cout << "Database::do_write()" << std::endl;
+    return true;
+  };
 };
 
-#endif //CPP_TEST_DATABASE_H
+#endif  // CPP_TEST_DATABASE_H

@@ -9,12 +9,10 @@ namespace type_erasure {
 
 class ShapeConcept {
  public:
-    virtual ~ShapeConcept() = default;
+  virtual ~ShapeConcept() = default;
 
-    virtual void draw() const = 0;
-    virtual std::unique_ptr<ShapeConcept> clone() const = 0;
+  virtual void draw() const = 0;
+  virtual std::unique_ptr<ShapeConcept> clone() const = 0;
 };
 
 }  // namespace type_erasure
-
-
