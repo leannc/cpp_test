@@ -129,7 +129,8 @@ int main() {
   //   CALL_USE_CASE(customize_unordered_map);
   //   CALL_USE_CASE(customize_std_map);
   // CALL_USE_CASE(data_type_overflow);
-  CALL_USE_CASE(function_object);
+  // CALL_USE_CASE(function_object);
+  CALL_USE_CASE(lambda_closure);
   //---------------------------------------------------
   // CATEGORY   numeric
   //---------------------------------------------------

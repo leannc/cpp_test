@@ -34,3 +34,4 @@ void customize_std_map();
 void useful_macros();
 void data_type_overflow();
 void function_object();
+void lambda_closure();
