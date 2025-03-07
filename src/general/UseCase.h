@@ -35,3 +35,4 @@ void useful_macros();
 void data_type_overflow();
 void function_object();
 void lambda_closure();
+void customize_iterator();

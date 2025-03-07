@@ -1,9 +1,12 @@
 //
 // Created by wangkang on 2023/11/20.
 //
+#include <locale.h>
+
 #include "TestInfo.h"
 #include "algorithm/UseCase.h"
 #include "benchmark/UseCase.h"
+#include "boost/UseCase.h"
 #include "concurrencpp_test/UseCase.h"
 #include "design_pattern/UseCase.h"
 #include "error_handling/UseCase.h"
@@ -11,10 +14,10 @@
 #include "googletest_test/UseCase.h"
 #include "numeric/UseCase.h"
 #include "performance_engineer/UseCase.h"
+#include "sigslot/UseCase.h"
 #include "templates/UseCase.h"
 #include "templates/template_classes/HideImplementationTemplate.h"
 #include "type_traits/UseCase.h"
-#include <locale.h>
 
 int main() {
   //---------------------------------------------------
@@ -48,6 +51,11 @@ int main() {
   // BENCHMARK(BM_with_single_param)->Arg(10000000);  // 有O2编译优化
   // BENCHMARK(BM_without_o2_optimization)->Arg(10000000);  // 没有O2编译优化
   // RUN_BENCH_MARK();
+
+  //---------------------------------------------------
+  // CATEGORY   boost
+  //---------------------------------------------------
+  // CALL_USE_CASE(signals_basic);
 
   //---------------------------------------------------
   // CATEGORY   concurrencpp
@@ -130,7 +138,8 @@ int main() {
   //   CALL_USE_CASE(customize_std_map);
   // CALL_USE_CASE(data_type_overflow);
   // CALL_USE_CASE(function_object);
-  CALL_USE_CASE(lambda_closure);
+  // CALL_USE_CASE(lambda_closure);
+  // CALL_USE_CASE(customize_iterator);
   //---------------------------------------------------
   // CATEGORY   numeric
   //---------------------------------------------------
@@ -140,6 +149,13 @@ int main() {
   // CATEGORY   performance
   //---------------------------------------------------
   //   CALL_USE_CASE(packing_and_encoding);
+
+  //---------------------------------------------------
+  // CATEGORY   sigslot
+  //---------------------------------------------------
+  // CALL_USE_CASE(signal_basic);
+  // CALL_USE_CASE(signal_with_param);
+  CALL_USE_CASE(multi_thread_signal_slot);
 
   //---------------------------------------------------
   // CATEGORY   templates

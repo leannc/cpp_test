@@ -64,9 +64,9 @@ class Square {
 
 class Draw {
  public:
-  void operator()(Circle &c) { c.DrawCircle(); }
-  void operator()(Box &b) { b.DrawBox(); }
-  void operator()(Square &s) { s.DrawSquare(); }
+  void operator()(const Circle &c) { c.DrawCircle(); }
+  void operator()(const Box &b) { b.DrawBox(); }
+  void operator()(const Square &s) { s.DrawSquare(); }
 };
 
 using Shape = std::variant<Circle, Box, Square>;
@@ -80,7 +80,7 @@ void std_variant_with_visitor3() {
   }
 }
 
-//-------------------pointer version-------------------------------------
+// -------------------pointer version-------------------------------------
 class Draw2 {
  public:
   void operator()(Circle *c) { c->DrawCircle(); }
