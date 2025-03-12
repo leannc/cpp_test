@@ -15,6 +15,7 @@ target_include_directories(${PROJECT_NAME}
     PUBLIC src/concurrencpp_test/include
     PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/expected/include
     PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/sigslot/include
+    PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/entt/single_include/entt
     # PUBLIC "E:/Syncthing/libs/boost_1_76_0/"
 #     PUBLIC libs/google_benchmark/include
 )

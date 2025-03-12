@@ -9,6 +9,7 @@
 #include "boost/UseCase.h"
 #include "concurrencpp_test/UseCase.h"
 #include "design_pattern/UseCase.h"
+#include "entt/UseCase.h"
 #include "error_handling/UseCase.h"
 #include "general/UseCase.h"
 #include "googletest_test/UseCase.h"
@@ -97,6 +98,11 @@ int main() {
   //   CALL_USE_CASE(singleton_with_dependency_injection);
 
   //---------------------------------------------------
+  // CATEGORY   entt
+  //---------------------------------------------------
+  CALL_USE_CASE(entt_basic_view);
+
+  //---------------------------------------------------
   // CATEGORY   error_handling
   //---------------------------------------------------
   //   CALL_USE_CASE(output_log_should_in_caller);
@@ -155,7 +161,7 @@ int main() {
   //---------------------------------------------------
   // CALL_USE_CASE(signal_basic);
   // CALL_USE_CASE(signal_with_param);
-  CALL_USE_CASE(multi_thread_signal_slot);
+  // CALL_USE_CASE(multi_thread_signal_slot);
 
   //---------------------------------------------------
   // CATEGORY   templates
