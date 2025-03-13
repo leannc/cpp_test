@@ -28,7 +28,9 @@ void entt_serialize_pointer() {
     cereal ::BinaryOutputArchive archive(ofs);
 
     // 保存注册表
-    entt ::snapshot{registry}.get<entt::entity>(archive).get<ComplicateData>(archive);
+    entt ::snapshot saver{registry};
+    saver.get<entt::entity>(archive);
+    saver.get<ComplicateData>(archive);
   }
 
   // 清空 registry 和 data
@@ -40,7 +42,10 @@ void entt_serialize_pointer() {
     cereal ::BinaryInputArchive archive(ifs);
 
     // 加载注册表
-    entt ::snapshot_loader{registry2}.get<entt::entity>(archive).get<ComplicateData>(archive).orphans();
+    entt ::snapshot_loader loader{registry2};
+    loader.get<entt::entity>(archive);
+    loader.get<ComplicateData>(archive);
+    loader.orphans();
   }
 
   // 验证加载的数据
