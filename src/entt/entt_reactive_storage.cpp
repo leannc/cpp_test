@@ -57,7 +57,8 @@ void entt_reactive_storage() {
   }
 
   std::cout << "------storage && storage_only_larger_than_10-------" << std::endl;
-  for (auto entity : entt::basic_view{storage, storage_only_larger_than_10}) {
+  for (auto entity :
+       entt::basic_view{storage, storage_only_larger_than_10}) {  // 求的事这两个都交集，两个都有，才会被筛出来
     auto pos = doc.registry_.get<Position>(entity);
     std::cout << pos.x << ", " << pos.y << std::endl;
   }
