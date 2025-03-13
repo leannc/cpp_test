@@ -41,8 +41,32 @@ void entt_snapshot_with_cereal() {
         .orphans();
   }
 
+  entt::registry registry3;
+  auto e3 = registry3.create();
+  registry3.emplace<Position>(e1, 21.0f, 32.0f);
+  registry3.emplace<Velocity>(e1, 21.10f, 32.1f);
+  {
+    std::ifstream ifs("data11.bin", std::ios::binary);
+    cereal::BinaryInputArchive iarchive(ifs);
+
+    // 使用Entt的continuous_loader进行反序列化
+    entt::continuous_loader{registry3}
+        .get<entt::entity>(iarchive)
+        .get<Velocity>(iarchive)
+        .get<Position>(iarchive)
+        .orphans();
+  }
+
   // 验证数据是否正确恢复
   auto view = registry2.view<Position, Velocity>();
+  for (auto entity : view) {
+    const auto& [pos, vel] = view.get<Position, Velocity>(entity);
+    std::cout << "Entity: " << ", Position: (" << pos.x << ", " << pos.y << ")" << std::endl;
+    std::cout << "Velocity: (" << vel.dx << ", " << vel.dy << ")" << std::endl;
+    std::cout << std::endl;
+  }
+  std::cout << "continous loading---------" << std::endl;
+  view = registry3.view<Position, Velocity>();
   for (auto entity : view) {
     const auto& [pos, vel] = view.get<Position, Velocity>(entity);
     std::cout << "Entity: " << ", Position: (" << pos.x << ", " << pos.y << ")" << std::endl;
