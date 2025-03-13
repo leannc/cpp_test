@@ -100,7 +100,7 @@ int main() {
   //---------------------------------------------------
   // CATEGORY   entt
   //---------------------------------------------------
-  CALL_USE_CASE(entt_basic_view);
+  // CALL_USE_CASE(entt_basic_view);
 
   //---------------------------------------------------
   // CATEGORY   error_handling
@@ -111,6 +111,7 @@ int main() {
   //   CALL_USE_CASE(custom_std_error_code);
   //   CALL_USE_CASE(use_std_variant_as_return_error_info_container);
   //   CALL_USE_CASE(use_expected);
+  // CALL_USE_CASE(monadic_operation);
 
   //---------------------------------------------------
   // CATEGORY   general
@@ -146,6 +147,7 @@ int main() {
   // CALL_USE_CASE(function_object);
   // CALL_USE_CASE(lambda_closure);
   // CALL_USE_CASE(customize_iterator);
+  CALL_USE_CASE(std_view_filter);
   //---------------------------------------------------
   // CATEGORY   numeric
   //---------------------------------------------------
