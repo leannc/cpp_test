@@ -42,4 +42,33 @@ struct ComplicateData {
   void serialize(Archive& archive) {
     archive(positions_, my_position_);
   }
+
+  // 默认构造函数
+  ComplicateData() = default;
+  ~ComplicateData() = default;
+  // 移动构造函数
+  ComplicateData(ComplicateData&& other) noexcept = default;
+  ComplicateData& operator=(const ComplicateData& other) = default;
+  ComplicateData& operator=(ComplicateData&& other) noexcept = default;
+
+  // 拷贝构造函数
+  ComplicateData(const ComplicateData& other) {
+    std::cout << "Copy constructor called for ComplicateData" << std::endl;
+    for (const auto& posPtr : other.positions_) {
+      positions_.push_back(std::make_shared<Position>(*posPtr));
+    }
+    if (other.my_position_) {
+      my_position_ = std::make_unique<Position>(*other.my_position_);
+    }
+  }
+};
+
+struct LessComplicateData {
+  std::vector<Position> positions_;
+
+  // 为 ComplicateData 结构体实现 serialize 函数
+  template <class Archive>
+  void serialize(Archive& archive) {
+    archive(positions_);
+  }
 };

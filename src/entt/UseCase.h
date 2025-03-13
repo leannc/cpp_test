@@ -6,3 +6,4 @@ void entt_ctx();
 void entt_snapshot();
 void entt_snapshot_with_cereal();
 void entt_serialize_pointer();
+void entt_copy_entity();
