@@ -1,11 +1,12 @@
 ﻿#include "Common.h"
 #include <fstream>
 
+#include <memory>
+#include <vector>
+
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/memory.hpp>
 #include <cereal/types/vector.hpp>
-#include <memory>
-#include <vector>
 
 void entt_serialize_pointer() {
   entt ::registry registry;
