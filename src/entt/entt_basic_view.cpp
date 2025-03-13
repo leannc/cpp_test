@@ -16,6 +16,12 @@ void entt_basic_view() {
   Position& pos_2 = doc.registry_.emplace<Position>(entity_2, 2, 3);
   Position& pos_3 = doc.registry_.patch<Position>(entity_2, [](auto& pos) { pos.x = 10; });
 
+  auto entity_3 = doc.registry_.create();
+  Velocity& vel_3 = doc.registry_.emplace<Velocity>(entity_3);
+  doc.registry_.remove<Position>(entity_3);
+
+  doc.registry_.sort<Position>([](const Position& lhs, const Position& rhs) { return lhs.x < rhs.x; });
+
   auto view = doc.registry_.view<Position>();
 
   for (auto entity : view) {

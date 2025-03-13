@@ -101,6 +101,7 @@ int main() {
   // CATEGORY   entt
   //---------------------------------------------------
   // CALL_USE_CASE(entt_basic_view);
+  CALL_USE_CASE(entt_reactive_storage);
 
   //---------------------------------------------------
   // CATEGORY   error_handling
@@ -147,7 +148,7 @@ int main() {
   // CALL_USE_CASE(function_object);
   // CALL_USE_CASE(lambda_closure);
   // CALL_USE_CASE(customize_iterator);
-  CALL_USE_CASE(std_view_filter);
+  // CALL_USE_CASE(std_view_filter);
   //---------------------------------------------------
   // CATEGORY   numeric
   //---------------------------------------------------
