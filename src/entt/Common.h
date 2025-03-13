@@ -2,15 +2,26 @@
 #include <entt.hpp>
 
 struct Position {
-  int x, y;
+  float x, y;
+
+  // 模板函数，用于序列化和反序列化Position对象
+  template <class Archive>
+  void serialize(Archive& archive) {
+    archive(x, y);
+  }
 };
 
 struct Velocity {
-  int dx, dy;
+  float dx, dy;
+
+  template <class Archive>
+  void serialize(Archive& archive) {
+    archive(dx, dy);
+  }
 };
 
 struct Acceleration {
-  int ax, ay;
+  float ax, ay;
 };
 
 class Document {

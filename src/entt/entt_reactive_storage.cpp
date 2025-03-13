@@ -37,10 +37,10 @@ void entt_reactive_storage() {
   storage_only_larger_than_10.on_destroy<Position, &DestroyPosition>();
 
   auto entity_1 = doc.registry_.create();
-  doc.registry_.emplace<Position>(entity_1, 11, 1);
+  doc.registry_.emplace<Position>(entity_1, 11.f, 1.f);
 
   auto entity_2 = doc.registry_.create();
-  doc.registry_.emplace<Position>(entity_2, 2, 2);
+  doc.registry_.emplace<Position>(entity_2, 2.f, 2.f);
 
   auto entity_3 = doc.registry_.create();
 

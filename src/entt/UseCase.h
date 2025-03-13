@@ -2,3 +2,6 @@
 
 void entt_basic_view();
 void entt_reactive_storage();
+void entt_ctx();
+void entt_snapshot();
+void entt_snapshot_with_cereal();

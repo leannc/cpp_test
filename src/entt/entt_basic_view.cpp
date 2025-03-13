@@ -5,16 +5,16 @@ void entt_basic_view() {
   auto entity_1 = doc.registry_.create();
 
   Position& pos_1 = doc.registry_.emplace<Position>(entity_1);
-  pos_1.x = 1;
-  pos_1.y = 1;
+  pos_1.x = 1.0f;
+  pos_1.y = 1.0f;
 
   Velocity& vel_1 = doc.registry_.emplace<Velocity>(entity_1);
-  vel_1.dx = 2;
-  vel_1.dy = 2;
+  vel_1.dx = 2.0f;
+  vel_1.dy = 2.0f;
 
   auto entity_2 = doc.registry_.create();
-  Position& pos_2 = doc.registry_.emplace<Position>(entity_2, 2, 3);
-  Position& pos_3 = doc.registry_.patch<Position>(entity_2, [](auto& pos) { pos.x = 10; });
+  Position& pos_2 = doc.registry_.emplace<Position>(entity_2, 2.0f, 3.0f);
+  Position& pos_3 = doc.registry_.patch<Position>(entity_2, [](auto& pos) { pos.x = 10.0f; });
 
   auto entity_3 = doc.registry_.create();
   Velocity& vel_3 = doc.registry_.emplace<Velocity>(entity_3);
