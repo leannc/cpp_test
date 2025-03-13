@@ -104,7 +104,8 @@ int main() {
   // CALL_USE_CASE(entt_reactive_storage);
   // CALL_USE_CASE(entt_ctx);
   // CALL_USE_CASE(entt_snapshot);
-  CALL_USE_CASE(entt_snapshot_with_cereal);
+  // CALL_USE_CASE(entt_snapshot_with_cereal);
+  CALL_USE_CASE(entt_serialize_pointer);
 
   //---------------------------------------------------
   // CATEGORY   error_handling
