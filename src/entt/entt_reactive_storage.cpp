@@ -44,29 +44,35 @@ void entt_reactive_storage() {
 
   auto entity_3 = doc.registry_.create();
 
+  std::cout << "------storage-------" << std::endl;
   for (auto [entity, flag] : storage.each()) {
     auto pos = doc.registry_.get<Position>(entity);
     std::cout << pos.x << ", " << pos.y << std::endl;
   }
 
+  std::cout << "------storage_only_larger_than_10-------" << std::endl;
   for (auto [entity, flag] : storage_only_larger_than_10.each()) {  // 只会有entity_1,因为entity_2不满足x的值的条件
     auto pos = doc.registry_.get<Position>(entity);
     std::cout << pos.x << ",, " << pos.y << std::endl;
   }
-  std::cout << std::endl;
-  doc.registry_.destroy(entity_2);
 
+  std::cout << "------storage && storage_only_larger_than_10-------" << std::endl;
+  for (auto entity : entt::basic_view{storage, storage_only_larger_than_10}) {
+    auto pos = doc.registry_.get<Position>(entity);
+    std::cout << pos.x << ", " << pos.y << std::endl;
+  }
+
+  std::cout << "------storage: entity destroyed-------" << std::endl;
+  doc.registry_.destroy(entity_2);
   for (auto [entity, flag] : storage.each()) {  // 删除以后，这个就只剩下entity_1了
     auto pos = doc.registry_.get<Position>(entity);
     std::cout << pos.x << ", " << pos.y << std::endl;
   }
-  std::cout << std::endl;
 
+  std::cout << "------storage: component destroyed-------" << std::endl;
   doc.registry_.remove<Position>(entity_1);
-
   for (auto [entity, flag] : storage.each()) {  // 一个都不剩了
     auto pos = doc.registry_.get<Position>(entity);
     std::cout << pos.x << ", " << pos.y << std::endl;
   }
-  std::cout << std::endl;
 }
