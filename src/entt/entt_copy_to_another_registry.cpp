@@ -31,7 +31,8 @@ void entt_copy_to_another_registry() {
   // NOTE 这里被注释了，导致registry2没有Velocity组件的storage，后面的dst_storage就会是nullptr
   // registry2.emplace<Velocity>(dest_2, 11.10f, 12.1f);
 
-  auto& tmp_complicate_data = registry2.emplace<ComplicateData>(dest_2);
+  // auto& tmp_complicate_data = registry2.emplace<ComplicateData>(dest_2);
+  registry2.storage<ComplicateData>();  // 这样也可以初始化storage
   auto& tmp_less_complicate_data = registry2.emplace<LessComplicateData>(dest_2);
 
   // create a copy of an entity component by component
@@ -58,12 +59,12 @@ void entt_copy_to_another_registry() {
   std::cout << std::endl;
   auto& less_complicate_data_2 = registry2.get<LessComplicateData>(dest_1);
   for (auto& pos : less_complicate_data_2.positions_) {
-    std::cout << "Position: (" << pos.x << ", " << pos.y << ")" << std::endl;
+    std::cout << "LessComplicateData Position: (" << pos.x << ", " << pos.y << ")" << std::endl;
   }
 
   std::cout << std::endl;
   auto& complicate_data_2 = registry2.get<ComplicateData>(dest_1);
   for (auto& pos : complicate_data_2.positions_) {
-    std::cout << "Position: (" << pos->x << ", " << pos->y << ")" << std::endl;
+    std::cout << "ComplicateData Position: (" << pos->x << ", " << pos->y << ")" << std::endl;
   }
 }

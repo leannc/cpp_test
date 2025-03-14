@@ -107,10 +107,11 @@ int main() {
   // CALL_USE_CASE(entt_snapshot_with_cereal);
   // CALL_USE_CASE(entt_serialize_pointer);
   // CALL_USE_CASE(entt_copy_entity);
-  // CALL_USE_CASE(entt_copy_to_another_registry);
+  CALL_USE_CASE(entt_copy_to_another_registry);
   // CALL_USE_CASE(entt_multy_same_component_type);
   // CALL_USE_CASE(entt_view_with_iterator);
-  CALL_USE_CASE(entt_runtime_view);
+  // CALL_USE_CASE(entt_runtime_view);
+  // CALL_USE_CASE(entt_group);
 
   //---------------------------------------------------
   // CATEGORY   error_handling

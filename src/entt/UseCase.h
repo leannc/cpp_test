@@ -11,3 +11,4 @@ void entt_copy_to_another_registry();
 void entt_multy_same_component_type();
 void entt_view_with_iterator();
 void entt_runtime_view();
+void entt_group();
