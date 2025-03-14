@@ -7,3 +7,4 @@ void entt_snapshot();
 void entt_snapshot_with_cereal();
 void entt_serialize_pointer();
 void entt_copy_entity();
+void entt_copy_to_another_registry();
