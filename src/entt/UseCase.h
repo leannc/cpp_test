@@ -13,3 +13,4 @@ void entt_view_with_iterator();
 void entt_runtime_view();
 void entt_group();
 void entt_tag();
+void entt_runtime_unique_sequential_identifier();

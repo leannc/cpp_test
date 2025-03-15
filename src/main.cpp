@@ -112,7 +112,8 @@ int main() {
   // CALL_USE_CASE(entt_view_with_iterator);
   // CALL_USE_CASE(entt_runtime_view);
   // CALL_USE_CASE(entt_group);
-  CALL_USE_CASE(entt_tag);
+  // CALL_USE_CASE(entt_tag);
+  CALL_USE_CASE(entt_runtime_unique_sequential_identifier);
 
   //---------------------------------------------------
   // CATEGORY   error_handling
