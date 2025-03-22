@@ -34,24 +34,38 @@ int main() {
   //---------------------------------------------------
   // CATEGORY   benchmark
   //---------------------------------------------------
-  // BENCHMARK(BM_VectorVector_double)->Args({1000, 10000})->Args({10000,
-  // 1000}); BENCHMARK(BM_VectorFlat_double)->Args({1000, 10000})->Args({10000,
-  // 1000}); BENCHMARK(BM_VectorFlat_double_parallel)->Args({1000,
-  // 10000})->Args({10000, 1000});
-  // BENCHMARK(BM_VectorFlat_double_SIMD)->Args({1000, 10000})->Args({10000,
-  // 1000}); BENCHMARK(BM_VectorVector_double_RowMajor)->Args({1000,
-  // 10000})->Args({10000, 1000});
+  // BENCHMARK(BM_VectorVector_double)->Args({1, 100000000})->Args({100000000, 1});
+  // BENCHMARK(BM_VectorFlat_double)->Args({1000, 10000})->Args({10000, 1000});
+  // BENCHMARK(BM_VectorFlat_double_parallel)->Args({1000, 10000})->Args({10000, 1000});
+  // BENCHMARK(BM_VectorFlat_double_SIMD)->Args({1000, 10000})->Args({10000, 1000});
+  // BENCHMARK(BM_VectorVector_double_RowMajor)->Args({1000, 10000})->Args({10000, 1000});
 
-  // BENCHMARK(BM_HeapContourPoint_traversal)->Args({30, 40,
-  // 1000000})->Args({30, 40, 10000000});  // 100万个contour 和 10000万个
-  // contour BENCHMARK(BM_HeapContourPoint_traversal_parallel)->Args({30, 40,
-  // 1000000})->Args({30, 40, 10000000});  // 100万个contour 和 10000万个
-  // contour BENCHMARK(BM_HeapContourPoint_traversal_parallel)->Args({3, 4,
-  // 1000000})->Args({3, 4, 10000000});  // 100万个contour 和 10000万个 contour
+  // BENCHMARK(BM_HeapContourPoint_traversal)->Args({30, 40, 1000});
+  // ->Args({30, 40, 10000000});  // 100万个contour 和 1000万个 contour
+  // ->Args({300000, 400000, 100})     // 100万个contour 和 1000万个 contour
+  // ->Args({3000000, 4000000, 100});  // 100万个contour 和 1000万个 contour
+
+  BENCHMARK(BM_CAMContour_Traditional_traversal)->Args({40, 40, 2500});
+  std::cout << "----------sss----------------" << std::endl;
+  BENCHMARK(BM_CAMContour_Traditional_multithread_traversal)->Args({40, 40, 2500});
+  // BENCHMARK(BM_CAMContour_ECS_traversal)->Args({40, 40, 100000});
+  // BENCHMARK(BM_CAMContour_Boost_Traditional_traversal)->Args({40, 40, 1000000});
+  // BENCHMARK(BM_CAMContour_Unordered_map_Traditional_traversal)->Args({40, 40, 1000000});
+  // BENCHMARK(BM_CAMContour_plf_colony_Traditional_traversal)->Args({40, 40, 1000000});
+  // BENCHMARK(BM_CAMContour_pure_contour_Traditional_traversal)->Args({40, 40, 1000000});
+  // BENCHMARK(BM_CAMContour_Traditional_transform_traversal)->Args({40, 40, 100000});
+  // ->Args({30, 40, 10000000});
+
+  // BENCHMARK(BM_HeapContourPoint_traversal_parallel)
+  //     ->Args({30, 40, 1000000})
+  //     ->Args({30, 40, 10000000});  // 100万个contour 和 1000万个 contour
+  // BENCHMARK(BM_HeapContourPoint_traversal_parallel)
+  //     ->Args({3, 4, 1000000})
+  //     ->Args({3, 4, 10000000});  // 100万个contour 和 1000万个 contour
 
   // BENCHMARK(BM_with_single_param)->Arg(10000000);  // 有O2编译优化
   // BENCHMARK(BM_without_o2_optimization)->Arg(10000000);  // 没有O2编译优化
-  // RUN_BENCH_MARK();
+  RUN_BENCH_MARK();
 
   //---------------------------------------------------
   // CATEGORY   boost
@@ -113,7 +127,7 @@ int main() {
   // CALL_USE_CASE(entt_runtime_view);
   // CALL_USE_CASE(entt_group);
   // CALL_USE_CASE(entt_tag);
-  CALL_USE_CASE(entt_runtime_unique_sequential_identifier);
+  // CALL_USE_CASE(entt_runtime_unique_sequential_identifier);
 
   //---------------------------------------------------
   // CATEGORY   error_handling
