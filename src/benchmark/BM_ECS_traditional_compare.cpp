@@ -327,6 +327,24 @@ std::vector<CAMContour> generateCAMContours(size_t num_contours, size_t min_poin
   return contours;
 }
 
+std::vector<std::shared_ptr<CAMContour>> generateCAMContoursPtr(size_t num_contours, size_t min_points,
+                                                                size_t max_points) {
+  std::vector<std::shared_ptr<CAMContour>> contours;
+  contours.reserve(num_contours);
+
+  std::random_device rd;
+  std::mt19937 rng(rd());
+  std::uniform_int_distribution<size_t> point_dist(min_points, max_points);
+  // std::uniform_int_distribution<size_t> cam_operations_dist(8, 10);  // 一共8-10个CAM操作：微联，冷却点等。
+
+  int cam_operation_num = 10;
+  for (size_t i = 0; i < num_contours; ++i) {
+    contours.emplace_back(std::make_shared<CAMContour>(point_dist(rng), cam_operation_num, rng));
+  }
+
+  return contours;
+}
+
 // **基准测试 1：使用 `vector<vector<double>>`**
 void BM_CAMContour_Traditional_traversal(benchmark::State& state) {  // NOLINT
   int minPoints = state.range(0);
@@ -355,6 +373,51 @@ void BM_CAMContour_Traditional_traversal(benchmark::State& state) {  // NOLINT
       }
 
       for (const auto& cam_operation : contour.cam_operations) {
+        // for (const auto& point : cam_operation->points) {
+        for (const auto& point : cam_operation.points) {
+          // sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
+          sum += point.x;
+          // benchmark::DoNotOptimize(point);
+        }
+      }
+    }
+
+    total += sum;
+    // benchmark::DoNotOptimize(sum);
+    // benchmark::ClobberMemory();
+  }
+  std::cout << "the traditional total is " << total << std::endl;
+  // 确保统计的是遍历的点数，而不是 contours 数量
+  //   state.SetItemsProcessed(contours.size() * state.iterations());
+}
+
+void BM_CAMContour_Traditional_ptr_traversal(benchmark::State& state) {  // NOLINT
+  int minPoints = state.range(0);
+  int maxPoints = state.range(1);
+  int numContours = state.range(2);
+
+  // 在堆上构造 Contour 对象
+  auto contours = generateCAMContoursPtr(numContours, minPoints, maxPoints);
+
+  // 计算总点数
+  size_t total_points = 0;
+  for (const auto& contour : contours) {
+    total_points += contour->origin_contour.points.size();
+  }
+
+  size_t total = 0;
+  for (auto _ : state) {
+    // 遍历所有 Contour 中的点
+    double sum = 0.0;
+    // -------- 单线程版本 --------
+    for (const auto& contour : contours) {
+      for (const auto& point : contour->origin_contour.points) {
+        // sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
+        sum += point.x;
+        // benchmark::DoNotOptimize(point);
+      }
+
+      for (const auto& cam_operation : contour->cam_operations) {
         // for (const auto& point : cam_operation->points) {
         for (const auto& point : cam_operation.points) {
           // sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
@@ -408,6 +471,53 @@ void BM_CAMContour_Traditional_multithread_traversal(benchmark::State& state) { 
         }
       }
     });
+
+    total += sum;
+    // benchmark::DoNotOptimize(sum);
+    // benchmark::ClobberMemory();
+  }
+  std::cout << "the traditional total is " << total << std::endl;
+  // 确保统计的是遍历的点数，而不是 contours 数量
+  //   state.SetItemsProcessed(contours.size() * state.iterations());
+}
+
+void BM_CAMContour_Traditional_multithread_ptr_traversal(benchmark::State& state) {  // NOLINT
+  int minPoints = state.range(0);
+  int maxPoints = state.range(1);
+  int numContours = state.range(2);
+
+  // 在堆上构造 Contour 对象
+  auto contours = generateCAMContoursPtr(numContours, minPoints, maxPoints);
+
+  // 计算总点数
+  size_t total_points = 0;
+  for (const auto& contour : contours) {
+    total_points += contour->origin_contour.points.size();
+  }
+
+  size_t total = 0;
+  for (auto _ : state) {
+    // 遍历所有 Contour 中的点
+    double sum = 0.0;
+    // -------- 多线程版本 ---------
+    std::for_each(std::execution::par, contours.begin(), contours.end(),
+                  [&sum](const std::shared_ptr<CAMContour>& contour) {
+                    for (const auto& point : contour->origin_contour.points) {
+                      // sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
+                      sum += point.x;
+                      // benchmark::DoNotOptimize(point);
+                    }
+
+                    for (const auto& cam_operation : contour->cam_operations) {
+                      // for (const auto& point : cam_operation->points) {
+                      for (const auto& point : cam_operation.points) {
+                        // sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress
+                        // unreadVariable
+                        sum += point.x;
+                        // benchmark::DoNotOptimize(point);
+                      }
+                    }
+                  });
 
     total += sum;
     // benchmark::DoNotOptimize(sum);

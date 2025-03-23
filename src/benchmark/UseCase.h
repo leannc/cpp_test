@@ -31,8 +31,12 @@ void BM_CAMContour_Boost_Traditional_traversal(benchmark::State& state);        
 void BM_CAMContour_Unordered_map_Traditional_traversal(benchmark::State& state);  // NOLINT
 void BM_CAMContour_plf_colony_Traditional_traversal(benchmark::State& state);     // NOLINT
 
-void BM_CAMContour_Traditional_traversal(benchmark::State& state);               // NOLINT
-void BM_CAMContour_Traditional_multithread_traversal(benchmark::State& state);   // NOLINT
+void BM_CAMContour_Traditional_traversal(benchmark::State& state);      // NOLINT
+void BM_CAMContour_Traditional_ptr_traversal(benchmark::State& state);  // NOLINT
+
+void BM_CAMContour_Traditional_multithread_traversal(benchmark::State& state);      // NOLINT
+void BM_CAMContour_Traditional_multithread_ptr_traversal(benchmark::State& state);  // NOLINT
+
 void BM_CAMContour_Traditional_transform_traversal(benchmark::State& state);     // NOLINT
 void BM_CAMContour_pure_contour_Traditional_traversal(benchmark::State& state);  // NOLINT
 

@@ -10,6 +10,7 @@
 
 void print(std::span<int> s) {
   std::for_each(s.begin(), s.end(), [](int element) { std::cout << element << ","; });
+  *s.begin() = 999;
   std::cout << std::endl;
 }
 
@@ -17,6 +18,7 @@ void std_span() {
   //    std::stack<int,std::vector<int>> s;
   std::vector<int> v{1, 2, 3, 4, 5, 6};
   std::cout << "----------std::vector---------" << std::endl;
+  print(v);
   print(v);
 
   std::array<int, 3> arr = {10, 20, 30};

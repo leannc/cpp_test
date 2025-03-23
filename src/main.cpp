@@ -45,9 +45,12 @@ int main() {
   // ->Args({300000, 400000, 100})     // 100万个contour 和 1000万个 contour
   // ->Args({3000000, 4000000, 100});  // 100万个contour 和 1000万个 contour
 
-  BENCHMARK(BM_CAMContour_Traditional_traversal)->Args({40, 40, 2500});
-  std::cout << "----------sss----------------" << std::endl;
-  BENCHMARK(BM_CAMContour_Traditional_multithread_traversal)->Args({40, 40, 2500});
+  // BENCHMARK(BM_CAMContour_Traditional_traversal)->Args({40, 40, 1000000});
+  // BENCHMARK(BM_CAMContour_Traditional_ptr_traversal)->Args({40, 40, 1000000});
+  // std::cout << "----------sss----------------" << std::endl;
+  // BENCHMARK(BM_CAMContour_Traditional_multithread_traversal)->Args({40, 40, 1000000});
+  // BENCHMARK(BM_CAMContour_Traditional_multithread_ptr_traversal)->Args({40, 40, 1000000});
+
   // BENCHMARK(BM_CAMContour_ECS_traversal)->Args({40, 40, 100000});
   // BENCHMARK(BM_CAMContour_Boost_Traditional_traversal)->Args({40, 40, 1000000});
   // BENCHMARK(BM_CAMContour_Unordered_map_Traditional_traversal)->Args({40, 40, 1000000});
@@ -65,7 +68,7 @@ int main() {
 
   // BENCHMARK(BM_with_single_param)->Arg(10000000);  // 有O2编译优化
   // BENCHMARK(BM_without_o2_optimization)->Arg(10000000);  // 没有O2编译优化
-  RUN_BENCH_MARK();
+  // RUN_BENCH_MARK();
 
   //---------------------------------------------------
   // CATEGORY   boost
@@ -158,7 +161,7 @@ int main() {
   //   CALL_USE_CASE(std_function_as_a_parameter_test);
   //   CALL_USE_CASE(std_for_each_test);
   //   CALL_USE_CASE(std_unique_ptr);
-  //   CALL_USE_CASE(std_span);
+  CALL_USE_CASE(std_span);
   //   CALL_USE_CASE(std_string_view);
   //   CALL_USE_CASE(std_move);
   //   CALL_USE_CASE(std_decay);
