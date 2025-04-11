@@ -1,4 +1,5 @@
 ﻿#include "Common.h"
+#include <stack>
 
 using namespace entt::literals;
 
@@ -15,6 +16,8 @@ void printEntityTags(const entt::registry& registry, entt::entity entity) {
            : 0)...};
 }
 
+constexpr entt::id_type tag_a = "TagA"_hs;
+
 void entt_tag() {
   entt::registry registry;
   auto entity = registry.create();
@@ -29,7 +32,19 @@ void entt_tag() {
   registry.emplace<TagA>(entity3);
   registry.emplace<TagB>(entity3);
 
-  printEntityTags<TagA, TagB, TagC>(registry, entity);
+  // printEntityTags<TagA, TagB, TagC>(registry, entity);
+
+  std::stack<entt::id_type> s;
+  s.push(tag_a);
+
+  const entt::id_type val = s.top();
+  std::cout << val << std::endl;
+
+  // std::string str = "TagA";
+
+  // const entt::id_type type_id_A = "TagA"_hs;
+  // const entt::id_type type_id_A = entt::hashed_string::value("TagA");
+  // const entt::id_type type_id_A = entt::hashed_string::value(str.c_str());
 
   auto view = registry.view<TagA>(entt::exclude<TagB>);  // 只有entity2，因为1,3都有TagB
   view.each([](auto entity) { std::cout << "Entity with TagA: " << static_cast<unsigned int>(entity) << std::endl; });

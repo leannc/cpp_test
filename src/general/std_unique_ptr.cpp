@@ -17,7 +17,7 @@ class OpenGLDrawer : public DrawStrategy {
 
 class Circle {
  public:
-  Circle(double radius_, std::unique_ptr<DrawStrategy> &drawer_) : radius(radius_), drawer(std::move(drawer_)) {};
+  Circle(double radius_, std::unique_ptr<DrawStrategy>& drawer_) : radius(radius_), drawer(std::move(drawer_)) {};
 
   void draw() { drawer->draw(); }
 
@@ -40,5 +40,24 @@ void std_unique_ptr() {
 
   if (drawer.get() == nullptr) {
     std::cout << "empty now" << std::endl;
+  }
+
+  std::vector<std::unique_ptr<int>> v;
+  v.push_back(std::make_unique<int>(1));
+  v.push_back(std::make_unique<int>(2));
+  v.push_back(std::make_unique<int>(3));
+
+  int& i2 = *v.at(2);
+  i2 *= 2;
+
+  int i3 = 10;
+  int* i3_ptr = &i3;
+
+  v.emplace_back(std::unique_ptr<int>(i3_ptr));
+
+  *i3_ptr = 11;
+
+  for (auto& i : v) {
+    std::cout << *i << std::endl;
   }
 }

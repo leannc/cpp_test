@@ -14,6 +14,8 @@
 #include <boost/multi_index_container.hpp>
 
 #include "BM_Contours.h"
+#include "DocumentEntity.h"
+#include "DocumentEntity_visitor.h"
 
 // 旋转操作
 // 旋转角度（弧度制），这里旋转 45 度
@@ -307,7 +309,7 @@ void BM_CAMContour_plf_colony_Traditional_traversal(benchmark::State& state) {  
   //   state.SetItemsProcessed(contours.size() * state.iterations());
 }
 
-// ---------------------传统的遍历----------------------
+// ---------------------遍历数据生成----------------------
 
 // 生成随机 CAMContour 数据
 std::vector<CAMContour> generateCAMContours(size_t num_contours, size_t min_points, size_t max_points) {
@@ -327,6 +329,56 @@ std::vector<CAMContour> generateCAMContours(size_t num_contours, size_t min_poin
   return contours;
 }
 
+// NOTE: 生成type erasure版本的contour
+std::vector<Hera::DocumentEntity> generateTypeErasureCAMContours(size_t num_contours, size_t min_points,
+                                                                 size_t max_points) {
+  std::vector<Hera::DocumentEntity> contours;
+  contours.reserve(num_contours);
+
+  std::random_device rd;
+  std::mt19937 rng(rd());
+  std::uniform_int_distribution<size_t> point_dist(min_points, max_points);
+  // std::uniform_int_distribution<size_t> cam_operations_dist(8, 10);  // 一共8-10个CAM操作：微联，冷却点等。
+
+  int cam_operation_num = 10;
+  for (size_t i = 0; i < num_contours; ++i) {
+    CAMContour tmpContour = CAMContour(point_dist(rng), cam_operation_num, rng);
+    contours.emplace_back(tmpContour);
+  }
+
+  return contours;
+}
+
+// NOTE: 生成variant版本的contour
+using DocumentEntityVariant = std::variant<CAMContour>;
+std::vector<DocumentEntityVariant> generateVariantCAMContours(size_t num_contours, size_t min_points,
+                                                              size_t max_points) {
+  std::vector<DocumentEntityVariant> contours;
+  contours.reserve(num_contours);
+
+  std::random_device rd;
+  std::mt19937 rng(rd());
+  std::uniform_int_distribution<size_t> point_dist(min_points, max_points);
+  // std::uniform_int_distribution<size_t> cam_operations_dist(8, 10);  // 一共8-10个CAM操作：微联，冷却点等。
+
+  int cam_operation_num = 10;
+  for (size_t i = 0; i < num_contours; ++i) {
+    CAMContour tmpContour = CAMContour(point_dist(rng), cam_operation_num, rng);
+    contours.emplace_back(tmpContour);
+  }
+
+  return contours;
+}
+
+class Traverser {
+ public:
+  size_t& sum;
+
+  Traverser(size_t& sum_) : sum(sum_) {}
+
+  void operator()(CAMContour& c) { c.traverse(sum); }
+};
+
 std::vector<std::shared_ptr<CAMContour>> generateCAMContoursPtr(size_t num_contours, size_t min_points,
                                                                 size_t max_points) {
   std::vector<std::shared_ptr<CAMContour>> contours;
@@ -345,7 +397,7 @@ std::vector<std::shared_ptr<CAMContour>> generateCAMContoursPtr(size_t num_conto
   return contours;
 }
 
-// **基准测试 1：使用 `vector<vector<double>>`**
+// -------- 最朴素的单线程版本 --------
 void BM_CAMContour_Traditional_traversal(benchmark::State& state) {  // NOLINT
   int minPoints = state.range(0);
   int maxPoints = state.range(1);
@@ -364,11 +416,12 @@ void BM_CAMContour_Traditional_traversal(benchmark::State& state) {  // NOLINT
   for (auto _ : state) {
     // 遍历所有 Contour 中的点
     double sum = 0.0;
-    // -------- 单线程版本 --------
+
     for (const auto& contour : contours) {
       for (const auto& point : contour.origin_contour.points) {
         // sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
         sum += point.x;
+        // sum++;
         // benchmark::DoNotOptimize(point);
       }
 
@@ -377,6 +430,7 @@ void BM_CAMContour_Traditional_traversal(benchmark::State& state) {  // NOLINT
         for (const auto& point : cam_operation.points) {
           // sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
           sum += point.x;
+          // sum++;
           // benchmark::DoNotOptimize(point);
         }
       }
@@ -391,6 +445,48 @@ void BM_CAMContour_Traditional_traversal(benchmark::State& state) {  // NOLINT
   //   state.SetItemsProcessed(contours.size() * state.iterations());
 }
 
+// -------- type erasure版本 --------
+void BM_CAMContour_TypeErasure_traversal(benchmark::State& state) {  // NOLINT
+  int minPoints = state.range(0);
+  int maxPoints = state.range(1);
+  int numContours = state.range(2);
+
+  // 在堆上构造 Contour 对象
+  auto contours = generateTypeErasureCAMContours(numContours, minPoints, maxPoints);
+
+  // // 计算总点数
+  size_t total = 0;
+  for (auto _ : state) {
+    for (auto& contour : contours) {
+      contour.traverse(total);
+    }
+  }
+
+  std::cout << "the traditional total is " << total << std::endl;
+}
+
+// -------- std variant版本 --------
+
+void BM_CAMContour_Variant_traversal(benchmark::State& state) {  // NOLINT
+  int minPoints = state.range(0);
+  int maxPoints = state.range(1);
+  int numContours = state.range(2);
+
+  // 在堆上构造 Contour 对象
+  auto contours = generateVariantCAMContours(numContours, minPoints, maxPoints);
+
+  // // 计算总点数
+  size_t total = 0;
+  for (auto _ : state) {
+    for (auto& contour : contours) {
+      std::visit(Traverser{total}, contour);
+    }
+  }
+
+  std::cout << "the traditional total is " << total << std::endl;
+}
+
+// -------- 指针版本 --------
 void BM_CAMContour_Traditional_ptr_traversal(benchmark::State& state) {  // NOLINT
   int minPoints = state.range(0);
   int maxPoints = state.range(1);

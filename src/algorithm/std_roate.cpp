@@ -32,8 +32,11 @@ void std_roate() {
   auto end_itr = mid_itr + 1;  /// end是指向的最后一个元素的下一位，这里找到的mid_itr是5，需要把5包括进来，所以要+1
 
   std::rotate_copy(begin_itr, mid_itr, end_itr, std::back_inserter(v3));
-  std::rotate(std::ranges::find(v3, 2), std::ranges::find(v3, 3), std::end(v3));
 
+  std::cout << "copyed v3 is" << std::endl;
+  std::for_each(std::begin(v3), std::end(v3), print_vec);
+
+  std::rotate(std::ranges::find(v3, 2), std::ranges::find(v3, 3), std::end(v3));
   std::cout << "switch 5 and 2 " << std::endl;
   std::for_each(std::begin(v3), std::end(v3), print_vec);
 }

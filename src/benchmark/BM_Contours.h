@@ -49,6 +49,23 @@ struct CAMContour {
       cam_operations.emplace_back(num_points, rng);
     }
   }
+
+  void traverse(size_t& sum) {
+    for (const auto& point : origin_contour.points) {
+      // sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
+      sum += point.x;
+      // sum++;
+      // benchmark::DoNotOptimize(point);
+    }
+
+    for (const auto& contour : cam_operations) {
+      for (const auto& point : contour.points) {
+        // sum += sqrt(point.x * point.x)  - sqrt(point.y * point.y);  // cppcheck-suppress unreadVariable
+        sum++;
+        // benchmark::DoNotOptimize(point);
+      }
+    }
+  }
 };
 
 struct ContourComponent {

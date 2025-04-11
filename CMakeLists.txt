@@ -5,7 +5,11 @@ project(CPP_TEST)
 
 add_executable(${PROJECT_NAME})
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.cpp src/*.h)
-target_sources(${PROJECT_NAME} PUBLIC ${sources})
+target_sources(${PROJECT_NAME} PUBLIC 
+    ${sources}
+    $ENV{HERA_WORKSPACE_DIR}/Dependencies/cpp-te/src/te.cpp
+    $ENV{HERA_WORKSPACE_DIR}/Dependencies/cpp-te/src/te2.cpp
+)
 
 
 set(PCH_HEADER "src/pch.h")
@@ -19,6 +23,7 @@ target_include_directories(${PROJECT_NAME}
     PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/cereal/include
     PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/plf_colony
     PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/glm
+    PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/cpp-te/include
     # PUBLIC "E:/Syncthing/libs/boost_1_76_0/"
 #     PUBLIC libs/google_benchmark/include
 )

@@ -25,11 +25,12 @@ int main() {
   // CATEGORY   algorithm
   //---------------------------------------------------
   //   CALL_USE_CASE(std_erase);
-  //   CALL_USE_CASE(std_roate);
+  // CALL_USE_CASE(std_roate);
   //   CALL_USE_CASE(std_partition);
   //   CALL_USE_CASE(std_transform);
   //   CALL_USE_CASE(std_find);
   //   CALL_USE_CASE(multy_level_sort);
+  CALL_USE_CASE(std_partial_sort);
 
   //---------------------------------------------------
   // CATEGORY   benchmark
@@ -46,6 +47,8 @@ int main() {
   // ->Args({3000000, 4000000, 100});  // 100万个contour 和 1000万个 contour
 
   // BENCHMARK(BM_CAMContour_Traditional_traversal)->Args({40, 40, 1000000});
+  // BENCHMARK(BM_CAMContour_TypeErasure_traversal)->Args({40, 40, 1000000});
+  // BENCHMARK(BM_CAMContour_Variant_traversal)->Args({40, 40, 1000000});
   // BENCHMARK(BM_CAMContour_Traditional_ptr_traversal)->Args({40, 40, 1000000});
   // std::cout << "----------sss----------------" << std::endl;
   // BENCHMARK(BM_CAMContour_Traditional_multithread_traversal)->Args({40, 40, 1000000});
@@ -160,8 +163,8 @@ int main() {
   //   CALL_USE_CASE(std_async_complex_1_test);
   //   CALL_USE_CASE(std_function_as_a_parameter_test);
   //   CALL_USE_CASE(std_for_each_test);
-  //   CALL_USE_CASE(std_unique_ptr);
-  CALL_USE_CASE(std_span);
+  // CALL_USE_CASE(std_unique_ptr);
+  // CALL_USE_CASE(std_span);
   //   CALL_USE_CASE(std_string_view);
   //   CALL_USE_CASE(std_move);
   //   CALL_USE_CASE(std_decay);
