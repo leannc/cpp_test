@@ -3,12 +3,14 @@ cmake_minimum_required(VERSION 3.26)
 set(CMAKE_CXX_STANDARD 20)
 project(CPP_TEST)
 
+message("Hera_Dependencies_Dir : ${Hera_Dependencies_Dir}")
+
 add_executable(${PROJECT_NAME})
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.cpp src/*.h)
 target_sources(${PROJECT_NAME} PUBLIC 
     ${sources}
-    $ENV{HERA_WORKSPACE_DIR}/Dependencies/cpp-te/src/te.cpp
-    $ENV{HERA_WORKSPACE_DIR}/Dependencies/cpp-te/src/te2.cpp
+    $ENV{Hera_Dependencies_Dir}/cpp-te/src/te.cpp
+    $ENV{Hera_Dependencies_Dir}/cpp-te/src/te2.cpp
 )
 
 
@@ -17,13 +19,13 @@ target_precompile_headers(${PROJECT_NAME} PRIVATE ${PCH_HEADER})
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC src/concurrencpp_test/include
-    PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/expected/include
-    PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/sigslot/include
-    PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/entt/single_include/entt
-    PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/cereal/include
-    PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/plf_colony
-    PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/glm
-    PUBLIC $ENV{HERA_WORKSPACE_DIR}/Dependencies/cpp-te/include
+    PUBLIC $ENV{Hera_Dependencies_Dir}/expected/include
+    PUBLIC $ENV{Hera_Dependencies_Dir}/sigslot/include
+    PUBLIC $ENV{Hera_Dependencies_Dir}/entt/single_include/entt
+    PUBLIC $ENV{Hera_Dependencies_Dir}/cereal/include
+    PUBLIC $ENV{Hera_Dependencies_Dir}/plf_colony
+    PUBLIC $ENV{Hera_Dependencies_Dir}/glm
+    PUBLIC $ENV{Hera_Dependencies_Dir}/cpp-te/include
     # PUBLIC "E:/Syncthing/libs/boost_1_76_0/"
 #     PUBLIC libs/google_benchmark/include
 )

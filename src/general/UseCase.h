@@ -37,3 +37,4 @@ void function_object();
 void lambda_closure();
 void customize_iterator();
 void std_view_filter();
+void cereal_test();

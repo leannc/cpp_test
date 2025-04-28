@@ -30,7 +30,7 @@ int main() {
   //   CALL_USE_CASE(std_transform);
   //   CALL_USE_CASE(std_find);
   //   CALL_USE_CASE(multy_level_sort);
-  CALL_USE_CASE(std_partial_sort);
+  // CALL_USE_CASE(std_partial_sort);
 
   //---------------------------------------------------
   // CATEGORY   benchmark
@@ -181,6 +181,7 @@ int main() {
   // CALL_USE_CASE(lambda_closure);
   // CALL_USE_CASE(customize_iterator);
   // CALL_USE_CASE(std_view_filter);
+  CALL_USE_CASE(cereal_test);
   //---------------------------------------------------
   // CATEGORY   numeric
   //---------------------------------------------------
