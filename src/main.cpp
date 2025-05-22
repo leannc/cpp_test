@@ -19,6 +19,7 @@
 #include "templates/UseCase.h"
 #include "templates/template_classes/HideImplementationTemplate.h"
 #include "type_traits/UseCase.h"
+#include "working_demo_code/UseCase.h"
 
 int main() {
   //---------------------------------------------------
@@ -181,7 +182,7 @@ int main() {
   // CALL_USE_CASE(lambda_closure);
   // CALL_USE_CASE(customize_iterator);
   // CALL_USE_CASE(std_view_filter);
-  CALL_USE_CASE(cereal_test);
+  // CALL_USE_CASE(cereal_test);
   //---------------------------------------------------
   // CATEGORY   numeric
   //---------------------------------------------------
@@ -220,5 +221,10 @@ int main() {
   //   CALL_USE_CASE(function_return_values_in_type_traits);
   //   CALL_USE_CASE(std_declval);
 
+
+    //---------------------------------------------------
+  // CATEGORY   working_demo_code
+  //---------------------------------------------------
+    CALL_USE_CASE(split_contour_for_fabric_cutting);
   return 0;
 }
