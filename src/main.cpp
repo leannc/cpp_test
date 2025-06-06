@@ -159,7 +159,7 @@ int main() {
   //   CALL_USE_CASE(std_set_test);
   //   CALL_USE_CASE(std_min_max_element_test);
   //   CALL_USE_CASE(semaphore_test);
-  //   CALL_USE_CASE(condition_variable_test);
+  CALL_USE_CASE(condition_variable_test);
   //   CALL_USE_CASE(std_async_simple_test);
   //   CALL_USE_CASE(std_async_complex_1_test);
   //   CALL_USE_CASE(std_function_as_a_parameter_test);
@@ -221,10 +221,9 @@ int main() {
   //   CALL_USE_CASE(function_return_values_in_type_traits);
   //   CALL_USE_CASE(std_declval);
 
-
-    //---------------------------------------------------
+  //---------------------------------------------------
   // CATEGORY   working_demo_code
   //---------------------------------------------------
-    CALL_USE_CASE(split_contour_for_fabric_cutting);
+  // CALL_USE_CASE(split_contour_for_fabric_cutting);
   return 0;
 }
