@@ -12,7 +12,7 @@ int concurrencpp_result_promise() {
 
     // imitate a random failure
     std::srand(static_cast<unsigned>(::time(nullptr)));
-    if (std::rand() % 100 < 90) {
+    if (std::rand() % 100 < 50) {
       promise.set_result("hello world");
     } else {
       promise.set_exception(std::make_exception_ptr(std::runtime_error("failure")));
@@ -22,7 +22,7 @@ int concurrencpp_result_promise() {
   try {
     auto asynchronous_string = result.get();
     std::cout << "result promise returned string: " << asynchronous_string << std::endl;
-  } catch (const std::exception &e) {
+  } catch (const std::exception& e) {
     std::cerr << "An exception was thrown while executing asynchronous function: " << e.what() << std::endl;
   }
 

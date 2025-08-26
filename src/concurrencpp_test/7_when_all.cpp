@@ -18,10 +18,10 @@ int example_job(int task_num, int dummy_value, int sleeping_time_ms) {
 }
 
 concurrencpp::result<void> consume_all_tasks(std::shared_ptr<concurrencpp::thread_pool_executor> resume_executor,
-                                             std::vector<concurrencpp::result<int>> results) {
+                                             std::vector<concurrencpp::result<int>>&& results) {
   auto all_done = co_await concurrencpp::when_all(resume_executor, results.begin(), results.end());
 
-  for (auto &done_result : all_done) {
+  for (auto& done_result : all_done) {
     std::cout << co_await done_result << std::endl;
   }
 
