@@ -7,6 +7,7 @@
 #include "algorithm/UseCase.h"
 #include "benchmark/UseCase.h"
 #include "boost/UseCase.h"
+#include "cereal/UseCase.h"
 #include "concurrencpp_test/UseCase.h"
 #include "design_pattern/UseCase.h"
 #include "entt/UseCase.h"
@@ -79,6 +80,11 @@ int main() {
   //---------------------------------------------------
   // CALL_USE_CASE(signals_basic);
 
+  //---------------------------------------------------
+  // CATEGORY   cereal
+  //---------------------------------------------------
+  // CALL_USE_CASE(cereal_test);
+  CALL_USE_CASE(custom_data_serialization);
   //---------------------------------------------------
   // CATEGORY   concurrencpp
   //---------------------------------------------------
@@ -183,7 +189,6 @@ int main() {
   // CALL_USE_CASE(lambda_closure);
   // CALL_USE_CASE(customize_iterator);
   // CALL_USE_CASE(std_view_filter);
-  CALL_USE_CASE(cereal_test);
   //---------------------------------------------------
   // CATEGORY   numeric
   //---------------------------------------------------

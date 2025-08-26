@@ -22,4 +22,12 @@ void cereal_test() {
   iarchive(my_map2);
 
   std::cout << "my_map2 size: " << my_map2.size() << std::endl;
+
+  for (auto& kv : my_map2) {
+    std::cout << kv.first << ": ";
+    for (auto& v : kv.second) {
+      std::cout << v << " ";
+    }
+    std::cout << std::endl;
+  }
 }
