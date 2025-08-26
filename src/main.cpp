@@ -98,7 +98,7 @@ int main() {
   // CALL_USE_CASE(concurrencpp_async_locks);
   // CALL_USE_CASE(async_condition_variable_test);
   // CALL_USE_CASE(SLA_axis_init);
-  CALL_USE_CASE(parallel_coroutines);
+  // CALL_USE_CASE(parallel_coroutines);
 
   //---------------------------------------------------
   // CATEGORY   design_pattern
@@ -183,7 +183,7 @@ int main() {
   // CALL_USE_CASE(lambda_closure);
   // CALL_USE_CASE(customize_iterator);
   // CALL_USE_CASE(std_view_filter);
-  // CALL_USE_CASE(cereal_test);
+  CALL_USE_CASE(cereal_test);
   //---------------------------------------------------
   // CATEGORY   numeric
   //---------------------------------------------------
