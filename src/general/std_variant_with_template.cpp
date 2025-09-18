@@ -25,8 +25,8 @@ class ShapeBase {
   using Shapes = std::vector<std::variant<Devs...>>;
   explicit ShapeBase(Shapes shapes) : shapes_{std::move(shapes)} {}
   void draw() {
-    for (auto &shape : shapes_) {
-      std::visit([](auto &dev) { dev.draw(); }, shape);
+    for (auto& shape : shapes_) {
+      std::visit([](auto& dev) { dev.draw(); }, shape);
     }
   }
 

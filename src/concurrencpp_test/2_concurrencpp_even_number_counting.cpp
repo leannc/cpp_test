@@ -4,13 +4,13 @@
 #include "UseCase.h"
 
 // using namespace concurrencpp;
-using namespace std::chrono_literals;
+using namespace std::chrono_literals;  //NOLINT
 
 std::vector<int> make_random_vector() {
   std::vector<int> vec(64 * 1'024);
 
   std::srand(std::time(nullptr));
-  for (auto &i : vec) {
+  for (auto& i : vec) {
     i = ::rand();
   }
 
@@ -18,8 +18,8 @@ std::vector<int> make_random_vector() {
 }
 
 concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_pool_executor> tpe,
-                                        std::shared_ptr<concurrencpp::timer_queue> tq, const std::vector<int> &vector,
-                                        int &worker_times) {
+                                        std::shared_ptr<concurrencpp::timer_queue> tq, const std::vector<int>& vector,
+                                        int& worker_times) {  //NOLINT
   std::cout << "begin count_even in thread : " << std::this_thread::get_id() << std::endl;
   //    co_await concurrencpp::resume_on(tpe);
   //    co_await tq->make_delay_object(1ms, tpe);
@@ -46,7 +46,7 @@ concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_poo
   }
 
   size_t total_count = 0;
-  for (auto &result : chunk_count) {
+  for (auto& result : chunk_count) {
     std::cout << "before co_await,total_count : " << total_count << std::endl;
     total_count += co_await result;
     //        total_count += result.get();
