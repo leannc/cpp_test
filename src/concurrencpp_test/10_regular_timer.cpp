@@ -11,7 +11,8 @@ int regular_timer() {
   concurrencpp::timer timer = runtime.timer_queue()->make_timer(1500ms, 2000ms, runtime.thread_pool_executor(), [&] {
     const auto c = counter.fetch_add(1);
     //        std::this_thread::sleep_for(5s);
-    std::cout << "timer was invoked for the " << c << "th time" << std::endl;
+    std::cout << "【" << std::this_thread::get_id() << "】" << "timer was invoked for the " << c << "th time"
+              << std::endl;
   });
 
   std::cout << "timer due time (ms): " << timer.get_due_time().count() << std::endl;

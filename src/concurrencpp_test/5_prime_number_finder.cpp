@@ -12,23 +12,15 @@
 #include "concurrencpp/concurrencpp.h"
 
 bool is_prime(int num) {
-  if (num <= 1) {
-    return false;
-  }
+  if (num <= 1) { return false; }
 
-  if (num <= 3) {
-    return true;
-  }
+  if (num <= 3) { return true; }
 
   const auto range = static_cast<int>(std::sqrt(num));
-  if (num % 2 == 0 || num % 3 == 0) {
-    return false;
-  }
+  if (num % 2 == 0 || num % 3 == 0) { return false; }
 
   for (int i = 5; i <= range; i += 6) {
-    if (num % i == 0 || num % (i + 2) == 0) {
-      return false;
-    }
+    if (num % i == 0 || num % (i + 2) == 0) { return false; }
   }
 
   return true;
@@ -39,12 +31,10 @@ concurrencpp::result<std::vector<int>>
 find_primes(concurrencpp::executor_tag, std::shared_ptr<concurrencpp::executor> executor, int begin, int end) {
   assert(begin <= end);
 
-  std::cout << "find_primes working thread : " << std::this_thread::get_id() << std::endl;
+  std::cout << "【" << std::this_thread::get_id() << "】" << "find_primes working " << std::endl;
   std::vector<int> prime_numbers;
   for (int i = begin; i < end; i++) {
-    if (is_prime(i)) {
-      prime_numbers.emplace_back(i);
-    }
+    if (is_prime(i)) { prime_numbers.emplace_back(i); }
   }
 
   co_return prime_numbers;
@@ -58,7 +48,7 @@ concurrencpp::result<std::vector<int>> find_prime_numbers(std::shared_ptr<concur
   int range_begin = 0;
 
   for (int i = 0; i < concurrency_level; i++) {
-    std::cout << "calling thread : " << std::this_thread::get_id() << std::endl;
+    std::cout << "【" << std::this_thread::get_id() << "】" << "calling thread" << std::endl;
     auto result = find_primes({}, executor, range_begin, range_begin + range_length);
     range_begin += range_length;
 
@@ -68,7 +58,7 @@ concurrencpp::result<std::vector<int>> find_prime_numbers(std::shared_ptr<concur
   auto all_done = co_await concurrencpp::when_all(executor, found_primes_in_range.begin(), found_primes_in_range.end());
 
   std::vector<int> found_primes;
-  for (auto &done_result : all_done) {
+  for (auto& done_result : all_done) {
     auto prime_numbers = co_await done_result;
     found_primes.insert(found_primes.end(), prime_numbers.begin(), prime_numbers.end());
   }

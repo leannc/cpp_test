@@ -20,7 +20,7 @@ std::string currentTime() {
   time_t now = time(0);
 
   // 将秒数转换为本地时间结构
-  tm *localTime = localtime(&now);
+  tm* localTime = localtime(&now);
 
   // 格式化时间为字符串
   char timeStr[100];
@@ -42,7 +42,7 @@ concurrencpp::generator<bool> is_moving() {
 }
 
 result<int> axis_move_task(std::shared_ptr<concurrencpp::thread_pool_executor> tpe,
-                           std::shared_ptr<concurrencpp::timer_queue> tq, result<int> &&preivous_task, int distance,
+                           std::shared_ptr<concurrencpp::timer_queue> tq, result<int>&& preivous_task, int distance,
                            std::string axis_name) {
   auto result = co_await preivous_task;
   if (result == -1) {
@@ -73,7 +73,7 @@ result<int> axis_move_task(std::shared_ptr<concurrencpp::thread_pool_executor> t
 }
 
 result<int> axis_go_origin_task(std::shared_ptr<concurrencpp::thread_pool_executor> tpe,
-                                std::shared_ptr<concurrencpp::timer_queue> tq, result<int> &&preivous_task,
+                                std::shared_ptr<concurrencpp::timer_queue> tq, result<int>&& preivous_task,
                                 std::string axis_name) {
   auto result = co_await preivous_task;
   if (result == -1) {

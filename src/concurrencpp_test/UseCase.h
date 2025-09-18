@@ -22,3 +22,4 @@ int concurrencpp_generator();
 int concurrencpp_async_locks();
 int async_condition_variable_test();
 int SLA_axis_init();
+int parallel_coroutines();

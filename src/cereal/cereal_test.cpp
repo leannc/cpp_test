@@ -10,14 +10,24 @@ void cereal_test() {
   my_map.emplace("key3", std::vector<int>{7, 8, 9});
   std::cout << "my_map size: " << my_map.size() << std::endl;
 
-  std::ofstream ofs("data11.bin", std::ios::binary);
-  cereal::BinaryOutputArchive oarchive(ofs);
-  oarchive(my_map);
+  {
+    std::ofstream ofs("data11.bin", std::ios::binary);
+    cereal::BinaryOutputArchive oarchive(ofs);
+    oarchive(my_map);
+  }
 
   std::map<std::string, std::vector<int>> my_map2;
   std::ifstream ifs("data11.bin", std::ios::binary);
   cereal::BinaryInputArchive iarchive(ifs);
   iarchive(my_map2);
 
-  //   std::cout << "my_map2 size: " << my_map2.size() << std::endl;
+  std::cout << "my_map2 size: " << my_map2.size() << std::endl;
+
+  for (auto& kv : my_map2) {
+    std::cout << kv.first << ": ";
+    for (auto& v : kv.second) {
+      std::cout << v << " ";
+    }
+    std::cout << std::endl;
+  }
 }

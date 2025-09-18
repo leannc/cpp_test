@@ -37,10 +37,8 @@ replace_chars_in_file_version_2(std::shared_ptr<concurrencpp::thread_pool_execut
   co_await concurrencpp::resume_on(threadpool_executor);
 
   // we're running on the threadpool executor now. we can process CPU-bound tasks now.
-  for (auto &c : file_content) {
-    if (c == from) {
-      c = to;
-    }
+  for (auto& c : file_content) {
+    if (c == from) { c = to; }
   }
 
   // switch execution back to the background-executor
@@ -66,9 +64,7 @@ int async_file_processing_version_2() {
     replace_chars_in_file_version_2(runtime.background_executor(), runtime.thread_pool_executor(), file_path, from_char,
                                     to_char)
         .get();
-  } catch (const std::exception &e) {
-    std::cerr << e.what() << std::endl;
-  }
+  } catch (const std::exception& e) { std::cerr << e.what() << std::endl; }
 
   return 0;
 }
