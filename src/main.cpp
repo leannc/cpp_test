@@ -203,7 +203,7 @@ int main() {
   // CALL_USE_CASE(lambda_closure);
   // CALL_USE_CASE(customize_iterator);
   // CALL_USE_CASE(std_view_filter);
-  CALL_USE_CASE(std_view_keys_filter);
+  // CALL_USE_CASE(std_view_keys_filter);
   // CALL_USE_CASE(cereal_test);
   //---------------------------------------------------
   // CATEGORY   numeric
@@ -234,6 +234,7 @@ int main() {
   //   CALL_USE_CASE(concept_test);
   //   CALL_USE_CASE(concept_requirements_test);
   //   CALL_USE_CASE(template_function_overload);
+  CALL_USE_CASE(variadic_template_member_attributes);
 
   //---------------------------------------------------
   // CATEGORY   type_traits

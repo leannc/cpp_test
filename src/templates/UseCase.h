@@ -5,6 +5,7 @@
 void hide_implementation_template_use();
 void variadic_template_use();
 void variadic_function_template();
+void variadic_template_member_attributes();
 void stand_alone_fold_expression_using();
 void parameter_pack_expansion_and_perfect_forwarding();
 void abbreviation_template();
