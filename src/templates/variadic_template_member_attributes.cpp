@@ -39,7 +39,8 @@ class DeviceManager {
   template <typename TargetDeviceT>  // 目标设备类型
   TargetDeviceT* Get(const Name& name) {
     // 从 tuple 中找到存储对应类型 Components 的那个，并调用其 Get 方法
-    return &(std::get<Components<TargetDeviceT>>(componentTuples_).Get(name));
+    auto device = std::get<Components<TargetDeviceT>>(componentTuples_).Get(name);
+    return device;
     // 注意：这里假设 Components<TargetDeviceT> 类型一定在 DeviceTypes... 中，否则编译失败
   }
 

@@ -5,3 +5,5 @@
 /out
 /.vscode
 data11.bin
+data.bin
+src/templates/variadic_template_member_attributes.cpp

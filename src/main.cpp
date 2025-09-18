@@ -84,7 +84,7 @@ int main() {
   // CATEGORY   cereal
   //---------------------------------------------------
   // CALL_USE_CASE(cereal_test);
-  CALL_USE_CASE(custom_data_serialization);
+  // CALL_USE_CASE(custom_data_serialization);
   //---------------------------------------------------
   // CATEGORY   concurrencpp
   //---------------------------------------------------
