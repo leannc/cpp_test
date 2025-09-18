@@ -17,90 +17,90 @@ std::vector<int> make_random_vector() {
 
     return vec;
   }
+}
 
-  concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_pool_executor> tpe,
-                                          std::shared_ptr<concurrencpp::timer_queue> tq, const std::vector<int>& vector,
-                                          int& worker_times) {
-    std::cout << "【" << std::this_thread::get_id() << "】" << "begin count_even" << std::endl;
-    // co_await concurrencpp::resume_on(tpe);
-    co_await tq->make_delay_object(1ms, tpe);
-    std::cout << "【" << std::this_thread::get_id() << "】" << "resume count_even" << std::endl;
-    const auto vector_size = vector.size();
-    const auto concurrency_level = tpe->max_concurrency_level();
-    std::cout << "concurrency_level: " << concurrency_level << std::endl;
-    const auto chunk_size = vector_size / concurrency_level;
-    //    co_await concurrencpp::resume_on(tpe);
-    //    std::cout << "returned: " << concurrency_level << std::endl;
-    std::vector<concurrencpp::result<size_t>> chunk_count;
+concurrencpp::result<size_t> count_even(std::shared_ptr<concurrencpp::thread_pool_executor> tpe,
+                                        std::shared_ptr<concurrencpp::timer_queue> tq, const std::vector<int>& vector,
+                                        int& worker_times) {
+  std::cout << "【" << std::this_thread::get_id() << "】" << "begin count_even" << std::endl;
+  // co_await concurrencpp::resume_on(tpe);
+  co_await tq->make_delay_object(1ms, tpe);
+  std::cout << "【" << std::this_thread::get_id() << "】" << "resume count_even" << std::endl;
+  const auto vector_size = vector.size();
+  const auto concurrency_level = tpe->max_concurrency_level();
+  std::cout << "concurrency_level: " << concurrency_level << std::endl;
+  const auto chunk_size = vector_size / concurrency_level;
+  //    co_await concurrencpp::resume_on(tpe);
+  //    std::cout << "returned: " << concurrency_level << std::endl;
+  std::vector<concurrencpp::result<size_t>> chunk_count;
 
-    for (auto i = 0; i < concurrency_level; i++) {
-      const auto chunk_begin = i * chunk_size;
-      const auto chunk_end = chunk_begin + chunk_size;
-      auto result = tpe->submit([&vector, chunk_begin, chunk_end, &worker_times]() -> size_t {
-        worker_times++;
-        // std::cout << "【" << std::this_thread::get_id() << "】" << "working" << std::endl;
-        std::this_thread::sleep_for(100ms);
-        //            std::cout << "start work : " << std::this_thread::get_id()<< std::endl;
-        return std::count_if(vector.begin() + chunk_begin, vector.begin() + chunk_end,
-                             [](auto i) { return i % 2 == 0; });
-      });
+  for (auto i = 0; i < concurrency_level; i++) {
+    const auto chunk_begin = i * chunk_size;
+    const auto chunk_end = chunk_begin + chunk_size;
+    auto result = tpe->submit([&vector, chunk_begin, chunk_end, &worker_times]() -> size_t {
+      worker_times++;
+      // std::cout << "【" << std::this_thread::get_id() << "】" << "working" << std::endl;
+      std::this_thread::sleep_for(100ms);
+      //            std::cout << "start work : " << std::this_thread::get_id()<< std::endl;
+      return std::count_if(vector.begin() + chunk_begin, vector.begin() + chunk_end, [](auto i) { return i % 2 == 0; });
+    });
 
-      chunk_count.emplace_back(std::move(result));
-    }
-
-    size_t total_count = 0;
-    for (auto& result : chunk_count) {
-      std::cout << "【" << std::this_thread::get_id() << "】" << "before co_await,total_count : " << total_count
-                << std::endl;
-      total_count += co_await result;
-      // total_count += result.get();
-      std::cout << "【" << std::this_thread::get_id() << "】" << "after co_await total_count: " << total_count
-                << std::endl;
-    }
-
-    std::cout << "【" << std::this_thread::get_id() << "】" << "end count_even" << std::endl;
-    co_return total_count;
+    chunk_count.emplace_back(std::move(result));
   }
 
-  int concurrencpp_even_number_counting() {
-    int thread_invoke_times = 0;
-    int thread_terminate_times = 0;
-    int worker_invoke_times = 0;
-    concurrencpp::runtime_options options;
-    options.thread_started_callback = [&](std::string_view thread_name) {
-      thread_invoke_times++;
-      //        std::cout << "A new thread is starting to run, name: " << thread_name << ", thread id: " <<
-      //        std::this_thread::get_id()
-      //                  << std::endl;
-    };
-
-    options.thread_terminated_callback = [&](std::string_view thread_name) {
-      thread_terminate_times++;
-      //        std::cout << "A thread is terminating, name: " << thread_name << ", thread id: " <<
-      //        std::this_thread::get_id() << std::endl;
-    };
-
-    concurrencpp::runtime runtime(options);
-    const auto vector = make_random_vector();
-    std::cout << "【" << std::this_thread::get_id() << "】" << "before calling count_even " << std::endl;
-    auto result = count_even(runtime.thread_pool_executor(), runtime.timer_queue(), vector, worker_invoke_times);
-    //    auto result2 = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
-    //    auto result3 = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
-    //    auto result4 = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
-    //    auto result5 = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
-    std::cout << "【" << std::this_thread::get_id() << "】" << "after calling count_even " << std::endl;
-    // std::this_thread::sleep_for(3000ms);
-    // std::cout << "【" << std::this_thread::get_id() << "】" << "after sleep in main thread " << std::endl;
-    const auto total_count = result.get();
-    // const auto total_count = co_await result;  // 报错，只能在协程中使用
-    //    const auto total_count2 = result2.get();
-    std::cout << "【" << std::this_thread::get_id() << "】" << "thread_invoke_times : " << thread_invoke_times
+  size_t total_count = 0;
+  for (auto& result : chunk_count) {
+    std::cout << "【" << std::this_thread::get_id() << "】" << "before co_await,total_count : " << total_count
               << std::endl;
-    std::cout << "【" << std::this_thread::get_id() << "】" << "thread_terminate_times : " << thread_terminate_times
+    total_count += co_await result;
+    // total_count += result.get();
+    std::cout << "【" << std::this_thread::get_id() << "】" << "after co_await total_count: " << total_count
               << std::endl;
-    std::cout << "【" << std::this_thread::get_id() << "】" << "worker_invoke_times : " << worker_invoke_times
-              << std::endl;
-    std::cout << "【" << std::this_thread::get_id() << "】" << "there are " << total_count
-              << " even numbers in the vector" << std::endl;
-    return 0;
   }
+
+  std::cout << "【" << std::this_thread::get_id() << "】" << "end count_even" << std::endl;
+  co_return total_count;
+}
+
+int concurrencpp_even_number_counting() {
+  int thread_invoke_times = 0;
+  int thread_terminate_times = 0;
+  int worker_invoke_times = 0;
+  concurrencpp::runtime_options options;
+  options.thread_started_callback = [&](std::string_view thread_name) {
+    thread_invoke_times++;
+    //        std::cout << "A new thread is starting to run, name: " << thread_name << ", thread id: " <<
+    //        std::this_thread::get_id()
+    //                  << std::endl;
+  };
+
+  options.thread_terminated_callback = [&](std::string_view thread_name) {
+    thread_terminate_times++;
+    //        std::cout << "A thread is terminating, name: " << thread_name << ", thread id: " <<
+    //        std::this_thread::get_id() << std::endl;
+  };
+
+  concurrencpp::runtime runtime(options);
+  const auto vector = make_random_vector();
+  std::cout << "【" << std::this_thread::get_id() << "】" << "before calling count_even " << std::endl;
+  auto result = count_even(runtime.thread_pool_executor(), runtime.timer_queue(), vector, worker_invoke_times);
+  //    auto result2 = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
+  //    auto result3 = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
+  //    auto result4 = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
+  //    auto result5 = count_even(runtime.thread_pool_executor(), vector,worker_invoke_times);
+  std::cout << "【" << std::this_thread::get_id() << "】" << "after calling count_even " << std::endl;
+  // std::this_thread::sleep_for(3000ms);
+  // std::cout << "【" << std::this_thread::get_id() << "】" << "after sleep in main thread " << std::endl;
+  const auto total_count = result.get();
+  // const auto total_count = co_await result;  // 报错，只能在协程中使用
+  //    const auto total_count2 = result2.get();
+  std::cout << "【" << std::this_thread::get_id() << "】" << "thread_invoke_times : " << thread_invoke_times
+            << std::endl;
+  std::cout << "【" << std::this_thread::get_id() << "】" << "thread_terminate_times : " << thread_terminate_times
+            << std::endl;
+  std::cout << "【" << std::this_thread::get_id() << "】" << "worker_invoke_times : " << worker_invoke_times
+            << std::endl;
+  std::cout << "【" << std::this_thread::get_id() << "】" << "there are " << total_count
+            << " even numbers in the vector" << std::endl;
+  return 0;
+}
