@@ -41,6 +41,8 @@ class concurrent_queue {
 
   lazy_result<int> pop(std::shared_ptr<executor> resume_executor) {
     auto guard = co_await _lock.lock(resume_executor);
+
+    // 这个会unlock，suspend，然后判断pred，如果pred为true，则lock，继续执行，否则co_await
     co_await _cv.await(resume_executor, guard, [this] {
       std::cout << "consumer await" << std::endl;
       return _abort || !_queue.empty();

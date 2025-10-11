@@ -225,7 +225,7 @@ int main() {
   //---------------------------------------------------
   // CATEGORY   templates
   //---------------------------------------------------
-  //   CALL_USE_CASE(hide_implementation_template_use);
+  CALL_USE_CASE(hide_implementation_template_use);
   //   CALL_USE_CASE(variadic_template_use);
   //   CALL_USE_CASE(variadic_function_template);
   //   CALL_USE_CASE(stand_alone_fold_expression_using);
@@ -234,7 +234,7 @@ int main() {
   //   CALL_USE_CASE(concept_test);
   //   CALL_USE_CASE(concept_requirements_test);
   //   CALL_USE_CASE(template_function_overload);
-  CALL_USE_CASE(variadic_template_member_attributes);
+  // CALL_USE_CASE(variadic_template_member_attributes);
 
   //---------------------------------------------------
   // CATEGORY   type_traits

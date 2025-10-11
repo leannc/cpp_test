@@ -91,6 +91,7 @@ int concurrencpp_even_number_counting() {
   std::cout << "【" << std::this_thread::get_id() << "】" << "after calling count_even " << std::endl;
   // std::this_thread::sleep_for(3000ms);
   // std::cout << "【" << std::this_thread::get_id() << "】" << "after sleep in main thread " << std::endl;
+
   const auto total_count = result.get();
   // const auto total_count = co_await result;  // 报错，只能在协程中使用
   //    const auto total_count2 = result2.get();
